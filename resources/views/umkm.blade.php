@@ -91,16 +91,16 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 py-4">
             <div
-                class="w-full transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                 <img class="h-48 w-full object-cover object-center"
                     src="https://images.unsplash.com/photo-1674296115670-8f0e92b1fddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                     alt="Product Image" />
                 <div class="p-4">
-                    <h2 class="mb-2 text-lg font-medium capitalize dark:text-white text-gray-900">Batik Gajah Oling</h2>
-                    <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Lorem ipsum dolor sit amet.</p>
+                    <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Gajah Oling</h2>
+                    <p class="mb-2 text-base text-gray-700">Lorem ipsum dolor sit amet.</p>
                     <div class="flex items-center">
-                        <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">Rp.20.000</p>
-                        <p class="text-base font-medium text-gray-500 line-through dark:text-gray-300"></p>
+                        <p class="mr-2 text-lg font-semibold text-gray-900">Rp.20.000</p>
+                        <p class="text-base font-medium text-gray-500 line-through"></p>
                         <p class="ml-auto text-base font-medium text-green-500">Tersedia</p>
                     </div>
                 </div>
@@ -113,17 +113,17 @@
                 </div>
             </div>
             <div
-                class="w-full transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                 <img class="h-48 w-full object-cover object-center"
                     src="https://images.unsplash.com/photo-1674296115670-8f0e92b1fddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                     alt="Product Image" />
                 <div class="p-4">
-                    <h2 class="mb-2 text-lg font-medium capitalize dark:text-white text-gray-900">Batik Gajah Oling
+                    <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Gajah Oling
                     </h2>
-                    <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Lorem ipsum dolor sit amet.</p>
+                    <p class="mb-2 text-base text-gray-700">Lorem ipsum dolor sit amet.</p>
                     <div class="flex items-center">
-                        <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">Rp.20.000</p>
-                        <p class="text-base font-medium text-gray-500 line-through dark:text-gray-300"></p>
+                        <p class="mr-2 text-lg font-semibold text-gray-900">Rp.20.000</p>
+                        <p class="text-base font-medium text-gray-500 line-through"></p>
                         <p class="ml-auto text-base font-medium text-green-500">Tersedia</p>
                     </div>
                 </div>
@@ -136,17 +136,17 @@
                 </div>
             </div>
             <div
-                class="w-full transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                 <img class="h-48 w-full object-cover object-center"
                     src="https://images.unsplash.com/photo-1674296115670-8f0e92b1fddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                     alt="Product Image" />
                 <div class="p-4">
-                    <h2 class="mb-2 text-lg font-medium capitalize dark:text-white text-gray-900">Batik Gajah Oling
+                    <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Gajah Oling
                     </h2>
-                    <p class="mb-2 text-base dark:text-gray-300 text-gray-700">Lorem ipsum dolor sit amet.</p>
+                    <p class="mb-2 text-base text-gray-700">Lorem ipsum dolor sit amet.</p>
                     <div class="flex items-center">
-                        <p class="mr-2 text-lg font-semibold text-gray-900 dark:text-white">Rp.20.000</p>
-                        <p class="text-base font-medium text-gray-500 line-through dark:text-gray-300"></p>
+                        <p class="mr-2 text-lg font-semibold text-gray-900">Rp.20.000</p>
+                        <p class="text-base font-medium text-gray-500 line-through"></p>
                         <p class="ml-auto text-base font-medium text-green-500">Tersedia</p>
                     </div>
                 </div>

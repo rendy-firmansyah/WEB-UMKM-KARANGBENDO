@@ -1,23 +1,32 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+// Non user
+Route::get('/', [UserController::class, 'index'])->name('home');
+Route::get('/umkm', [UserController::class, 'indexUmkm'])->name('umkm');
+Route::get('/order-detail', [UserController::class, 'indexOrder'])->name('order-detail');
+Route::get('/berita', [UserController::class, 'indexBerita'])->name('berita');
+Route::get('/detail-berita', [UserController::class, 'indexDetailBerita'])->name('detail-berita');
 
-Route::get('/umkm', function () {
-    return view('umkm');
-})->name('umkm');
+// Admin
+Route::get('/admin/dashboard', function () {
+    return view('dashboard.admin.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard-admin');
 
-Route::get('order-detail', function () {
-    return view('order-detail');
-})->name('order-detail');
+Route::get('/dashboard', function () {
+    return view('dashboard.umkm.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard-umkm');
 
-Route::get('/berita', function () {
-    return view('berita');
-})->name('berita');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/detail-berita', function () {
-    return view('detail-berita');
-})->name('detail-berita');
+// User UMKM
+
+
+require __DIR__.'/auth.php';
