@@ -10,10 +10,14 @@ Route::get('/umkm', function () {
     return view('umkm');
 })->name('umkm');
 
-Route::get('/produk', function () {
-    return view('produk');
-})->name('produk');
+Route::get('order-detail', function () {
+    return view('order-detail');
+})->name('order-detail');
 
 Route::get('/berita', function () {
     return view('berita');
 })->name('berita');
+
+Route::get('/detail-berita', function () {
+    return view('detail-berita');
+})->name('detail-berita');

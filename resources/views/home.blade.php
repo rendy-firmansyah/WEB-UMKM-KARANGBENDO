@@ -4,20 +4,22 @@
 
     <section
         class=" p-12 w-full flex flex-col-reverse lg:flex-row md:flex-row bg-gray-800 sm:py-24  text-gray-100 items-center min-h-screen"
-        id="hero">
+        id="hero"
+        style="background-image: url({{ asset('images/bg-sectionHome.png') }}); background-repeat: no-repeat; background-size: cover;">
         <div class="w-full lg:w-1/2 container">
             <div class="my-6 md:my-6 sm:my-0">
                 <span
                     class="text-xs sm:text-sm md:text-md lg:text-lg bg-gray-700 px-2 sm:px-3 py-1 rounded-full text-gray-100">#umkmmaju</span>
             </div>
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-8">Selamat datang di UMKM
-                Unggulan Desa
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-8">Selamat datang Desa
                 <span class="text-blue-500">Karangbendo</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-md lg:text-lg mb-4">Kenalan lebih dekat yuk tentang UMKM unggulan apa
+            <p class="text-xs sm:text-sm md:text-md lg:text-lg mb-4 capitalize">Kenalan lebih dekat yuk tentang potensi
+                dan
+                keunggulan apa
                 saja yang ada di Desa Karangbendo</p>
 
-            <a href="#">
+            <a href="#pengenalan">
                 <button
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-800 rounded-full transition-all">Selengkapnya
                 </button>
@@ -161,7 +163,8 @@
 
     {{-- luas wilayah section --}}
 
-    <section class="flex flex-col bg-gray-100 text-gray-800 p-12 ">
+    <section class="flex flex-col bg-gray-100 text-gray-800 p-12 "
+        style="background-image: url({{ asset('images/batik-bg-fix.png') }}); background-repeat: no-repeat; background-size: cover">
         <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-8 text-center">Pembagian
             <span class="text-blue-500">Wilayah</span>
         </h3>
@@ -219,12 +222,18 @@
                     <p>2.280 Ha</p>
                 </div>
             </div>
-
-
         </div>
-
-        <div id="hs-multiple-bar-charts"></div>
+        <div class="w-full flex flex-col-reverse lg:flex-row items-center justify-center">
+            <div class="w-full lg:w-3/5 flex justify-center">
+                <x-chart-pembagian-wilayah></x-chart-pembagian-wilayah>
+            </div>
+            <div class="w-full lg:w-2/5 flex justify-center">
+                <img src="{{ asset('images/data-3d.png') }}" alt="data-3d" class="h-full max-h-96">
+            </div>
+        </div>
     </section>
+
+    {{-- Section wilayah end --}}
 
     <section class="p-6 sm:p-12 w-full flex flex-col bg-gray-800 sm:py-24 text-gray-100 items-center"
         style="background-image: url({{ asset('images/bg-batik2.png') }}); background-repeat: no-repeat; background-size: cover;">

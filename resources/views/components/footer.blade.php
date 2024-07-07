@@ -16,10 +16,7 @@
                             <a href="{{ route('home') }}" class="hover:underline">Home</a>
                         </li>
                         <li>
-                            <a href="{{ route('umkm') }}" class="hover:underline">UMKM</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('produk') }}" class="hover:underline">Produk</a>
+                            <a href="{{ route('umkm') }}" class="hover:underline">UMKM & Produk</a>
                         </li>
                         <li>
                             <a href="{{ route('berita') }}" class="hover:underline">Berita</a>

@@ -24,9 +24,8 @@
         </div>
         <ul id="nav-links" class="hidden md:flex md:space-x-8">
             <li><a href="{{ route('home') }}" class="hover:bg-blue-700 transition-all py-2 px-3 rounded">Home</a></li>
-            <li><a href="{{ route('umkm') }}" class="hover:bg-blue-700 transition-all py-2 px-3 rounded">UMKM</a></li>
-            <li><a href="{{ route('produk') }}" class="hover:bg-blue-700 transition-all py-2 px-3 rounded">Produk</a>
-            </li>
+            <li><a href="{{ route('umkm') }}" class="hover:bg-blue-700 transition-all py-2 px-3 rounded">UMKM &
+                    Produk</a></li>
             <li><a href="{{ route('berita') }}" class="hover:bg-blue-700 transition-all py-2 px-3 rounded">Berita</a>
             </li>
         </ul>
@@ -34,10 +33,8 @@
     <ul id="mobile-nav" class="menu-enter hidden flex-col md:hidden bg-gray-800 text-white">
         <li><a href="{{ route('home') }}" class="block py-2 px-12 hover:bg-gray-700">Home</a></li>
         <hr class="border-gray-400 w-1/2 ml-12">
-        <li><a href="{{ route('umkm') }}" class="block py-2 px-12 hover:bg-gray-700">UMKM</a></li>
+        <li><a href="{{ route('umkm') }}" class="block py-2 px-12 hover:bg-gray-700">UMKM & Produk</a></li>
         <hr class="border-gray-400 w-1/3 ml-12">
-        <li><a href="{{ route('produk') }}" class="block py-2 px-12 hover:bg-gray-700">Produk</a></li>
-        <hr class="border-gray-400 w-1/4 ml-12">
         <li><a href="{{ route('berita') }}" class="block py-2 px-12 hover:bg-gray-700">Berita</a></li>
         <hr class="border-gray-400 w-1/5 ml-12">
 
