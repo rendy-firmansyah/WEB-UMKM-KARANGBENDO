@@ -1,4 +1,4 @@
-<footer class="bg-white">
+<footer class="bg-gray-900 text-gray-100">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
@@ -10,8 +10,8 @@
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Navigation</h2>
-                    <ul class="text-gray-500 font-medium flex flex-col gap-4">
+                    <h2 class="mb-6 text-sm font-semibold text-gray-100 uppercase">Navigation</h2>
+                    <ul class="text-gray-100 font-medium flex flex-col gap-4">
                         <li>
                             <a href="{{ route('home') }}" class="hover:underline">Home</a>
                         </li>
@@ -24,8 +24,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
-                    <ul class="text-gray-500 font-medium">
+                    <h2 class="mb-6 text-sm font-semibold text-gray-100 uppercase">Follow us</h2>
+                    <ul class="text-gray-100 font-medium">
                         <li class="mb-4">
                             <a href="#" class="hover:underline ">Instagram</a>
                         </li>
@@ -35,8 +35,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
-                    <ul class="text-gray-500 font-medium">
+                    <h2 class="mb-6 text-sm font-semibold text-gray-100 uppercase">Legal</h2>
+                    <ul class="text-gray-100 font-medium">
                         <li class="mb-4">
                             <a href="#" class="hover:underline">Privacy Policy</a>
                         </li>
@@ -47,15 +47,15 @@
                 </div>
             </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <hr class="my-6 border-gray-500 sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center">© <span id="year"></span> <a
+            <span class="text-sm text-gray-100 sm:text-center">© <span id="year"></span> <a
                     href="{{ route('home') }}" class="hover:underline">Politeknik Negeri
                     Banyuwangi</a>. All Rights
                 Reserved.
             </span>
             <div class="flex mt-4 sm:justify-center sm:mt-0">
-                <a href="#" class="text-gray-500 hover:text-gray-900">
+                <a href="#" class="text-gray-500 hover:text-gray-400">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 8 19">
                         <path fill-rule="evenodd"
@@ -64,7 +64,7 @@
                     </svg>
                     <span class="sr-only">Facebook page</span>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+                <a href="#" class="text-gray-500 hover:text-gray-400 ms-5">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 21 16">
                         <path
@@ -72,7 +72,7 @@
                     </svg>
                     <span class="sr-only">Discord community</span>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+                <a href="#" class="text-gray-500 hover:text-gray-400 ms-5">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 20 17">
                         <path fill-rule="evenodd"
@@ -81,7 +81,7 @@
                     </svg>
                     <span class="sr-only">Twitter page</span>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+                <a href="#" class="text-gray-500 hover:text-gray-400 ms-5">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
@@ -90,7 +90,7 @@
                     </svg>
                     <span class="sr-only">GitHub account</span>
                 </a>
-                <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+                <a href="#" class="text-gray-500 hover:text-gray-400 ms-5">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         viewBox="0 0 20 20">
                         <path fill-rule="evenodd"
