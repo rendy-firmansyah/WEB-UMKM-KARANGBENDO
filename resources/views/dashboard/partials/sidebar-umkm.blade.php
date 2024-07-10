@@ -17,7 +17,7 @@
                 <p class="menu-label">Data</p>
                 <ul class="menu-list">
                     <li class="--set-active-tables-html">
-                        <a href="tables.html">
+                        <a href="">
                             <span class="icon"><i class="mdi mdi-table"></i></span>
                             <span class="menu-item-label">Tables</span>
                         </a>

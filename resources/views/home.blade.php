@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot name="title">Home - UMKM Unggulan Desa Karangbendo</x-slot>
+    <x-slot name="title">Home - UMKM Desa Karangbendo - Membangun Ekonomi Lokal dengan Kreativitas</x-slot>
 
 
     <section

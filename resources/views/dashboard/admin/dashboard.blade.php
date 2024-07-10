@@ -5,16 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard - Admin One Tailwind CSS Admin Dashboard</title>
+    <title>Dashboard - Admin Karangbendo</title>
 
     <!-- Tailwind is included -->
     @include('dashboard.partials.style')
     <meta name="description" content="Admin UMKM-karangbendo">
-
+    {{-- 
     <meta property="og:site_name" content="JustBoil.me">
     <meta property="og:title" content="Karang Bendo">
     <meta property="og:description" content="Admin UMKM-karangbendo">
-    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="960">
 
@@ -22,7 +21,7 @@
     <meta property="twitter:title" content="Karangbendo">
     <meta property="twitter:description" content="Admin UMKM-karangbendo">
     <meta property="twitter:image:width" content="1920">
-    <meta property="twitter:image:height" content="960">
+    <meta property="twitter:image:height" content="960"> --}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
@@ -65,7 +64,7 @@
         </section>
 
         <section class="section main-section">
-            <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
+            {{-- <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
                 <div class="card">
                     <div class="card-content">
                         <div class="flex items-center justify-between">
@@ -114,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- 
             <div class="card mb-6">
                 <header class="card-header">
@@ -147,7 +146,7 @@
 
 
             <div class="card has-table">
-                <header class="card-header">
+                {{-- <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
                         Clients
@@ -155,7 +154,7 @@
                     <a href="#" class="card-header-icon">
                         <span class="icon"><i class="mdi mdi-reload"></i></span>
                     </a>
-                </header>
+                </header> --}}
                 <div class="card-content">
                     <table>
                         <thead>
@@ -165,8 +164,7 @@
                                 <th>Content</th>
                                 <th>Author</th>
                                 <th>Date</th>
-                                <th>image</th>
-                                <th>Created</th>
+                                <th>Created At</th>
                                 <th>Action</th>
                                 <th></th>
                             </tr>

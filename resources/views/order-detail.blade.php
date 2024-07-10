@@ -12,7 +12,8 @@
             <div class="w-full md:w-2/3 lg:w-full p-6 bg-white rounded-lg shadow-lg flex flex-col md:flex-row">
                 <div class="flex justify-center items-center p-4">
                     <div class="relative w-56 h-56 rounded-md overflow-hidden flex justify-center items-center">
-                        <img class="object-cover w-full h-full" src="{{ asset('images/logo-poliwangi.png') }}"
+                        <img class="object-cover w-full h-full"
+                            src="https://d220hvstrn183r.cloudfront.net/attachment/18577248412538719799.large"
                             alt="">
                     </div>
                 </div>
@@ -34,6 +35,10 @@
                                 <td class="text-gray-600 align-top">: Rp. xxx.xxx</td>
                             </tr>
                             <tr>
+                                <td class="text-gray-600 font-bold align-top w-1/3 md:w-1/4 lg:w-1/5">Alamat</td>
+                                <td class="text-gray-600 align-top">: Jl. xxx</td>
+                            </tr>
+                            <tr>
                                 <td class="text-gray-600 font-bold align-top w-1/3 md:w-1/4 lg:w-1/5">Status</td>
                                 <td class="text-emerald-400 align-top">: Tersedia</td>
                             </tr>
@@ -41,14 +46,24 @@
                     </table>
 
 
-                    <div class="mt-4">
-                        <a href="https://wa.me/yourphonenumber"
-                            class="bg-emerald-500 hover:bg-emerald-700  transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
-                            <i class="ri-whatsapp-line px-2"></i>
-                            Hubungi Penjual
+
+                    <div class="mt-4 flex items-start flex-col gap-2 lg:flex-row">
+                        <a href="https://wa.me/yourphonenumber">
+                            <button type="button"
+                                class="bg-emerald-500 hover:bg-emerald-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
+                                Hubungi Penjual
+                                <i class="ri-whatsapp-line px-2"></i>
+                            </button>
+                            <a href="https://maps.app.goo.gl/VHdXQiH4uGJe5Z8m7">
+                                <button type="button"
+                                    class="bg-blue-500 hover:bg-blue-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
+                                    Lihat Alamat
+                                    <i class="ri-road-map-fill px-2"></i>
+                                </button>
+                            </a>
                         </a>
-                        <p class="text-gray-800 font-medium pt-4">Bagikan :</p>
                     </div>
+                    <p class="text-gray-800 font-medium pt-4">Bagikan :</p>
 
                     <div class="mt-4 flex items-center lg:flex-row space-x-4">
 
@@ -81,7 +96,7 @@
         <div class="w-48">
             <a href="{{ route('umkm') }}">
                 <button
-                    class="my-4 w-full bg-red-600 hover:bg-red-700 text-gray-100 text-sm md:text-md lg:text-lg font-medium py-2 px-8 transition-all rounded-lg">
+                    class="my-4 w-full bg-white shadow-xl hover:bg-slate-100 text-gray-800 text-sm md:text-md lg:text-lg font-medium py-2 px-8 transition-all rounded-lg">
                     Kembali
                 </button>
             </a>
@@ -91,31 +106,26 @@
 
     <script>
         function copyLink() {
-            // Mendapatkan URL yang akan disalin (gunakan cara yang sesuai dengan aplikasi Anda)
             let urlToCopy = window.location.href;
 
-            // Membuat elemen textarea sementara untuk menyalin teks
             let tempInput = document.createElement('textarea');
             tempInput.value = urlToCopy;
             document.body.appendChild(tempInput);
 
-            // Memilih dan menyalin teks
             tempInput.select();
             document.execCommand('copy');
             document.body.removeChild(tempInput);
 
-            // Mengubah ikon menjadi centang setelah berhasil menyalin
             let copyIcon = document.getElementById('copyIcon');
             copyIcon.classList.remove('ri-file-copy-2-line');
             copyIcon.classList.add('ri-check-line');
 
 
-            // Mengatur timeout untuk mengembalikan ikon dan teks semula setelah beberapa detik
             setTimeout(function() {
                 copyIcon.classList.remove('ri-check-line');
                 copyIcon.classList.add('ri-file-copy-2-line');
                 copyButtonText.textContent = 'Salin Link';
-            }, 2000); // Mengembalikan setelah 2 detik
+            }, 2000);
         }
     </script>
 
