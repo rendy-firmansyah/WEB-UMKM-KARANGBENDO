@@ -1,4 +1,4 @@
-<?php
+<?php // app/Http/Middleware/RoleMiddleware.php
 
 namespace App\Http\Middleware;
 
@@ -12,8 +12,9 @@ class RoleMiddleware
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  string $role
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $role): Response
     {
         if (!$request->user() || $request->user()->role !== $role) {
             abort(403, 'Unauthorized');

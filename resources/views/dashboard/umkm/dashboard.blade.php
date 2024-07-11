@@ -154,7 +154,7 @@
                         <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
                         Clients
                     </p>
-                    <a href="#" class="card-header-icon">
+                    <a href="{{ route('dashboard-umkm') }}" class="card-header-icon">
                         <span class="icon"><i class="mdi mdi-reload"></i></span>
                     </a>
                 </header>

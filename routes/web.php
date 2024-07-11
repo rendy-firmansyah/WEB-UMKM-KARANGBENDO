@@ -20,6 +20,15 @@ Route::get('/dashboard', function () {
     return view('dashboard.umkm.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard-umkm');
 
+Route::get('/dashboard/form', function () {
+    return view('dashboard.umkm.form');
+})->middleware(['auth', 'verified'])->name('dashboard-form');
+
+Route::get('/dashboard/profile', function () {
+    return view('dashboard.umkm.profile');
+})->middleware(['auth', 'verified'])->name('dashboard-profile');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
