@@ -16,17 +16,27 @@ Route::get('/admin/dashboard', function () {
     return view('dashboard.admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard-admin');
 
+Route::get('/admin/dashboard/form', function () {
+    return view('dashboard.admin.form');
+})->middleware(['auth', 'verified'])->name('dashboard-form-admin');
+
+Route::get('/admin/dashboard/profile', function () {
+    return view('dashboard.admin.profile');
+})->middleware(['auth', 'verified'])->name('dashboard-profile-admin');
+
+
+// UMKM
 Route::get('/dashboard', function () {
     return view('dashboard.umkm.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard-umkm');
 
 Route::get('/dashboard/form', function () {
     return view('dashboard.umkm.form');
-})->middleware(['auth', 'verified'])->name('dashboard-form');
+})->middleware(['auth', 'verified'])->name('dashboard-form-umkm');
 
 Route::get('/dashboard/profile', function () {
     return view('dashboard.umkm.profile');
-})->middleware(['auth', 'verified'])->name('dashboard-profile');
+})->middleware(['auth', 'verified'])->name('dashboard-profile-umkm');
 
 
 Route::middleware('auth')->group(function () {
