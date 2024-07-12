@@ -69,11 +69,13 @@
                             </a>
                         </div>
                     </div>
-
-                    <a title="Log out" class="navbar-item desktop-icon-only cursor-pointer">
-                        <span class="icon"><i class="mdi mdi-logout"></i></span>
-                        <span>Log out</span>
-                    </a>
+                    <form action="{{route("logout")}}" method="POST">
+                        @csrf
+                        <button type="submit" title="Log out" class="navbar-item desktop-icon-only cursor-pointer">
+                            <span class="icon"><i class="mdi mdi-logout"></i></span>
+                            <span>Log out</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>
