@@ -55,12 +55,23 @@
                 berkembang
                 pesat. Desa ini memproduksi kerajinan tangan berkualitas dan makanan olahan tradisional, menjadikannya
                 pusat kreativitas dan inovasi lokal.</p>
-            <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-800 rounded-full transition-all">Baca
-                Selengkapnya
-            </button>
+            <a href="#video">
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-800 rounded-full transition-all">
+                    Selengkapnya
+                </button>
+            </a>
             </a>
         </div>
+    </section>
+
+    <section class="p-12 w-full flex flex-col bg-gray-100 text-gray-800" id="video">
+        <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-5 leading-8 text-center text-blue-500">Cerita
+            <span class="text-gray-800">Kami</span>
+        </h3>
+        <video width="100%" controls autoplay loop muted class="rounded-lg">
+            <source src="{{ asset('dist/Umkmunggulan.mp4') }}" type="video/mp4">
+        </video>
     </section>
     {{-- penegnalan desa section end --}}
 
