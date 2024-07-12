@@ -52,7 +52,7 @@
         <section class="is-title-bar">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
                 <ul>
-                    <li>Admin</li>
+                    <li>UMKM</li>
                     <li>Forms</li>
                 </ul>
             </div>
@@ -71,7 +71,7 @@
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-ballot"></i></span>
-                        Forms
+                        Upload Product
                     </p>
                 </header>
                 <div class="card-content">
@@ -81,20 +81,34 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control icons-left">
-                                        <input class="input" type="text" placeholder="Name">
-                                        <span class="icon left"><i class="mdi mdi-account"></i></span>
+                                        <input class="input" type="text" placeholder="Product Name">
+                                        <span class="icon left"><i
+                                                class="mdi mdi-accountmdi mdi-package-variant-closed"></i></span>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control icons-left icons-right">
-                                        <input class="input" type="email" placeholder="Email" value="alex@smith.com">
-                                        <span class="icon left"><i class="mdi mdi-mail"></i></span>
-                                        <span class="icon right"><i class="mdi mdi-check"></i></span>
+                                        <input class="input" type="number" id="price" name="price"
+                                            placeholder="Enter price" min="0">
+                                        <span class="icon left"><i class="mdi mdi-cash-multiple"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="field">
+                            <label class="label">Upload Foto</label>
+                            <div class="field-body">
+                                <div class="field file">
+                                    <label class="upload control">
+                                        <a class="button blue">
+                                            Upload
+                                        </a>
+                                        <input type="file">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="field">
                             <div class="field-body">
                                 <div class="field">
                                     <div class="field addons">
@@ -108,8 +122,8 @@
                                     <p class="help">Do not enter the first zero</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="field">
+                        </div> --}}
+                        {{-- <div class="field">
                             <label class="label">Department</label>
                             <div class="control">
                                 <div class="select">
@@ -120,9 +134,9 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <hr>
-                        <div class="field">
+                        {{-- <div class="field">
                             <label class="label">Subject</label>
 
                             <div class="control">
@@ -131,10 +145,10 @@
                             <p class="help">
                                 This field is required
                             </p>
-                        </div>
+                        </div> --}}
 
                         <div class="field">
-                            <label class="label">Question</label>
+                            <label class="label">Desciption Product</label>
                             <div class="control">
                                 <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
                             </div>
@@ -157,7 +171,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            {{-- <div class="card">
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-ballot-outline"></i></span>
@@ -226,21 +240,9 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="field">
-                        <label class="label">File</label>
-                        <div class="field-body">
-                            <div class="field file">
-                                <label class="upload control">
-                                    <a class="button blue">
-                                        Upload
-                                    </a>
-                                    <input type="file">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                
                 </div>
-            </div>
+            </div> --}}
         </section>
 
         @include('dashboard.partials.footer')

@@ -71,7 +71,7 @@
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-ballot"></i></span>
-                        Forms
+                        Start writing news
                     </p>
                 </header>
                 <div class="card-content">
@@ -81,15 +81,14 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control icons-left">
-                                        <input class="input" type="text" placeholder="Name">
-                                        <span class="icon left"><i class="mdi mdi-account"></i></span>
+                                        <input class="input" type="text" placeholder="Enter the News title">
+                                        <span class="icon left"><i class="mdi mdi-format-title"></i></span>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control icons-left icons-right">
-                                        <input class="input" type="email" placeholder="Email" value="alex@smith.com">
-                                        <span class="icon left"><i class="mdi mdi-mail"></i></span>
-                                        <span class="icon right"><i class="mdi mdi-check"></i></span>
+                                        <input class="input" type="email" placeholder="Author">
+                                        <span class="icon left"><i class="mdi mdi-account-edit"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -98,18 +97,16 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="field addons">
-                                        <div class="control">
-                                            <input class="input" value="+44" size="3" readonly>
-                                        </div>
-                                        <div class="control expanded">
-                                            <input class="input" type="tel" placeholder="Your phone number">
+                                        <div class="mb-4">
+                                            <label class="label">Date and time</label>
+                                            <input type="datetime-local" id="datetime-local" name="datetime-local">
                                         </div>
                                     </div>
-                                    <p class="help">Do not enter the first zero</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="field">
+
+                        {{-- <div class="field">
                             <label class="label">Department</label>
                             <div class="control">
                                 <div class="select">
@@ -120,9 +117,22 @@
                                     </select>
                                 </div>
                             </div>
+                        </div> --}}
+                        <div class="field">
+                            <label class="label">upload foto</label>
+                            <div class="field-body">
+                                <div class="field file">
+                                    <label class="upload control">
+                                        <a class="button blue">
+                                            Upload
+                                        </a>
+                                        <input type="file">
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <hr>
-                        <div class="field">
+                        {{-- <div class="field">
                             <label class="label">Subject</label>
 
                             <div class="control">
@@ -131,12 +141,12 @@
                             <p class="help">
                                 This field is required
                             </p>
-                        </div>
+                        </div> --}}
 
                         <div class="field">
-                            <label class="label">Question</label>
+                            <label class="label">Content</label>
                             <div class="control">
-                                <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                                <textarea class="textarea" placeholder="Enter news content here"></textarea>
                             </div>
                         </div>
                         <hr>
@@ -157,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            {{-- <div class="card">
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-ballot-outline"></i></span>
@@ -226,21 +236,9 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="field">
-                        <label class="label">File</label>
-                        <div class="field-body">
-                            <div class="field file">
-                                <label class="upload control">
-                                    <a class="button blue">
-                                        Upload
-                                    </a>
-                                    <input type="file">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
-            </div>
+            </div> --}}
         </section>
 
         @include('dashboard.partials.footer')

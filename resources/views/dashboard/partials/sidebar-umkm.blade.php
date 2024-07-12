@@ -17,13 +17,13 @@
                 <p class="menu-label">Action</p>
                 <ul class="menu-list">
                     <li class="--set-active-forms-html">
-                        <a href="{{ route('dashboard-form') }}">
+                        <a href="{{ route('dashboard-form-umkm') }}">
                             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                             <span class="menu-item-label">Form</span>
                         </a>
                     </li>
                     <li class="--set-active-profile-html">
-                        <a href="{{ route('dashboard-profile') }}">
+                        <a href="{{ route('dashboard-profile-umkm') }}">
                             <span class="icon"><i class="mdi mdi-account-circle"></i></span>
                             <span class="menu-item-label">Profile</span>
                         </a>
