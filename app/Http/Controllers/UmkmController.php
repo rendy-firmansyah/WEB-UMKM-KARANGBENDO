@@ -13,8 +13,5 @@ class UmkmController extends Controller
     {
         return view('dashboard.umkm.form');
     }
-    public function profile()
-    {
-        return view('dashboard.umkm.profile');
-    }
+ 
 }

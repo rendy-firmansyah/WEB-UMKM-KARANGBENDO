@@ -54,13 +54,7 @@
                                 Hubungi Penjual
                                 <i class="ri-whatsapp-line px-2"></i>
                             </button>
-                            <a href="https://maps.app.goo.gl/VHdXQiH4uGJe5Z8m7">
-                                <button type="button"
-                                    class="bg-blue-500 hover:bg-blue-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
-                                    Lihat Alamat
-                                    <i class="ri-road-map-fill px-2"></i>
-                                </button>
-                            </a>
+
                         </a>
                     </div>
                     <p class="text-gray-800 font-medium pt-4">Bagikan :</p>

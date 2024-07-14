@@ -20,9 +20,6 @@ Route::get('/admin/dashboard/form', function () {
     return view('dashboard.admin.form');
 })->middleware(['auth', 'verified'])->name('dashboard-form-admin');
 
-Route::get('/admin/dashboard/profile', function () {
-    return view('dashboard.admin.profile');
-})->middleware(['auth', 'verified'])->name('dashboard-profile-admin');
 
 
 // UMKM
@@ -33,10 +30,6 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/form', function () {
     return view('dashboard.umkm.form');
 })->middleware(['auth', 'verified'])->name('dashboard-form-umkm');
-
-Route::get('/dashboard/profile', function () {
-    return view('dashboard.umkm.profile');
-})->middleware(['auth', 'verified'])->name('dashboard-profile-umkm');
 
 
 Route::middleware('auth')->group(function () {

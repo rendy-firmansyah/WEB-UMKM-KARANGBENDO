@@ -3,7 +3,7 @@
         <div class="flex items-center space-x-4">
             <div class="flex flex-col">
                 <a href="{{ route('home') }}"
-                    class="text-2xl font-bold text-emerald-400 hover:text-blue-500 transition-all ">Umkm
+                    class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500 hover:text-blue-500 transition-all ">Umkm
                     Unggulan</a>
                 <a href="{{ route('home') }}" class="text-sm font-normal">Desa Karangbendo</a>
             </div>

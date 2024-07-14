@@ -22,13 +22,6 @@
                             <span class="menu-item-label">Form</span>
                         </a>
                     </li>
-                    <li class="--set-active-profile-html">
-                        <a href="{{ route('dashboard-profile-umkm') }}">
-                            <span class="icon"><i class="mdi mdi-account-circle"></i></span>
-                            <span class="menu-item-label">Profile</span>
-                        </a>
-                    </li>
                 </ul>
-
             </div>
         </aside>
