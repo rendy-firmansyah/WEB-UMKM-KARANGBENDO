@@ -11,18 +11,6 @@
     <!-- Tailwind is included -->
     @include('dashboard.partials.style')
     <meta name="description" content="Admin UMKM-karangbendo">
-    {{-- 
-    <meta property="og:site_name" content="JustBoil.me">
-    <meta property="og:title" content="Karang Bendo">
-    <meta property="og:description" content="Admin UMKM-karangbendo">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="960">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Karangbendo">
-    <meta property="twitter:description" content="Admin UMKM-karangbendo">
-    <meta property="twitter:image:width" content="1920">
-    <meta property="twitter:image:height" content="960"> --}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>

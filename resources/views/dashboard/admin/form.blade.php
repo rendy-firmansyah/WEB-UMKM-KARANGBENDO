@@ -10,23 +10,7 @@
 
     <!-- Tailwind is included -->
     @include('dashboard.partials.style')
-    {{-- <meta name="description" content="Admin One - free Tailwind dashboard">
 
-    <meta property="og:url" content="https://justboil.github.io/admin-one-tailwind/">
-    <meta property="og:site_name" content="JustBoil.me">
-    <meta property="og:title" content="Admin One HTML">
-    <meta property="og:description" content="Admin One - free Tailwind dashboard">
-    <meta property="og:image" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="960">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Admin One HTML">
-    <meta property="twitter:description" content="Admin One - free Tailwind dashboard">
-    <meta property="twitter:image:src" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png">
-    <meta property="twitter:image:width" content="1920">
-    <meta property="twitter:image:height" content="960"> --}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
@@ -71,69 +55,63 @@
                 <div class="card-content">
                     <form class="form" method="GET">
                         <div class="field">
-                            <label class="label">From</label>
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="control icons-left">
-                                        <input class="input" type="text" placeholder="Enter the News title">
-                                        <span class="icon left"><i class="mdi mdi-format-title"></i></span>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="control icons-left icons-right">
-                                        <input class="input" type="email" placeholder="Author">
-                                        <span class="icon left"><i class="mdi mdi-account-edit"></i></span>
-                                    </div>
-                                </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="product-name">
+                                    Judul Berita
+                                </label>
+                                <input id="product-name" type="text" placeholder="Masukkan nama produk"
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="product-price">
+                                    Penulis
+                                </label>
+                                <input id="product-price" type="number" placeholder="Masukkan harga produk"
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500" />
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="field addons">
-                                        <div class="mb-4">
-                                            <label class="label">Date and time</label>
-                                            <input type="datetime-local" id="datetime-local" name="datetime-local">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
+                                Pilih Tanggal dan Waktu
+                            </label>
+                            <input id="datetime" name="datetime" type="datetime-local"
+                                class="cursor-pointer w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                required>
                         </div>
 
 
-                        <div class="field">
-                            <label class="label">upload foto</label>
-                            <div class="field-body">
-                                <div class="field file">
-                                    <label class="upload control">
-                                        <a class="button blue">
-                                            Upload
-                                        </a>
-                                        <input type="file">
-                                    </label>
-                                </div>
+                        <div class="mb-4 mt-2">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="file-input">
+                                Upload Foto
+                            </label>
+                            <div class="flex items-center">
+                                <label
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
+                                    Upload
+                                    <input type="file" id="file-input" accept="image/*" class="hidden" />
+                                </label>
                             </div>
                         </div>
+                        <div class="mb-4 relative w-32">
+                            <img id="preview-image" class="hidden w-32 h-32 object-cover rounded-lg shadow-md" />
+                            <button id="remove-image"
+                                class="hidden absolute top-0 right-0 mt-1 mr-1 bg-red-500 text-white rounded-full w-6 h-6  items-center justify-center">
+                                &times;
+                            </button>
+                        </div>
+
+
+                        <div>
+                            <label for="description" class="block text-gray-800 text-sm font-bold mb-2">Konten Berita
+                            </label>
+                            <textarea id="description" name="address" placeholder="Mulai menulis konten disni..."
+                                class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                rows="4" required></textarea>
+                        </div>
+
+
+
                         <hr>
-                        {{-- <div class="field">
-                            <label class="label">Subject</label>
-
-                            <div class="control">
-                                <input class="input" type="text" placeholder="e.g. Partnership opportunity">
-                            </div>
-                            <p class="help">
-                                This field is required
-                            </p>
-                        </div> --}}
-
-                        <div class="field">
-                            <label class="label">Content</label>
-                            <div class="control">
-                                <textarea class="textarea" placeholder="Enter news content here"></textarea>
-                            </div>
-                        </div>
-                        <hr>
-
                         <div class="field grouped">
                             <div class="control">
                                 <button type="submit" class="button green">
@@ -146,124 +124,98 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
+
+
             </div>
 
-            {{-- <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        <span class="icon"><i class="mdi mdi-ballot-outline"></i></span>
-                        Custom elements
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="field">
-                        <label class="label">Checkbox</label>
-                        <div class="field-body">
-                            <div class="field grouped multiline">
-                                <div class="control">
-                                    <label class="checkbox"><input type="checkbox" value="lorem" checked>
-                                        <span class="check"></span>
-                                        <span class="control-label">Lorem</span>
-                                    </label>
-                                </div>
-                                <div class="control">
-                                    <label class="checkbox"><input type="checkbox" value="ipsum">
-                                        <span class="check"></span>
-                                        <span class="control-label">Ipsum</span>
-                                    </label>
-                                </div>
-                                <div class="control">
-                                    <label class="checkbox"><input type="checkbox" value="dolore">
-                                        <span class="check is-primary"></span>
-                                        <span class="control-label">Dolore</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field">
-                        <label class="label">Radio</label>
-                        <div class="field-body">
-                            <div class="field grouped multiline">
-                                <div class="control">
-                                    <label class="radio">
-                                        <input type="radio" name="sample-radio" value="one" checked>
-                                        <span class="check"></span>
-                                        <span class="control-label">One</span>
-                                    </label>
-                                </div>
-                                <div class="control">
-                                    <label class="radio">
-                                        <input type="radio" name="sample-radio" value="two">
-                                        <span class="check"></span>
-                                        <span class="control-label">Two</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field">
-                        <label class="label">Switch</label>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="switch">
-                                    <input type="checkbox" value="false">
-                                    <span class="check"></span>
-                                    <span class="control-label">Default</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-                </div>
-            </div> --}}
         </section>
+    </div>
 
-        @include('dashboard.partials.footer')
 
-        <div id="sample-modal" class="modal">
-            <div class="modal-background --jb-modal-close"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Sample modal</p>
-                </header>
-                <section class="modal-card-body">
-                    <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
-                    <p>This is sample modal</p>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">Cancel</button>
-                    <button class="button red --jb-modal-close">Confirm</button>
-                </footer>
-            </div>
+
+
+
+    @include('dashboard.partials.footer')
+
+    <div id="sample-modal" class="modal">
+        <div class="modal-background --jb-modal-close"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sample modal</p>
+            </header>
+            <section class="modal-card-body">
+                <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
+                <p>This is sample modal</p>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button --jb-modal-close">Cancel</button>
+                <button class="button red --jb-modal-close">Confirm</button>
+            </footer>
         </div>
+    </div>
 
-        <div id="sample-modal-2" class="modal">
-            <div class="modal-background --jb-modal-close"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Sample modal</p>
-                </header>
-                <section class="modal-card-body">
-                    <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
-                    <p>This is sample modal</p>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">Cancel</button>
-                    <button class="button blue --jb-modal-close">Confirm</button>
-                </footer>
-            </div>
+    <div id="sample-modal-2" class="modal">
+        <div class="modal-background --jb-modal-close"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sample modal</p>
+            </header>
+            <section class="modal-card-body">
+                <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
+                <p>This is sample modal</p>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button --jb-modal-close">Cancel</button>
+                <button class="button blue --jb-modal-close">Confirm</button>
+            </footer>
         </div>
+    </div>
 
     </div>
 
-    <!-- Scripts below are for demo only -->
     <script type="text/javascript" src="{{ asset('dist/js/main.min.js?v=1628755089081') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const datetimeInput = document.getElementById('datetime');
+            datetimeInput.addEventListener('click', function() {
+                this.showPicker();
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('preview-image');
+            const removeButton = document.getElementById('remove-image');
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden');
+                    removeButton.classList.remove('hidden');
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('remove-image').addEventListener('click', function() {
+            const preview = document.getElementById('preview-image');
+            const removeButton = document.getElementById('remove-image');
+
+            preview.src = '';
+            preview.classList.add('hidden');
+            removeButton.classList.add('hidden');
+            document.getElementById('file-input').value = ''; // Clear the file input
+        });
+    </script>
+
 
 
     <script>

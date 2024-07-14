@@ -11,23 +11,7 @@
     @include('dashboard.partials.style')
     <meta name="description" content="Admin UMKM-karangbendo">
 
-    {{-- <meta property="og:url" content="https://justboil.github.io/admin-one-tailwind/"> --}}
-    {{-- <meta property="og:site_name" content="umkm-karangbendo">
-    <meta property="og:title" content="Admin umkm-karangbendo">
-    <meta property="og:description" content="Admin UMKM-karangbendo"> --}}
-    {{-- <meta property="og:image" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png"> --}}
-    {{-- <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="960">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Admin umkm-karangbendo">
-    <meta property="twitter:description" content="Admin UMKM-karangbendo"> --}}
-    {{-- <meta property="twitter:image:src" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png"> --}}
-    {{-- <meta property="twitter:image:width" content="1920">
-    <meta property="twitter:image:height" content="960"> --}}
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
     <script>
@@ -120,33 +104,7 @@
                 </div>
             </div>
 
-            {{-- <div class="card mb-6">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        <span class="icon"><i class="mdi mdi-finance"></i></span>
-                        Performance
-                    </p>
-                    <a href="#" class="card-header-icon">
-                        <span class="icon"><i class="mdi mdi-reload"></i></span>
-                    </a>
-                </header>
-                <div class="card-content">
-                    <div class="chart-area">
-                        <div class="h-full">
-                            <div class="chartjs-size-monitor">
-                                <div class="chartjs-size-monitor-expand">
-                                    <div></div>
-                                </div>
-                                <div class="chartjs-size-monitor-shrink">
-                                    <div></div>
-                                </div>
-                            </div>
-                            <canvas id="big-line-chart" width="2992" height="1000"
-                                class="chartjs-render-monitor block" style="height: 400px; width: 1197px;"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+
 
 
             <div class="card has-table">

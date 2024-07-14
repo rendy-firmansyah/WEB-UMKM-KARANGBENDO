@@ -16,25 +16,7 @@
     <!-- Tailwind is included -->
     @include('dashboard.partials.style')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- <meta name="description" content="Admin One - free Tailwind dashboard">
 
-    <meta property="og:url" content="https://justboil.github.io/admin-one-tailwind/">
-    <meta property="og:site_name" content="JustBoil.me">
-    <meta property="og:title" content="Admin One HTML">
-    <meta property="og:description" content="Admin One - free Tailwind dashboard">
-    <meta property="og:image" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="960">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Admin One HTML">
-    <meta property="twitter:description" content="Admin One - free Tailwind dashboard">
-    <meta property="twitter:image:src" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png">
-    <meta property="twitter:image:width" content="1920">
-    <meta property="twitter:image:height" content="960"> --}}
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -122,11 +104,12 @@
                         <div class="mb-4 relative w-32">
                             <img id="preview-image" class="hidden w-32 h-32 object-cover rounded-lg shadow-md" />
                             <button id="remove-image"
-                                class="hidden absolute top-0 right-0 mt-1 mr-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center">
+                                class="hidden absolute top-0 right-0 mt-1 mr-1 bg-red-500 text-white rounded-full w-6 h-6  items-center justify-center">
                                 &times;
                             </button>
                         </div>
-
+                        <label for="description" class="block text-gray-800 text-sm font-bold mb-2">Deskripsi
+                            Produk</label>
                         <textarea id="description" name="address" placeholder="Masukkan Deskripsi Produk"
                             class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                             rows="4" required></textarea>
@@ -246,7 +229,7 @@
             preview.src = '';
             preview.classList.add('hidden');
             removeButton.classList.add('hidden');
-            document.getElementById('file-input').value = ''; // Clear the file input
+            document.getElementById('file-input').value = '';
         });
     </script>
     {{-- end of script for upload --}}
