@@ -13,7 +13,7 @@
                 <span class="text-blue-500">Karangbendo</span>
             </h1>
             <p class="text-sm sm:text-base md:text-md lg:text-lg mb-4 mx-auto py-4">
-                Potensi dan keunggulan UMKM unggulan apa saja yang ada di Desa Karangbendo
+                Lihat Potensi dan keunggulan UMKM unggulan apa saja yang ada di Desa Karangbendo
             </p>
             <a href="#products">
                 <button type="button"

@@ -93,14 +93,16 @@
 
             <div
                 class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-
+                <div class="w-12 sm:w-20 rounded-full">
+                    <img src="{{ asset('images/makanan.png') }}" alt="makanan-icon">
+                </div>
                 <p>Makanan</p>
             </div>
 
             <div
                 class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
                 <div class="w-12 sm:w-20 rounded-full">
-                    <img src="{{ asset('images/pertanian-icon.png') }}" alt="icon-fashion">
+                    <img src="{{ asset('images/pertanian-icon.png') }}" alt="pertanian-icon">
                 </div>
                 <p>Pertanian</p>
             </div>
@@ -108,7 +110,7 @@
             <div
                 class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
                 <div class="w-12 sm:w-20 rounded-full">
-                    <img src="{{ asset('images/wisata-icon.png') }}" alt="icon-fashion">
+                    <img src="{{ asset('images/wisata-icon.png') }}" alt="icon-wiasata">
                 </div>
                 <p>Wisata</p>
             </div>

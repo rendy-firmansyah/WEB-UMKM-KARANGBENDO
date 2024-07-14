@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Form- Admin</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Tailwind is included -->
     @include('dashboard.partials.style')
@@ -58,13 +59,6 @@
             </div>
         </section>
 
-        {{-- <section class="is-hero-bar">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-                <h1 class="title">
-                    Forms
-                </h1>
-            </div>
-        </section> --}}
 
         <section class="section main-section">
             <div class="card mb-6">
@@ -75,7 +69,7 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <form method="get">
+                    <form class="form" method="GET">
                         <div class="field">
                             <label class="label">From</label>
                             <div class="field-body">
@@ -106,18 +100,7 @@
                             </div>
                         </div>
 
-                        {{-- <div class="field">
-                            <label class="label">Department</label>
-                            <div class="control">
-                                <div class="select">
-                                    <select>
-                                        <option>Business development</option>
-                                        <option>Marketing</option>
-                                        <option>Sales</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> --}}
+
                         <div class="field">
                             <label class="label">upload foto</label>
                             <div class="field-body">

@@ -9,6 +9,7 @@
 
     <!-- Tailwind is included -->
     @include('dashboard.partials.style')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- <meta name="description" content="Admin One - free Tailwind dashboard">
 
     <meta property="og:url" content="https://justboil.github.io/admin-one-tailwind/">
@@ -75,9 +76,9 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <form method="get">
+                    <form class="form" method="GET">
                         <div class="field">
-                            <label class="label">From</label>
+                            <label class="Label">From</label>
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control icons-left">
@@ -95,62 +96,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label">Upload Foto</label>
-                            <div class="field-body">
-                                <div class="field file">
-                                    <label class="upload control">
-                                        <a class="button blue">
-                                            Upload
-                                        </a>
-                                        <input type="file">
-                                    </label>
-                                </div>
+
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="file-input">
+                                Upload Foto
+                            </label>
+                            <div class="flex items-center">
+                                <label
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
+                                    Upload
+                                    <input type="file" id="file-input" accept="image/*" class="hidden" />
+                                </label>
                             </div>
                         </div>
-                        {{-- <div class="field">
-                            <div class="field-body">
-                                <div class="field">
-                                    <div class="field addons">
-                                        <div class="control">
-                                            <input class="input" value="+44" size="3" readonly>
-                                        </div>
-                                        <div class="control expanded">
-                                            <input class="input" type="tel" placeholder="Your phone number">
-                                        </div>
-                                    </div>
-                                    <p class="help">Do not enter the first zero</p>
-                                </div>
-                            </div>
-                        </div> --}}
-                        {{-- <div class="field">
-                            <label class="label">Department</label>
-                            <div class="control">
-                                <div class="select">
-                                    <select>
-                                        <option>Business development</option>
-                                        <option>Marketing</option>
-                                        <option>Sales</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> --}}
-                        <hr>
-                        {{-- <div class="field">
-                            <label class="label">Subject</label>
+                        <div class="mb-4">
+                            <img id="preview-image" class="hidden w-32 h-32 object-cover rounded-lg shadow-md" />
+                        </div>
 
-                            <div class="control">
-                                <input class="input" type="text" placeholder="e.g. Partnership opportunity">
-                            </div>
-                            <p class="help">
-                                This field is required
-                            </p>
-                        </div> --}}
 
                         <div class="field">
                             <label class="label">Desciption Product</label>
                             <div class="control">
-                                <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                                <textarea class="textarea" placeholder="Explain your product"></textarea>
                             </div>
                         </div>
                         <hr>
@@ -171,78 +139,6 @@
                 </div>
             </div>
 
-            {{-- <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        <span class="icon"><i class="mdi mdi-ballot-outline"></i></span>
-                        Custom elements
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="field">
-                        <label class="label">Checkbox</label>
-                        <div class="field-body">
-                            <div class="field grouped multiline">
-                                <div class="control">
-                                    <label class="checkbox"><input type="checkbox" value="lorem" checked>
-                                        <span class="check"></span>
-                                        <span class="control-label">Lorem</span>
-                                    </label>
-                                </div>
-                                <div class="control">
-                                    <label class="checkbox"><input type="checkbox" value="ipsum">
-                                        <span class="check"></span>
-                                        <span class="control-label">Ipsum</span>
-                                    </label>
-                                </div>
-                                <div class="control">
-                                    <label class="checkbox"><input type="checkbox" value="dolore">
-                                        <span class="check is-primary"></span>
-                                        <span class="control-label">Dolore</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field">
-                        <label class="label">Radio</label>
-                        <div class="field-body">
-                            <div class="field grouped multiline">
-                                <div class="control">
-                                    <label class="radio">
-                                        <input type="radio" name="sample-radio" value="one" checked>
-                                        <span class="check"></span>
-                                        <span class="control-label">One</span>
-                                    </label>
-                                </div>
-                                <div class="control">
-                                    <label class="radio">
-                                        <input type="radio" name="sample-radio" value="two">
-                                        <span class="check"></span>
-                                        <span class="control-label">Two</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="field">
-                        <label class="label">Switch</label>
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="switch">
-                                    <input type="checkbox" value="false">
-                                    <span class="check"></span>
-                                    <span class="control-label">Default</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                
-                </div>
-            </div> --}}
         </section>
 
         @include('dashboard.partials.footer')
@@ -285,7 +181,25 @@
 
     <!-- Scripts below are for demo only -->
     <script type="text/javascript" src="{{ asset('dist/js/main.min.js?v=1628755089081') }}"></script>
+    {{-- script for upload foto --}}
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('preview-image');
 
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden');
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+    {{-- end of script for upload --}}
 
     <script>
         ! function(f, b, e, v, n, t, s) {

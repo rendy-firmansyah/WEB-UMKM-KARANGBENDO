@@ -9,6 +9,7 @@
 
     <!-- Tailwind is included -->
     @include('dashboard.partials.style')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     {{-- <meta name="description" content="Admin One - free Tailwind dashboard">
 
@@ -45,9 +46,7 @@
 <body>
 
     <div id="app">
-
         @include('dashboard.partials.header')
-
         @include('dashboard.partials.sidebar-umkm')
 
         <section class="is-title-bar">
@@ -61,9 +60,7 @@
 
         <section class="is-hero-bar">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-                <h1 class="title">
-                    Profile
-                </h1>
+                <h1 class="title">Profile</h1>
             </div>
         </section>
 
@@ -86,7 +83,7 @@
                                             <a class="button blue">
                                                 Upload
                                             </a>
-                                            <input type="file">
+                                            <input type="file" id="file-input" accept="image/*" class="hidden">
                                         </label>
                                     </div>
                                 </div>
@@ -119,9 +116,7 @@
                             <hr>
                             <div class="field">
                                 <div class="control">
-                                    <button type="submit" class="button green">
-                                        Submit
-                                    </button>
+                                    <button type="submit" class="button green">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -136,8 +131,8 @@
                     </header>
                     <div class="card-content">
                         <div class="image w-48 h-48 mx-auto">
-                            <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe"
-                                class="rounded-full">
+                            <img id="profile-image" src="https://avatars.dicebear.com/v2/initials/john-doe.svg"
+                                alt="John Doe" class="rounded-full">
                         </div>
                         <hr>
                         <div class="field">
@@ -192,9 +187,7 @@
                         <hr>
                         <div class="field">
                             <div class="control">
-                                <button type="submit" class="button green">
-                                    Submit
-                                </button>
+                                <button type="submit" class="button green">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -240,10 +233,25 @@
 
     </div>
 
+
     <!-- Scripts below are for demo only -->
     <script type="text/javascript" src="{{ asset('dist/js/main.min.js?v=1628755089081') }}"></script>
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('profile-image');
 
+            if (file) {
+                const reader = new FileReader();
 
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
     <script>
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;

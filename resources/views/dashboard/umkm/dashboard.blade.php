@@ -28,6 +28,7 @@
     <meta property="twitter:image:height" content="960"> --}}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -74,10 +75,10 @@
                         <div class="flex items-center justify-between">
                             <div class="widget-label">
                                 <h3>
-                                    Clients
+                                    Terjual
                                 </h3>
                                 <h1>
-                                    512
+                                    12
                                 </h1>
                             </div>
                             <span class="icon widget-icon text-green-500"><i
@@ -107,10 +108,10 @@
                         <div class="flex items-center justify-between">
                             <div class="widget-label">
                                 <h3>
-                                    sales
+                                    Pendapatan
                                 </h3>
                                 <h1>
-                                    Rp. 200.000
+                                    Rp. 2.000.000
                                 </h1>
                             </div>
                             <span class="icon widget-icon text-red-500"><i class="mdi mdi-finance mdi-48px"></i></span>

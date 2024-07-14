@@ -17,9 +17,10 @@
                 <p class="text-xs sm:text-sm md:text-md lg:text-lg">Date</p>
             </div>
             <figure class="bg-white p-3 rounded-lg max-w-lg shadow-xl relative overflow-hidden my-3">
-                <img class="w-full h-64 object-cover rounded-lg" src="{{ asset('images/Batik craft.jpeg') }}"
-                    alt="">
+                <img class="w-full h-48 sm:h-32 md:h-48 lg:h-64 object-cover rounded-lg"
+                    src="{{ asset('images/Batik craft.jpeg') }}" alt="batik">
             </figure>
+
             <p class="text-xs sm:text-sm md:text-md lg:text-lg my-4">Lorem ipsum, dolor sit amet consectetur adipisicing
                 elit. Error quidem vero at repellat, ipsum minus asperiores iste deserunt sunt ipsa corporis. Neque
                 aliquam, voluptatum fuga ex assumenda at aliquid beatae. Lorem ipsum dolor sit amet, consectetur
