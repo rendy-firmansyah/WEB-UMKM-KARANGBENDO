@@ -60,14 +60,16 @@
                                     Judul Berita
                                 </label>
                                 <input id="product-name" type="text" placeholder="Masukkan nama produk"
-                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500" />
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    required />
                             </div>
                             <div class="mb-4">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-price">
                                     Penulis
                                 </label>
                                 <input id="product-price" type="number" placeholder="Masukkan harga produk"
-                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500" />
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    required />
                             </div>
                         </div>
                         <div>
@@ -88,7 +90,7 @@
                                 <label
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                                     Upload
-                                    <input type="file" id="file-input" accept="image/*" class="hidden" />
+                                    <input type="file" id="file-input" accept="image/*" class="hidden" required />
                                 </label>
                             </div>
                         </div>

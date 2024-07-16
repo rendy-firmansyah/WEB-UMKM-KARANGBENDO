@@ -1,10 +1,10 @@
 <x-layout>
 
     <x-slot name="title">UMKM Unggulan Desa Karangbendo</x-slot>
-    <section class="p-12 w-full bg-gray-800 text-gray-100 min-h-screen flex flex-col justify-center items-center"
+    <section class="p-6 md:p-12 w-full bg-gray-800 text-gray-100 min-h-screen flex flex-col justify-center items-center"
         id="hero"
         style="background-image: url({{ asset('images/batik-biru.png') }}); background-repeat: no-repeat; background-size: cover;">
-        <div class="flex justify-center items-center flex-col pt-32 text-center">
+        <div class="flex justify-center items-center flex-col pt-0 md:pt-32 text-center">
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-snug">
                 Selamat datang di
                 <span
@@ -23,11 +23,7 @@
             </a>
         </div>
     </section>
-
-
-
-
-    <section class="flex flex-col bg-gray-100 text-gray-800 p-12 " id="products"
+    <section class="flex flex-col bg-gray-100 text-gray-800 p-6 md:p-12 " id="products"
         style="background-image: url({{ asset('images/bg-batikGajahOling.png') }}); background-repeat: no-repeat; background-size: cover;">
         <h3 class="text-md md:text-2xl lg:text-3xl font-bold mb-3 leading-8 text-start">Daftar
             <span class="text-blue-500">UMKM </span> Unggulan
@@ -76,12 +72,12 @@
                         <select id="Offer2"
                             class="h-12 border border-gray-300 text-slate-100 pl-11 text-base font-normal rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-blue-500 transition-all duration-500 hover:bg-blue-600 focus:bg-blue-600">
                             <option selected disabled class="bg-slate-100">Short By Produk</option>
-                            <option value="gajah-oling" class="bg-slate-100 text-slate-900">Gajah Oling</option>
-                            <option value="kangkung-stingkes" class="bg-slate-100 text-slate-900">Kangkung Stingkes
+                            <option value="gajah-oling" class="bg-slate-100 text-slate-900">Batik</option>
+                            <option value="kangkung-stingkes" class="bg-slate-100 text-slate-900">Makanan
                             </option>
-                            <option value="batik-larasati" class="bg-slate-100 text-slate-900">Batik Alas Kobong
+                            <option value="batik-larasati" class="bg-slate-100 text-slate-900">Aksesoris
                             </option>
-                            <option value="option-4" class="bg-slate-100 text-slate-900">Batik Kangkung Setingkes
+                            <option value="option-4" class="bg-slate-100 text-slate-900">Kosmetik
                             </option>
                         </select>
                         <svg class="absolute top-1/2 transform -translate-y-1/2 right-4 z-50 text-slate-100"

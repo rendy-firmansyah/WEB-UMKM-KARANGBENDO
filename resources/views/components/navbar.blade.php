@@ -1,5 +1,5 @@
 <header class=" bg-gray-800 text-white fixed w-full z-50 transition-all duration-300 ease-in-out" id="navbar">
-    <nav class="w-full py-4 px-12 flex items-center justify-between">
+    <nav class="w-full py-4 px-6 md:px-12 flex items-center justify-between">
         <div class="flex items-center space-x-4">
             <div class="flex flex-col">
                 <a href="{{ route('home') }}"
@@ -31,12 +31,12 @@
         </ul>
     </nav>
     <ul id="mobile-nav" class="menu-enter hidden flex-col md:hidden bg-gray-800 text-white">
-        <li><a href="{{ route('home') }}" class="block py-2 px-12 hover:bg-gray-700">Home</a></li>
-        <hr class="border-gray-400 w-1/2 ml-12">
-        <li><a href="{{ route('umkm') }}" class="block py-2 px-12 hover:bg-gray-700">UMKM & Produk</a></li>
-        <hr class="border-gray-400 w-1/3 ml-12">
-        <li><a href="{{ route('berita') }}" class="block py-2 px-12 hover:bg-gray-700">Berita</a></li>
-        <hr class="border-gray-400 w-1/5 ml-12">
+        <li><a href="{{ route('home') }}" class="block py-2 px-6 md:px-12 hover:bg-gray-700">Home</a></li>
+        <hr class="border-gray-400 w-1/2 ml-6 md:ml-12">
+        <li><a href="{{ route('umkm') }}" class="block py-2 px-6 md:px-12 hover:bg-gray-700">UMKM & Produk</a></li>
+        <hr class="border-gray-400 w-1/3 ml-6 md:ml-12">
+        <li><a href="{{ route('berita') }}" class="block py-2 px-6 md:px-12 hover:bg-gray-700">Berita</a></li>
+        <hr class="border-gray-400 w-1/5 ml-6 md:ml-12">
 
     </ul>
 

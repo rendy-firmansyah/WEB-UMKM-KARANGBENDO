@@ -65,21 +65,24 @@
                                     Nama Produk
                                 </label>
                                 <input id="product-name" type="text" placeholder="Masukkan nama produk"
-                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500" />
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    required />
                             </div>
                             <div class="mb-4">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-price">
                                     Harga
                                 </label>
                                 <input id="product-price" type="number" placeholder="Masukkan harga produk"
-                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500" />
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    required />
                             </div>
                         </div>
                         <div class="mb-4">
                             <label for="categoryies" class=" text-gray-800 text-sm font-bold">Pilih
                                 Kategori</label>
                             <select id="countries"
-                                class="bg-white border  text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2 ">
+                                class="bg-white border  text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2 "
+                                required>
                                 <option selected disabled class="bg-slate-100">Select Category</option>
                                 <option class="font-medium">Makanan</option>
                                 <option class="font-medium">Batik</option>
@@ -97,7 +100,7 @@
                                 <label
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                                     Upload
-                                    <input type="file" id="file-input" accept="image/*" class="hidden" />
+                                    <input type="file" id="file-input" accept="image/*" class="hidden" required />
                                 </label>
                             </div>
                         </div>
@@ -132,12 +135,11 @@
                             </div>
                         </div>
                         <div class="mb-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
-                                Alamat
-                            </label>
-                            <textarea id="address" name="address" placeholder="Masukkan alamat"
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="address">Alamat</label>
+                            <input type="text-area" id="address" name="address" placeholder="Masukkan alamat"
                                 class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                rows="4" required></textarea>
+                                rows="4" required>
+
                         </div>
 
                         <hr>
@@ -168,15 +170,14 @@
             <div class="modal-background --jb-modal-close"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Sample modal</p>
+                    <p class="modal-card-title">Penting!</p>
                 </header>
                 <section class="modal-card-body">
-                    <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
-                    <p>This is sample modal</p>
+                    <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
                 </section>
                 <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">Cancel</button>
-                    <button class="button red --jb-modal-close">Confirm</button>
+                    <button class="button --jb-modal-close">tidak</button>
+                    <button class="button red --jb-modal-close">iya</button>
                 </footer>
             </div>
         </div>
@@ -233,6 +234,11 @@
         });
     </script>
     {{-- end of script for upload --}}
+
+
+
+
+
 
     <script>
         ! function(f, b, e, v, n, t, s) {

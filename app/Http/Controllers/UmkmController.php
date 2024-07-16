@@ -13,5 +13,8 @@ class UmkmController extends Controller
     {
         return view('dashboard.umkm.form');
     }
- 
+    public function edit()
+    {
+        return view('dashboard.umkm.edit');
+    }
 }

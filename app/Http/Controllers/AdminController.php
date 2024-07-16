@@ -12,5 +12,8 @@ class AdminController extends Controller
     public function form () {
         return view('dashboard.admin.form');
     }
+    public function edit() {
+        return view('dashboard.admin.edit');
+    }
 
 }

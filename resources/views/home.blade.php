@@ -3,7 +3,7 @@
 
 
     <section
-        class=" p-12 w-full flex flex-col-reverse lg:flex-row md:flex-row bg-gray-800 sm:py-24  text-gray-100 items-center min-h-screen"
+        class=" p-6 md:p-12 w-full flex flex-col-reverse lg:flex-row md:flex-row bg-gray-800 sm:py-24  text-gray-100 items-center min-h-screen"
         id="hero"
         style="background-image: url({{ asset('images/bg-sectionHome.png') }}); background-repeat: no-repeat; background-size: cover;">
         <div class="w-full lg:w-1/2 container">
@@ -34,7 +34,8 @@
     </section>
 
     {{-- penegnalan desa section start --}}
-    <section class=" p-12 w-full flex flex-col-reverse lg:flex-row md:flex-row bg-gray-100  text-gray-800 items-center "
+    <section
+        class=" p-6 md:p-12 w-full flex flex-col-reverse lg:flex-row md:flex-row bg-gray-100  text-gray-800 items-center "
         id="pengenalan"
         style="background-image: url({{ asset('images/batik-bg-fix.png') }}); background-repeat: no-repeat; background-size: cover">
 
@@ -65,7 +66,7 @@
         </div>
     </section>
 
-    <section class="p-12 w-full flex flex-col bg-gray-100 text-gray-800" id="video">
+    <section class="p-6 md:p-12 w-full flex flex-col bg-gray-100 text-gray-800" id="video">
         <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-5 leading-8 text-center text-blue-500">Cerita
             <span class="text-gray-800">Kami</span>
         </h3>
@@ -77,7 +78,7 @@
 
 
     {{-- potensi section start --}}
-    <section class="flex flex-col bg-gray-100 text-gray-800 p-12 ">
+    <section class="flex flex-col bg-gray-100 text-gray-800 p-6 md:p-12 ">
         <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-8 text-center">Potensi
             <span class="text-blue-500">Desa</span>
         </h3>
@@ -119,7 +120,7 @@
     {{-- potensi section end --}}
 
 
-    <section class="p-6 sm:p-12 w-full flex flex-col bg-gray-100 text-gray-800 "
+    <section class="p-6 md:p-12 w-full flex flex-col bg-gray-100 text-gray-800 "
         style="background-image: url({{ asset('images/batik-bg-fix.png') }}); background-repeat: no-repeat; background-size: cover">
 
         <div class="">
@@ -176,7 +177,7 @@
 
     {{-- luas wilayah section --}}
 
-    <section class="flex flex-col bg-gray-100 text-gray-800 p-12 "
+    <section class="flex flex-col bg-gray-100 text-gray-800 p-6 md:p-12 "
         style="background-image: url({{ asset('images/batik-bg-fix.png') }}); background-repeat: no-repeat; background-size: cover">
         <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-8 text-center">Pembagian
             <span class="text-blue-500">Wilayah</span>
@@ -248,7 +249,7 @@
 
     {{-- Section wilayah end --}}
 
-    <section class="p-6 sm:p-12 w-full flex flex-col bg-gray-800 sm:py-24 text-gray-100 items-center"
+    <section class="p-6 md:p-12 w-full flex flex-col bg-gray-800 sm:py-24 text-gray-100 items-center"
         style="background-image: url({{ asset('images/bg-batik2.png') }}); background-repeat: no-repeat; background-size: cover;">
         <div class="text-center">
             <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-8">Lokasi Desa <span
@@ -268,7 +269,5 @@
         </div>
     </section>
     {{-- localtion section end --}}
-
-
 
 </x-layout>

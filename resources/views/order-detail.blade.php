@@ -47,14 +47,19 @@
 
 
 
-                    <div class="mt-4 flex items-start flex-col gap-2 lg:flex-row">
+                    <div class="mt-4 flex items-start flex-col  gap-1 lg:flex-row">
                         <a href="https://wa.me/yourphonenumber">
                             <button type="button"
                                 class="bg-emerald-500 hover:bg-emerald-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
                                 Hubungi Penjual
                                 <i class="ri-whatsapp-line px-2"></i>
                             </button>
-
+                            <a href="https://maps.app.goo.gl/sUMWwyUw8TBy1pxJ6">
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
+                                    lihat Alamat
+                                    <i class="ri-map-pin-range-fill px-2"></i>
+                            </a>
                         </a>
                     </div>
                     <p class="text-gray-800 font-medium pt-4">Bagikan :</p>
