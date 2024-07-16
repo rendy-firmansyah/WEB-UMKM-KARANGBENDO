@@ -19,22 +19,22 @@
         <div class="max-w-2xl px-4 py-8 mx-auto lg:py-16">
             <h2 class="mb-4 text-xl font-bold text-gray-900 ">Edit Berita</h2>
             <hr class="border-gray-600 w-full border-2 rounded-full my-2">
-            <form action="#" method="">
+            <form action="{{route('form.update', $berita->id)}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
                     <div class="sm:col-span-2">
                         <label for="tittle" class="block mb-2 text-sm font-medium text-gray-900">Tittle</label>
-                        <input type="text" name="tittle" id="tittle"
+                        <input type="text" name="judul_berita" id="tittle"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan judul" required="">
+                            placeholder="Masukkan judul" value="{{$berita->judul_berita}}">
                     </div>
                     <div class="sm:col-span-2">
                         <label for="author" class="block mb-2 text-sm font-medium text-gray-900">Author</label>
                         <input type="text" name="author" id="author"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan penulis" required="">
+                            placeholder="Masukkan penulis" value="{{$berita->author}}">
                     </div>
-
-
 
                     <div class="sm:col-span-2">
                         <label for="img-berita" class="block mb-2 text-sm font-medium text-gray-900">Upload
@@ -49,8 +49,8 @@
                                     <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, GIF, SVG
                                     </p>
                                 </div>
-                                <input id="img-berita" type="file" class="hidden" name="img-berita"
-                                    accept="image/png, image/jpeg, image/gif, image/svg+xml" required>
+                                <input id="img-berita" type="file" class="hidden" name="gambar_berita"
+                                    accept="image/png, image/jpeg, image/gif, image/svg+xml">
                             </label>
                         </div>
                         <div class="mt-4 relative" id="image-preview-container" style="display: none;">
@@ -65,9 +65,9 @@
 
                     <div class="sm:col-span-2">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Content</label>
-                        <textarea id="description" name="description" placeholder="Masukkan content berita"
+                        <textarea id="description" name="isi_konten" placeholder="Masukkan content berita"
                             class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                            rows="4" required></textarea>
+                            rows="4">{{$berita->isi_konten}}</textarea>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">

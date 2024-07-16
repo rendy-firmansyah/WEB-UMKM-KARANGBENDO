@@ -18,7 +18,7 @@
         <ul class="menu-list">
 
             <li class="--set-active-forms-html">
-                <a href="{{ route('dashboard-form-admin') }}">
+                <a href="{{route('form.index')}}">
                     <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                     <span class="menu-item-label">Form</span>
                 </a>

@@ -76,36 +76,38 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="image-cell">
-                                    <div class="image">
-                                        <img src="{{ asset('images/avatar-admin-berita.png') }}" class="rounded-full">
-                                    </div>
-                                </td>
-                                <td data-label="Name">Rebecca Bauch</td>
-                                <td data-label="Company">Lorem.</td>
-                                <td data-label="City" class="font-medium">South Cory</td>
-                                <td data-label="Progress">
-                                    <img class="max-w-24 rounded-md"
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaWrPvArtL2yUgC31jEQKI_fq5BFYNAFrhAQ&s"
-                                        alt="">
-                                </td>
-                                <td data-label="Created">Time</td>
-                                <td class="actions-cell">
-                                    <div class="buttons right nowrap">
-                                        <a href="{{ route('dashboard-admin-edit') }}">
-                                            <button class="button small blue --jb-modal" type="button">
-                                                <span class="icon text-white"><i
-                                                        class="mdi mdi-square-edit-outline"></i></span>
+                            @foreach ($beritaAll as $item)                                
+                                <tr>
+                                    <td class="image-cell">
+                                        <div class="image">
+                                            <img src="{{ asset('images/avatar-admin-berita.png') }}" class="rounded-full">
+                                        </div>
+                                    </td>
+                                    <td data-label="Name">{{$item->judul_berita}}</td>
+                                    <td data-label="Company">{{Str::limit($item->isi_konten, 25)}}</td>
+                                    <td data-label="City" class="font-medium">{{$item->author}}</td>
+                                    <td data-label="Progress">
+                                        <img class="max-w-24 rounded-md"
+                                            src="{{asset('images/content/'. $item->gambar_berita)}}"
+                                            alt="">
+                                    </td>
+                                    <td data-label="Created">{{$item->created_at->format('M d, Y - H:i:s')}}</td>
+                                    <td class="actions-cell">
+                                        <div class="buttons right nowrap">
+                                            <a href="{{route('form.edit', $item->id)}}">
+                                                <button class="button small blue --jb-modal" type="button">
+                                                    <span class="icon text-white"><i
+                                                            class="mdi mdi-square-edit-outline"></i></span>
+                                                </button>
+                                            </a>
+                                            <button class="button small red --jb-modal" data-target="sample-modal"
+                                                type="button">
+                                                <span class="icon text-white"><i class="mdi mdi-trash-can"></i></span>
                                             </button>
-                                        </a>
-                                        <button class="button small red --jb-modal" data-target="sample-modal"
-                                            type="button">
-                                            <span class="icon text-white"><i class="mdi mdi-trash-can"></i></span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -125,7 +127,11 @@
                 </section>
                 <footer class="modal-card-foot">
                     <button class="button --jb-modal-close">tidak</button>
-                    <button class="button red --jb-modal-close">iya</button>
+                    <form action="{{route('form.destroy', $item->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="button red --jb-modal-close">iya</button>
+                    </form>
                 </footer>
             </div>
         </div>

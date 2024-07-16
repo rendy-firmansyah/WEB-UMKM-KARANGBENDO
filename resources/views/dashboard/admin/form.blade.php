@@ -53,7 +53,8 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <form class="form" method="GET">
+                    <form class="form" action="{{route('form.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="field">
                             <div class="mb-4">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-name">
@@ -61,25 +62,27 @@
                                 </label>
                                 <input id="product-name" type="text" placeholder="Masukkan nama produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="judul_berita"
                                     required />
                             </div>
                             <div class="mb-4">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-price">
                                     Penulis
                                 </label>
-                                <input id="product-price" type="number" placeholder="Masukkan harga produk"
+                                <input id="product-price" type="text" placeholder="Masukkan harga produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="author"
                                     required />
                             </div>
                         </div>
-                        <div>
+                        {{-- <div>
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
                                 Pilih Tanggal dan Waktu
                             </label>
                             <input id="datetime" name="datetime" type="datetime-local"
                                 class="cursor-pointer w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                                 required>
-                        </div>
+                        </div> --}}
 
 
                         <div class="mb-4 mt-2">
@@ -90,7 +93,7 @@
                                 <label
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                                     Upload
-                                    <input type="file" id="file-input" accept="image/*" class="hidden" required />
+                                    <input type="file" name="gambar_berita" id="file-input" accept="image/*" class="hidden" required />
                                 </label>
                             </div>
                         </div>
@@ -106,7 +109,7 @@
                         <div>
                             <label for="description" class="block text-gray-800 text-sm font-bold mb-2">Konten Berita
                             </label>
-                            <textarea id="description" name="address" placeholder="Mulai menulis konten disni..."
+                            <textarea id="description" name="isi_konten" placeholder="Mulai menulis konten disni..."
                                 class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                                 rows="4" required></textarea>
                         </div>

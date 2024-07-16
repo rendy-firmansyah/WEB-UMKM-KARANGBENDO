@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProfileController;
 
 // Non user
@@ -12,19 +14,17 @@ Route::get('/berita', [UserController::class, 'indexBerita'])->name('berita');
 Route::get('/detail-berita', [UserController::class, 'indexDetailBerita'])->name('detail-berita');
 
 // Admin
-Route::get('/admin/dashboard', function () {
-    return view('dashboard.admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard-admin');
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard-admin');
 
-Route::get('/admin/dashboard/form', function () {
-    return view('dashboard.admin.form');
-})->middleware(['auth', 'verified'])->name('dashboard-form-admin');
+// Route::get('/admin/dashboard/form', function () {
+//     return view('dashboard.admin.form');
+// })->middleware(['auth', 'verified'])->name('dashboard-form-admin');
 
-route::get('/admin/dashboard/edit', function () {
-    return view('dashboard.admin.edit');
-})->middleware(['auth', 'verified'])->name('dashboard-admin-edit');
+// route::get('/admin/dashboard/edit', function () {
+//     return view('dashboard.admin.edit');
+// })->middleware(['auth', 'verified'])->name('dashboard-admin-edit');
 
-
+Route::resource('admin/dashboard/form', BeritaController::class)->middleware(['auth', 'verified']);
 
 // UMKM
 Route::get('/dashboard', function () {

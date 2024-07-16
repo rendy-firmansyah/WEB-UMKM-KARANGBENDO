@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index () {
-        return view('dashboard.admin.dashboard');
+    public function index() {
+        $beritaAll = Berita::all();
+        return view('dashboard.admin.dashboard', compact('beritaAll'));
     }
-    public function form () {
-        return view('dashboard.admin.form');
-    }
-    public function edit() {
-        return view('dashboard.admin.edit');
-    }
-
 }
