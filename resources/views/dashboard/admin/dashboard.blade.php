@@ -79,15 +79,15 @@
                             <tr>
                                 <td class="image-cell">
                                     <div class="image">
-                                        <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
-                                            class="rounded-full">
+                                        <img src="{{ asset('images/avatar-admin-berita.png') }}" class="rounded-full">
                                     </div>
                                 </td>
                                 <td data-label="Name">Rebecca Bauch</td>
                                 <td data-label="Company">Lorem.</td>
                                 <td data-label="City" class="font-medium">South Cory</td>
-                                <td data-label="Progress" class="max-w-[80px] rounded-md text-right">
-                                    <img src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg"
+                                <td data-label="Progress">
+                                    <img class="max-w-24 rounded-md"
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaWrPvArtL2yUgC31jEQKI_fq5BFYNAFrhAQ&s"
                                         alt="">
                                 </td>
                                 <td data-label="Created">Time</td>

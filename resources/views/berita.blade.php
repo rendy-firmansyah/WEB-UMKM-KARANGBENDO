@@ -1,7 +1,8 @@
 <x-layout>
     <x-slot name="title">Berita - UMKM Unggulan Desa Karangbendo</x-slot>
 
-    <section class="p-12 pt-24 sm:pt-32 md:pt-40 w-full bg-gray-800 sm:py-24 text-gray-100 min-h-screen" id="hero"
+    <section class="p-6 md:p-12 pt-24 sm:pt-20 md:pt-24 w-full bg-gray-800 sm:py-24 text-gray-100 min-h-screen"
+        id="hero"
         style="background-image: url({{ asset('images/bg-batik2.png') }}); background-repeat: no-repeat; background-size: cover;">
         <div class="flex flex-col">
             <h2 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-8">Berita terbaru
