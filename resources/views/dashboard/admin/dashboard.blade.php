@@ -1,30 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard - Admin umkm-karangbendo</title>
-
-    <!-- Tailwind is included -->
-    @include('dashboard.partials.style')
-    <meta name="description" content="Admin UMKM-karangbendo">
-
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-130795909-1');
-    </script>
-
-</head>
+@include('dashboard.partials.head', [
+    'title' => 'Dashboard - Admin umkm-karangbendo',
+    'description' => 'Admin UMKM-karangbendo',
+])
 
 <body>
 
@@ -76,25 +56,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($beritaAll as $item)                                
+                            @foreach ($beritaAll as $item)
                                 <tr>
                                     <td class="image-cell">
                                         <div class="image">
-                                            <img src="{{ asset('images/avatar-admin-berita.png') }}" class="rounded-full">
+                                            <img src="{{ asset('images/avatar-admin-berita.png') }}"
+                                                class="rounded-full">
                                         </div>
                                     </td>
-                                    <td data-label="Name">{{$item->judul_berita}}</td>
-                                    <td data-label="Company">{{Str::limit($item->isi_konten, 25)}}</td>
-                                    <td data-label="City" class="font-medium">{{$item->author}}</td>
-                                    <td data-label="Progress">
+                                    <td data-label="Name">{{ $item->judul_berita }}</td>
+                                    <td data-label="content">{{ Str::limit($item->isi_konten, 25) }}</td>
+                                    <td data-label="author" class="font-medium">{{ $item->author }}</td>
+                                    <td data-label="image">
                                         <img class="max-w-24 rounded-md"
-                                            src="{{asset('images/content/'. $item->gambar_berita)}}"
-                                            alt="">
+                                            src="{{ asset('images/content/' . $item->gambar_berita) }}" alt="">
                                     </td>
-                                    <td data-label="Created">{{$item->created_at->format('M d, Y - H:i:s')}}</td>
+                                    <td data-label="Created">{{ $item->created_at->format('M d, Y - H:i:s') }}</td>
                                     <td class="actions-cell">
                                         <div class="buttons right nowrap">
-                                            <a href="{{route('form.edit', $item->id)}}">
+                                            <a href="{{ route('form.edit', $item->id) }}">
                                                 <button class="button small blue --jb-modal" type="button">
                                                     <span class="icon text-white"><i
                                                             class="mdi mdi-square-edit-outline"></i></span>
@@ -107,6 +87,25 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <div id="sample-modal" class="modal">
+                                    <div class="modal-background --jb-modal-close"></div>
+                                    <div class="modal-card">
+                                        <header class="modal-card-head">
+                                            <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
+                                        </header>
+                                        <section class="modal-card-body">
+                                            <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
+                                        </section>
+                                        <footer class="modal-card-foot">
+                                            <button class="button --jb-modal-close">tidak</button>
+                                            <form action="{{ route('form.destroy', $item->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="button red --jb-modal-close">iya</button>
+                                            </form>
+                                        </footer>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
                     </table>
@@ -115,32 +114,10 @@
         </section>
 
         @include('dashboard.partials.footer')
-
-        <div id="sample-modal" class="modal">
-            <div class="modal-background --jb-modal-close"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
-                </header>
-                <section class="modal-card-body">
-                    <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">tidak</button>
-                    <form action="{{route('form.destroy', $item->id)}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="button red --jb-modal-close">iya</button>
-                    </form>
-                </footer>
-            </div>
-        </div>
-
     </div>
 
 
     @include('dashboard.partials.script')
-
 
     <script>
         ! function(f, b, e, v, n, t, s) {
