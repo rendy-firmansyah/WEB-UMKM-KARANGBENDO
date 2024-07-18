@@ -56,69 +56,45 @@
                             </tr>
                         </thead>
                         <tbody>
-<<<<<<< HEAD
                             @foreach ($beritaAll as $item)
-=======
-                            @forelse ($beritaAll as $item)                                
->>>>>>> 9cbaffc88201fe2e3013789a4ce0fbf7c65e1c41
-                                <tr>
-                                    <td class="image-cell">
-                                        <div class="image">
-                                            <img src="{{ asset('images/avatar-admin-berita.png') }}"
-                                                class="rounded-full">
-                                        </div>
-                                    </td>
-                                    <td data-label="Name">{{ $item->judul_berita }}</td>
-                                    <td data-label="content">{{ Str::limit($item->isi_konten, 25) }}</td>
-                                    <td data-label="author" class="font-medium">{{ $item->author }}</td>
-                                    <td data-label="image">
-                                        <img class="max-w-24 rounded-md"
-                                            src="{{ asset('images/content/' . $item->gambar_berita) }}" alt="">
-                                    </td>
-                                    <td data-label="Created">{{ $item->created_at->format('M d, Y - H:i:s') }}</td>
-                                    <td class="actions-cell">
-                                        <div class="buttons right nowrap">
-                                            <a href="{{ route('form.edit', $item->id) }}">
-                                                <button class="button small blue --jb-modal" type="button">
+                                @forelse ($beritaAll as $item)
+                                    <tr>
+                                        <td class="image-cell">
+                                            <div class="image">
+                                                <img src="{{ asset('images/avatar-admin-berita.png') }}"
+                                                    class="rounded-full">
+                                            </div>
+                                        </td>
+                                        <td data-label="Name">{{ $item->judul_berita }}</td>
+                                        <td data-label="content">{{ Str::limit($item->isi_konten, 25) }}</td>
+                                        <td data-label="author" class="font-medium">{{ $item->author }}</td>
+                                        <td data-label="image">
+                                            <img class="max-w-24 rounded-md"
+                                                src="{{ asset('images/content/' . $item->gambar_berita) }}"
+                                                alt="">
+                                        </td>
+                                        <td data-label="Created">{{ $item->created_at->format('M d, Y - H:i:s') }}</td>
+                                        <td class="actions-cell">
+                                            <div class="buttons right nowrap">
+                                                <a href="{{ route('form.edit', $item->id) }}">
+                                                    <button class="button small blue --jb-modal" type="button">
+                                                        <span class="icon text-white"><i
+                                                                class="mdi mdi-square-edit-outline"></i></span>
+                                                    </button>
+                                                </a>
+                                                <button class="button small red --jb-modal" data-target="sample-modal"
+                                                    type="button">
                                                     <span class="icon text-white"><i
-                                                            class="mdi mdi-square-edit-outline"></i></span>
+                                                            class="mdi mdi-trash-can"></i></span>
                                                 </button>
-                                            </a>
-                                            <button class="button small red --jb-modal" data-target="sample-modal"
-                                                type="button">
-                                                <span class="icon text-white"><i class="mdi mdi-trash-can"></i></span>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-<<<<<<< HEAD
-                                <div id="sample-modal" class="modal">
-                                    <div class="modal-background --jb-modal-close"></div>
-                                    <div class="modal-card">
-                                        <header class="modal-card-head">
-                                            <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
-                                        </header>
-                                        <section class="modal-card-body">
-                                            <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
-                                        </section>
-                                        <footer class="modal-card-foot">
-                                            <button class="button --jb-modal-close">tidak</button>
-                                            <form action="{{ route('form.destroy', $item->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="button red --jb-modal-close">iya</button>
-                                            </form>
-                                        </footer>
-                                    </div>
-                                </div>
-                            @endforeach
-=======
-                            @empty
-                                <tr>
-                                    <td colspan="7" class="text-center">Oops data masih kosong....</td>
-                                </tr>
-                            @endforelse
->>>>>>> 9cbaffc88201fe2e3013789a4ce0fbf7c65e1c41
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="7" class="text-center">Oops data masih kosong....</td>
+                                    </tr>
+                                @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -126,10 +102,7 @@
         </section>
 
         @include('dashboard.partials.footer')
-<<<<<<< HEAD
-=======
-
-        @if ($beritaAll->isNotEmpty())   
+        @if ($beritaAll->isNotEmpty())
             <div id="sample-modal" class="modal">
                 <div class="modal-background --jb-modal-close"></div>
                 <div class="modal-card">
@@ -141,7 +114,7 @@
                     </section>
                     <footer class="modal-card-foot">
                         <button class="button --jb-modal-close">tidak</button>
-                        <form action="{{route('form.destroy', $item->id )}}" method="POST">
+                        <form action="{{ route('form.destroy', $item->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="button red --jb-modal-close">iya</button>
@@ -151,7 +124,6 @@
             </div>
         @endif
 
->>>>>>> 9cbaffc88201fe2e3013789a4ce0fbf7c65e1c41
     </div>
 
 

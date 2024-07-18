@@ -40,9 +40,18 @@
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option selected="" disabled>Pilih Kategori</option>
                             <option class="font-medium">Makanan</option>
-                            <option class="font-medium">Batik</option>
                             <option class="font-medium">Fashion</option>
                             <option class="font-medium">Aksesoris</option>
+                            <option class="font-medium">Kosmetik</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
+                        <select id="category"
+                            class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option selected="" disabled>Status</option>
+                            <option class="font-medium">Tersedia</option>
+                            <option class="font-medium">Tidak Tersedia</option>
                         </select>
                     </div>
 

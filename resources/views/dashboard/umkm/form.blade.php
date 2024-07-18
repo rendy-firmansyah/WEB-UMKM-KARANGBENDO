@@ -1,34 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Form- umkm</title>
-    <style>
-        #remove-image {
-            top: -0.5rem;
-            right: -0.5rem;
-        }
-    </style>
-
-    <!-- Tailwind is included -->
-    @include('dashboard.partials.style')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-130795909-1');
-    </script>
-
-</head>
+@include('dashboard.partials.head', ['title' => 'Form - umkm', 'description' => 'Form umkm'])
 
 <body>
 
@@ -85,9 +58,9 @@
                                 required>
                                 <option selected disabled class="bg-slate-100">Select Category</option>
                                 <option class="font-medium">Makanan</option>
-                                <option class="font-medium">Batik</option>
                                 <option class="font-medium">Fashion</option>
-                                <option class="font-medium">kosmetik</option>
+                                <option class="font-medium">Aksesoris</option>
+                                <option class="font-medium">Kosmetik</option>
                             </select>
                         </div>
 
