@@ -56,45 +56,44 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($beritaAll as $item)
-                                @forelse ($beritaAll as $item)
-                                    <tr>
-                                        <td class="image-cell">
-                                            <div class="image">
-                                                <img src="{{ asset('images/avatar-admin-berita.png') }}"
-                                                    class="rounded-full">
-                                            </div>
-                                        </td>
-                                        <td data-label="Name">{{ $item->judul_berita }}</td>
-                                        <td data-label="content">{{ Str::limit($item->isi_konten, 25) }}</td>
-                                        <td data-label="author" class="font-medium">{{ $item->author }}</td>
-                                        <td data-label="image">
-                                            <img class="max-w-24 rounded-md"
-                                                src="{{ asset('images/content/' . $item->gambar_berita) }}"
-                                                alt="">
-                                        </td>
-                                        <td data-label="Created">{{ $item->created_at->format('M d, Y - H:i:s') }}</td>
-                                        <td class="actions-cell">
-                                            <div class="buttons right nowrap">
-                                                <a href="{{ route('form.edit', $item->id) }}">
-                                                    <button class="button small blue --jb-modal" type="button">
-                                                        <span class="icon text-white"><i
-                                                                class="mdi mdi-square-edit-outline"></i></span>
-                                                    </button>
-                                                </a>
-                                                <button class="button small red --jb-modal" data-target="sample-modal"
-                                                    type="button">
+                            @forelse ($beritaAll as $item)
+                                <tr>
+                                    <td class="image-cell">
+                                        <div class="image">
+                                            <img src="{{ asset('images/avatar-admin-berita.png') }}"
+                                                class="rounded-full">
+                                        </div>
+                                    </td>
+                                    <td data-label="Name">{{ $item->judul_berita }}</td>
+                                    <td data-label="content">{{ Str::limit($item->isi_konten, 25) }}</td>
+                                    <td data-label="author" class="font-medium">{{ $item->author }}</td>
+                                    <td data-label="image">
+                                        <img class="max-w-24 rounded-md"
+                                            src="{{ asset('images/content/' . $item->gambar_berita) }}"
+                                            alt="">
+                                    </td>
+                                    <td data-label="Created">{{ $item->created_at->format('M d, Y - H:i:s') }}</td>
+                                    <td class="actions-cell">
+                                        <div class="buttons right nowrap">
+                                            <a href="{{ route('form.edit', $item->id) }}">
+                                                <button class="button small blue --jb-modal" type="button">
                                                     <span class="icon text-white"><i
-                                                            class="mdi mdi-trash-can"></i></span>
+                                                            class="mdi mdi-square-edit-outline"></i></span>
                                                 </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="7" class="text-center">Oops data masih kosong....</td>
-                                    </tr>
-                                @endforelse
+                                            </a>
+                                            <button class="button small red --jb-modal" data-target="sample-modal"
+                                                type="button">
+                                                <span class="icon text-white"><i
+                                                        class="mdi mdi-trash-can"></i></span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="text-center">Oops data masih kosong....</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -102,6 +101,7 @@
         </section>
 
         @include('dashboard.partials.footer')
+
         @if ($beritaAll->isNotEmpty())
             <div id="sample-modal" class="modal">
                 <div class="modal-background --jb-modal-close"></div>
