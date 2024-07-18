@@ -54,14 +54,7 @@
                                     name="author" required />
                             </div>
                         </div>
-                        {{-- <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
-                                Pilih Tanggal dan Waktu
-                            </label>
-                            <input id="datetime" name="datetime" type="datetime-local"
-                                class="cursor-pointer w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                required>
-                        </div> --}}
+
 
 
                         <div class="mb-4 mt-2">

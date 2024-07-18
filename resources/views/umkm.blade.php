@@ -72,12 +72,13 @@
                         <select id="Offer2"
                             class="h-12 border border-gray-300 text-slate-100 pl-11 text-base font-normal rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-blue-500 transition-all duration-500 hover:bg-blue-600 focus:bg-blue-600">
                             <option selected disabled class="bg-slate-100">Short By Produk</option>
-                            <option value="gajah-oling" class="bg-slate-100 text-slate-900">Batik</option>
-                            <option value="kangkung-stingkes" class="bg-slate-100 text-slate-900">Makanan
+                            <option value="Makanan" class="bg-slate-100 text-slate-900">Makanan
                             </option>
-                            <option value="batik-larasati" class="bg-slate-100 text-slate-900">Aksesoris
+                            <option value="Akasesoris" class="bg-slate-100 text-slate-900">Aksesoris
                             </option>
-                            <option value="option-4" class="bg-slate-100 text-slate-900">Kosmetik
+                            <option value="Fashion" class="bg-slate-100 text-slate-900">Fashion
+                            </option>
+                            <option value="Kosmetik" class="bg-slate-100 text-slate-900">Kosmetik
                             </option>
                         </select>
                         <svg class="absolute top-1/2 transform -translate-y-1/2 right-4 z-50 text-slate-100"

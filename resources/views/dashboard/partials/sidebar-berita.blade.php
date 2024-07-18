@@ -9,8 +9,14 @@
         <ul class="menu-list">
             <li class="active">
                 <a href="{{ route('dashboard-admin') }}">
-                    <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-                    <span class="menu-item-label">Dashboard</span>
+                    <span class="icon"><i class="mdi mdi-newspaper-variant"></i></span>
+                    <span class="menu-item-label">Dashboard News</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="{{ route('dashboard-register-umkm') }}">
+                    <span class="icon"><i class="mdi mdi-format-list-text"></i></span>
+                    <span class="menu-item-label">Dashboard List UMKM</span>
                 </a>
             </li>
         </ul>
@@ -18,9 +24,15 @@
         <ul class="menu-list">
 
             <li class="--set-active-forms-html">
-                <a href="{{route('form.index')}}">
+                <a href="{{ route('form.index') }}">
                     <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
-                    <span class="menu-item-label">Form</span>
+                    <span class="menu-item-label">Post News</span>
+                </a>
+            </li>
+            <li class="--set-active-forms-html">
+                <a href="{{ route('dashboard-register-umkm') }}">
+                    <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
+                    <span class="menu-item-label">Register UMKM</span>
                 </a>
             </li>
         </ul>
