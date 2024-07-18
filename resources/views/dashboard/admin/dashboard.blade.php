@@ -56,7 +56,11 @@
                             </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD
                             @foreach ($beritaAll as $item)
+=======
+                            @forelse ($beritaAll as $item)                                
+>>>>>>> 9cbaffc88201fe2e3013789a4ce0fbf7c65e1c41
                                 <tr>
                                     <td class="image-cell">
                                         <div class="image">
@@ -87,6 +91,7 @@
                                         </div>
                                     </td>
                                 </tr>
+<<<<<<< HEAD
                                 <div id="sample-modal" class="modal">
                                     <div class="modal-background --jb-modal-close"></div>
                                     <div class="modal-card">
@@ -107,6 +112,13 @@
                                     </div>
                                 </div>
                             @endforeach
+=======
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="text-center">Oops data masih kosong....</td>
+                                </tr>
+                            @endforelse
+>>>>>>> 9cbaffc88201fe2e3013789a4ce0fbf7c65e1c41
                         </tbody>
                     </table>
                 </div>
@@ -114,6 +126,32 @@
         </section>
 
         @include('dashboard.partials.footer')
+<<<<<<< HEAD
+=======
+
+        @if ($beritaAll->isNotEmpty())   
+            <div id="sample-modal" class="modal">
+                <div class="modal-background --jb-modal-close"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
+                    </header>
+                    <section class="modal-card-body">
+                        <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button --jb-modal-close">tidak</button>
+                        <form action="{{route('form.destroy', $item->id )}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="button red --jb-modal-close">iya</button>
+                        </form>
+                    </footer>
+                </div>
+            </div>
+        @endif
+
+>>>>>>> 9cbaffc88201fe2e3013789a4ce0fbf7c65e1c41
     </div>
 
 
