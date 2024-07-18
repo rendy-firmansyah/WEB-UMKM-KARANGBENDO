@@ -15,8 +15,9 @@ Route::get('/detail-berita', [UserController::class, 'indexDetailBerita'])->name
 
 // Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard-admin');
-Route::get('/admin/dashboard/list-umkm', [AdminController::class, 'daftar_umkm'])->middleware(['auth', 'verified'])->name('dashboard-register-umkm');
-Route::get('/admin/dashboard/register-umkm', [AdminController::class, 'daftar_umkm'])->middleware(['auth', 'verified'])->name('dashboard-register-umkm');
+Route::get('/admin/dashboard/list-umkm', [AdminController::class, 'daftar_umkm'])->middleware(['auth', 'verified'])->name('dashboard-list-umkm');
+Route::get('/admin/dashboard/register-umkm', [AdminController::class, 'regist_umkm'])->middleware(['auth', 'verified'])->name('dashboard-register-umkm');
+Route::get('/admin/dashboard/edit-umkm', [AdminController::class, 'ubahData_umkm'])->middleware(['auth', 'verified'])->name('dashboard-ubahData-umkm');
 
 // Route::get('/admin/dashboard/form', function () {
 //     return view('dashboard.admin.form');
