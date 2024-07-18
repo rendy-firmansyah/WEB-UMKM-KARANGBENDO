@@ -29,7 +29,7 @@
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-ballot"></i></span>
-                        Start writing news
+                        register umkm
                     </p>
                 </header>
                 <div class="card-content">
@@ -38,63 +38,55 @@
                         @csrf
                         <div class="field">
                             <div class="mb-4">
-                                <label class="block text-gray-800 text-sm font-bold mb-2" for="product-name">
-                                    Judul Berita
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="nama_umkm">
+                                    Nama UMKM
                                 </label>
-                                <input id="product-name" type="text" placeholder="Masukkan nama produk"
+                                <input id="nama_umkm" type="text" placeholder="Masukkan nama UMKM"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="judul_berita" required />
+                                    name="nama_umkm" required />
                             </div>
                             <div class="mb-4">
-                                <label class="block text-gray-800 text-sm font-bold mb-2" for="product-price">
-                                    Penulis
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="owner">
+                                    Owner
                                 </label>
-                                <input id="product-price" type="text" placeholder="Masukkan harga produk"
+                                <input id="owner" type="text" placeholder="Masukkan nama pemilik UMKM"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="author" required />
+                                    name="owner" required />
                             </div>
-                        </div>
-                        {{-- <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
-                                Pilih Tanggal dan Waktu
-                            </label>
-                            <input id="datetime" name="datetime" type="datetime-local"
-                                class="cursor-pointer w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                required>
-                        </div> --}}
-
-
-                        <div class="mb-4 mt-2">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="file-input">
-                                Upload Foto
-                            </label>
-                            <div class="flex items-center">
-                                <label
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
-                                    Upload
-                                    <input type="file" name="gambar_berita" id="file-input" accept="image/*"
-                                        class="hidden" required />
+                            <div class="mb-4">
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="owner">
+                                    Nomor Telepon
                                 </label>
+                                <input id="phone" type="text" placeholder="Masukkan nama pemilik UMKM"
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="phone" pattern="08[0-9]{8,11}" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="alamat">
+                                    Alamat
+                                </label>
+                                <input id="alamat" type="text" placeholder="Masukkan alamat pemilik UMKM"
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="alamat" required />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="email">
+                                    Email
+                                </label>
+                                <input id="email" type="email" placeholder="Masukkan email pemilik UMKM"
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="email" required />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-800 text-sm font-bold mb-2" for="password">
+                                    Password
+                                </label>
+                                <input id="password" type="password" placeholder="Masukkan password pemilik UMKM"
+                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="password" required />
                             </div>
                         </div>
-                        <div class="mb-4 relative w-32">
-                            <img id="preview-image" class="hidden w-32 h-32 object-cover rounded-lg shadow-md" />
-                            <button id="remove-image"
-                                class="hidden absolute top-0 right-0 mt-1 mr-1 bg-red-500 text-white rounded-full w-6 h-6  items-center justify-center">
-                                &times;
-                            </button>
-                        </div>
-
-
-                        <div>
-                            <label for="description" class="block text-gray-800 text-sm font-bold mb-2">Konten Berita
-                            </label>
-                            <textarea id="description" name="isi_konten" placeholder="Mulai menulis konten disni..."
-                                class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                rows="4" required></textarea>
-                        </div>
-
-
 
                         <hr>
                         <div class="field grouped">

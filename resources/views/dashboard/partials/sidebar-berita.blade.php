@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="active">
-                <a href="{{ route('dashboard-register-umkm') }}">
+                <a href="{{ route('dashboard-list-umkm') }}">
                     <span class="icon"><i class="mdi mdi-format-list-text"></i></span>
                     <span class="menu-item-label">Dashboard List UMKM</span>
                 </a>

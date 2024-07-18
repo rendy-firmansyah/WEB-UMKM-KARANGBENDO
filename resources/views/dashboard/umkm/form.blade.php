@@ -31,7 +31,8 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <form class="form" action="{{route('formUmkm.store')}}" method="POST" enctype="multipart/form-data">
+                    <form class="form" action="{{ route('formUmkm.store') }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="field">
                             <div class="mb-4">
@@ -40,8 +41,7 @@
                                 </label>
                                 <input id="product-name" type="text" placeholder="Masukkan nama produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="nama_produk"
-                                    required />
+                                    name="nama_produk" required />
                             </div>
                             <div class="mb-4">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-price">
@@ -49,8 +49,7 @@
                                 </label>
                                 <input id="product-price" type="number" placeholder="Masukkan harga produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="harga"
-                                    required />
+                                    name="harga" required />
                             </div>
                         </div>
                         <div class="mb-4">
@@ -58,13 +57,16 @@
                                 Kategori</label>
                             <select id="countries"
                                 class="bg-white border  text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2 "
-                                name="kategori"
-                                required>
+                                name="kategori" required>
                                 <option selected disabled class="bg-slate-100">Select Category</option>
-                                <option class="font-medium" value="Fashion" {{ old('kategori') == 'Fashion' ? 'selected' : '' }}>Fashion</option>
-                                <option class="font-medium" value="Makanan" {{ old('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
-                                <option class="font-medium" value="Aksesoris" {{ old('kategori') == 'Aksesoris' ? 'selected' : '' }}>Aksesoris</option>
-                                <option class="font-medium" value="Kosmetik" {{ old('kategori') == 'Kosmetik' ? 'selected' : '' }}>Kosmetik</option>
+                                <option class="font-medium" value="Fashion"
+                                    {{ old('kategori') == 'Fashion' ? 'selected' : '' }}>Fashion</option>
+                                <option class="font-medium" value="Makanan"
+                                    {{ old('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
+                                <option class="font-medium" value="Aksesoris"
+                                    {{ old('kategori') == 'Aksesoris' ? 'selected' : '' }}>Aksesoris</option>
+                                <option class="font-medium" value="Kosmetik"
+                                    {{ old('kategori') == 'Kosmetik' ? 'selected' : '' }}>Kosmetik</option>
                             </select>
                         </div>
 
@@ -77,7 +79,8 @@
                                 <label
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                                     Upload
-                                    <input type="file" id="file-input" name="gambar" accept="image/*" class="hidden" required />
+                                    <input type="file" id="file-input" name="gambar" accept="image/*" class="hidden"
+                                        required />
                                 </label>
                             </div>
                         </div>
@@ -93,32 +96,6 @@
                         <textarea id="description" name="deskripsi_produk" placeholder="Masukkan Deskripsi Produk"
                             class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                             rows="4" required></textarea>
-
-                        <div class="mb-4">
-                            <label for="phone-input" class="block text-gray-800 text-sm font-bold mb-2">Masukkam nomor
-                                Whatsapp:</label>
-                            <div class="relative">
-                                <div
-                                    class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-800" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 19 18">
-                                        <path
-                                            d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z" />
-                                    </svg>
-                                </div>
-                                <input type="text" id="phone-input" aria-describedby="helper-text-explanation"
-                                    class="bg-white border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 "
-                                    pattern="08[0-9]{8,11}"placeholder="08XXXXXXXXXX" name="nomor_telepon" required />
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="address">Alamat</label>
-                            <input type="text" id="address" placeholder="Masukkan alamat"
-                                class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                name="alamat"
-                                rows="4" required>
-
-                        </div>
 
                         <hr>
 

@@ -19,4 +19,8 @@ class AdminController extends Controller
     {
         return view('dashboard.admin.register-umkm');
     }
+     public function ubahData_umkm()
+    {
+        return view('dashboard.admin.edit-umkm');
+    }
 }
