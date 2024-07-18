@@ -45,8 +45,6 @@
                         </tbody>
                     </table>
 
-
-
                     <div class="mt-4 flex items-start flex-col  gap-1 lg:flex-row">
                         <a href="https://wa.me/yourphonenumber">
                             <button type="button"
