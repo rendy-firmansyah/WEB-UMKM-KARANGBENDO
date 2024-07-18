@@ -17,7 +17,7 @@
                 <p class="menu-label">Action</p>
                 <ul class="menu-list">
                     <li class="--set-active-forms-html">
-                        <a href="{{ route('dashboard-form-umkm') }}">
+                        <a href="{{ route('formUmkm.index') }}">
                             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                             <span class="menu-item-label">Form</span>
                         </a>

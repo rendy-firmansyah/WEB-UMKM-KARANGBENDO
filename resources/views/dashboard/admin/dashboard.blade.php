@@ -69,7 +69,8 @@
                                     <td data-label="author" class="font-medium">{{ $item->author }}</td>
                                     <td data-label="image">
                                         <img class="max-w-24 rounded-md"
-                                            src="{{ asset('images/content/' . $item->gambar_berita) }}" alt="">
+                                            src="{{ asset('images/content/' . $item->gambar_berita) }}"
+                                            alt="">
                                     </td>
                                     <td data-label="Created">{{ $item->created_at->format('M d, Y - H:i:s') }}</td>
                                     <td class="actions-cell">
@@ -82,7 +83,8 @@
                                             </a>
                                             <button class="button small red --jb-modal" data-target="sample-modal"
                                                 type="button">
-                                                <span class="icon text-white"><i class="mdi mdi-trash-can"></i></span>
+                                                <span class="icon text-white"><i
+                                                        class="mdi mdi-trash-can"></i></span>
                                             </button>
                                         </div>
                                     </td>
