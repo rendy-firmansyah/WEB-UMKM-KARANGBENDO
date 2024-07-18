@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
@@ -11,7 +12,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        // return view()
+        // $categories = Produk::select('kategori')->distinct()->get();
+        return view('dashboard.umkm.form');
     }
 
     /**
@@ -32,7 +34,9 @@ class ProdukController extends Controller
             'gambar' => 'required|mimes:png,jpg,jpeg',
             'deskripsi_produk' => 'required',
             'harga' => 'required',
-            'kategori' => 'required|in:Batik,Makanan,Aksesoris,Kosmetik'
+            'alamat' => 'required|max:255',
+            'nomor_telepon' => 'required',
+            'kategori' => 'required|in:Fashion,Makanan,Aksesoris,Kosmetik'
         ]);
 
         $produk = new Produk();
@@ -47,11 +51,13 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->input('deskripsi_produk');
         $produk->harga = $request->input('harga');
         $produk->kategori = $request->input('kategori');
+        $produk->alamat = $request->input('alamat');
+        $produk->nomor_telepon = $request->input('nomor_telepon');
         $produk->status_produk = 'Tersedia';
 
         $produk->save();
 
-        // return redirect->(route())
+        return redirect(route('dashboard-umkm'));
     }
 
     /**
@@ -68,7 +74,7 @@ class ProdukController extends Controller
     public function edit(string $id)
     {
         $produk = Produk::find($id);
-        // return view()
+        return view('dashboard.umkm.edit', compact('produk'));
     }
 
     /**
@@ -80,8 +86,9 @@ class ProdukController extends Controller
             'nama_produk' => 'max:255',
             'gambar' => 'image|mimes:png,jpg,jpeg',
             'deskripsi_produk' => '',
-            'harga' => '',
-            'kategori' => 'in:Batik,Makanan,Aksesoris,Kosmetik'
+            'harga' => 'nullable',
+            'status_produk' => '',
+            'kategori' => 'in:Fashion,Makanan,Aksesoris,Kosmetik'
         ]);
 
         $produk = Produk::find($id);
@@ -96,9 +103,11 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->input('deskripsi_produk');
         $produk->harga = $request->input('harga');
         $produk->kategori = $request->input('kategori');
-        $produk->status_produk = 'Tersedia';
+        $produk->status_produk = $request->input('status_produk');
 
         $produk->save();
+
+        return redirect(route('dashboard-umkm'));
     }
 
     /**
@@ -109,6 +118,6 @@ class ProdukController extends Controller
         $produk = Produk::find($id);
         $produk->delete();
 
-        // return redirect()->back()
+        return redirect()->back();
     }
 }

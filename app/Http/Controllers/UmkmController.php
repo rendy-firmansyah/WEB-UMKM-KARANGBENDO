@@ -2,19 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class UmkmController extends Controller
 {
     public function index() {
-        return view('dashboard.umkm.dashboard');
-    }
-    public function form()
-    {
-        return view('dashboard.umkm.form');
-    }
-    public function edit()
-    {
-        return view('dashboard.umkm.edit');
+        $produk = Produk::all();
+        return view('dashboard.umkm.dashboard', compact('produk'));
     }
 }

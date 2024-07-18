@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 
 // Non user
@@ -27,19 +29,14 @@ Route::get('/admin/dashboard/register-umkm', [AdminController::class, 'daftar_um
 // })->middleware(['auth', 'verified'])->name('dashboard-admin-edit');
 
 Route::resource('admin/dashboard/form', BeritaController::class)->middleware(['auth', 'verified']);
+Route::resource('umkm/dashboard/formUmkm', ProdukController::class)->middleware(['auth', 'verified']);
 
 // UMKM
-Route::get('/dashboard', function () {
-    return view('dashboard.umkm.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard-umkm');
+Route::get('/umkm/dashboard', [UmkmController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard-umkm');
 
-Route::get('/dashboard/form', function () {
-    return view('dashboard.umkm.form');
-})->middleware(['auth', 'verified'])->name('dashboard-form-umkm');
-
-Route::get('/dashboard/edit', function () {
-    return view('dashboard.umkm.edit');
-})->middleware(['auth', 'verified'])->name('dashboard-umkm-edit');
+// Route::get('/dashboard/edit', function () {
+//     return view('dashboard.umkm.edit');
+// })->middleware(['auth', 'verified'])->name('dashboard-umkm-edit');
 
 
 Route::middleware('auth')->group(function () {

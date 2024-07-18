@@ -31,7 +31,8 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <form class="form">
+                    <form class="form" action="{{route('formUmkm.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="field">
                             <div class="mb-4">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-name">
@@ -39,6 +40,7 @@
                                 </label>
                                 <input id="product-name" type="text" placeholder="Masukkan nama produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="nama_produk"
                                     required />
                             </div>
                             <div class="mb-4">
@@ -47,6 +49,7 @@
                                 </label>
                                 <input id="product-price" type="number" placeholder="Masukkan harga produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                    name="harga"
                                     required />
                             </div>
                         </div>
@@ -55,12 +58,13 @@
                                 Kategori</label>
                             <select id="countries"
                                 class="bg-white border  text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2 "
+                                name="kategori"
                                 required>
                                 <option selected disabled class="bg-slate-100">Select Category</option>
-                                <option class="font-medium">Makanan</option>
-                                <option class="font-medium">Fashion</option>
-                                <option class="font-medium">Aksesoris</option>
-                                <option class="font-medium">Kosmetik</option>
+                                <option class="font-medium" value="Fashion" {{ old('kategori') == 'Fashion' ? 'selected' : '' }}>Fashion</option>
+                                <option class="font-medium" value="Makanan" {{ old('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
+                                <option class="font-medium" value="Aksesoris" {{ old('kategori') == 'Aksesoris' ? 'selected' : '' }}>Aksesoris</option>
+                                <option class="font-medium" value="Kosmetik" {{ old('kategori') == 'Kosmetik' ? 'selected' : '' }}>Kosmetik</option>
                             </select>
                         </div>
 
@@ -73,7 +77,7 @@
                                 <label
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                                     Upload
-                                    <input type="file" id="file-input" accept="image/*" class="hidden" required />
+                                    <input type="file" id="file-input" name="gambar" accept="image/*" class="hidden" required />
                                 </label>
                             </div>
                         </div>
@@ -86,7 +90,7 @@
                         </div>
                         <label for="description" class="block text-gray-800 text-sm font-bold mb-2">Deskripsi
                             Produk</label>
-                        <textarea id="description" name="address" placeholder="Masukkan Deskripsi Produk"
+                        <textarea id="description" name="deskripsi_produk" placeholder="Masukkan Deskripsi Produk"
                             class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                             rows="4" required></textarea>
 
@@ -104,13 +108,14 @@
                                 </div>
                                 <input type="text" id="phone-input" aria-describedby="helper-text-explanation"
                                     class="bg-white border  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 "
-                                    pattern="08[0-9]{8,11}"placeholder="08XXXXXXXXXX" required />
+                                    pattern="08[0-9]{8,11}"placeholder="08XXXXXXXXXX" name="nomor_telepon" required />
                             </div>
                         </div>
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="address">Alamat</label>
-                            <input type="text-area" id="address" name="address" placeholder="Masukkan alamat"
+                            <input type="text" id="address" placeholder="Masukkan alamat"
                                 class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                                name="alamat"
                                 rows="4" required>
 
                         </div>
@@ -207,11 +212,6 @@
         });
     </script>
     {{-- end of script for upload --}}
-
-
-
-
-
 
     <script>
         ! function(f, b, e, v, n, t, s) {
