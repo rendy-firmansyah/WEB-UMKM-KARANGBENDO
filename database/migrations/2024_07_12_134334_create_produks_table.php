@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('gambar');
             $table->string('deskripsi_produk');
             $table->integer('harga');
+            $table->enum('kategori', ['Batik', 'Makanan', 'Aksesoris', 'Kosmetik']);
             $table->enum('status_produk', ['Tersedia', 'Tidak Tersedia']);
             $table->timestamps();
         });

@@ -76,7 +76,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($beritaAll as $item)                                
+                            @forelse ($beritaAll as $item)                                
                                 <tr>
                                     <td class="image-cell">
                                         <div class="image">
@@ -107,7 +107,11 @@
                                         </div>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="text-center">Oops data masih kosong....</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -116,25 +120,27 @@
 
         @include('dashboard.partials.footer')
 
-        <div id="sample-modal" class="modal">
-            <div class="modal-background --jb-modal-close"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
-                </header>
-                <section class="modal-card-body">
-                    <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">tidak</button>
-                    <form action="{{route('form.destroy', $item->id)}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="button red --jb-modal-close">iya</button>
-                    </form>
-                </footer>
+        @if ($beritaAll->isNotEmpty())   
+            <div id="sample-modal" class="modal">
+                <div class="modal-background --jb-modal-close"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
+                    </header>
+                    <section class="modal-card-body">
+                        <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button --jb-modal-close">tidak</button>
+                        <form action="{{route('form.destroy', $item->id )}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="button red --jb-modal-close">iya</button>
+                        </form>
+                    </footer>
+                </div>
             </div>
-        </div>
+        @endif
 
     </div>
 
