@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('dashboard.partials.head', ['title' => 'Edit Berita', 'description' => 'Edit Berita'])
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit - Berita</title>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
 
 <body>
-
 
     <section
         class="bg-gray-100 text-gray-800 min-h-screen"style="background-image: url({{ asset('images/batik-biru.png') }}); background-repeat: no-repeat; background-size: cover;">
@@ -107,7 +114,9 @@
                 reader.readAsDataURL(file);
             }
 
-            removeButton.addEventListener('click', function() {
+            removeButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
                 previewImage.src = '';
                 previewContainer.style.display = 'none';
                 document.getElementById('img-berita').value = '';

@@ -11,7 +11,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130795909-1"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <script>
+    {{-- <script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -19,5 +19,5 @@
         }
         gtag('js', new Date());
         gtag('config', 'UA-130795909-1');
-    </script>
+    </script> --}}
 </head>
