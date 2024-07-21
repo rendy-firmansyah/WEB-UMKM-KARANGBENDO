@@ -34,8 +34,6 @@ class ProdukController extends Controller
             'gambar' => 'required|mimes:png,jpg,jpeg',
             'deskripsi_produk' => 'required',
             'harga' => 'required',
-            'alamat' => 'required|max:255',
-            'nomor_telepon' => 'required',
             'kategori' => 'required|in:Fashion,Makanan,Aksesoris,Kosmetik'
         ]);
 
@@ -51,8 +49,6 @@ class ProdukController extends Controller
         $produk->deskripsi_produk = $request->input('deskripsi_produk');
         $produk->harga = $request->input('harga');
         $produk->kategori = $request->input('kategori');
-        $produk->alamat = $request->input('alamat');
-        $produk->nomor_telepon = $request->input('nomor_telepon');
         $produk->status_produk = 'Tersedia';
 
         $produk->save();

@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UMKMUserController;
 
 // Non user
 Route::get('/', [UserController::class, 'index'])->name('home');
@@ -17,9 +18,9 @@ Route::get('/detail-berita', [UserController::class, 'indexDetailBerita'])->name
 
 // Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard-admin');
-Route::get('/admin/dashboard/list-umkm', [AdminController::class, 'daftar_umkm'])->middleware(['auth', 'verified'])->name('dashboard-list-umkm');
-Route::get('/admin/dashboard/register-umkm', [AdminController::class, 'regist_umkm'])->middleware(['auth', 'verified'])->name('dashboard-register-umkm');
-Route::get('/admin/dashboard/edit-umkm', [AdminController::class, 'ubahData_umkm'])->middleware(['auth', 'verified'])->name('dashboard-ubahData-umkm');
+// Route::get('/admin/dashboard/list-umkm', [AdminController::class, 'daftar_umkm'])->middleware(['auth', 'verified'])->name('dashboard-list-umkm');
+// Route::get('/admin/dashboard/register-umkm', [AdminController::class, 'regist_umkm'])->middleware(['auth', 'verified'])->name('dashboard-register-umkm');
+// Route::get('/admin/dashboard/edit-umkm', [AdminController::class, 'ubahData_umkm'])->middleware(['auth', 'verified'])->name('dashboard-ubahData-umkm');
 
 // Route::get('/admin/dashboard/form', function () {
 //     return view('dashboard.admin.form');
@@ -29,6 +30,7 @@ Route::get('/admin/dashboard/edit-umkm', [AdminController::class, 'ubahData_umkm
 //     return view('dashboard.admin.edit');
 // })->middleware(['auth', 'verified'])->name('dashboard-admin-edit');
 
+Route::resource('admin/dashboard/daftarumkm', UMKMUserController::class)->middleware(['auth', 'verified']);
 Route::resource('admin/dashboard/form', BeritaController::class)->middleware(['auth', 'verified']);
 Route::resource('umkm/dashboard/formUmkm', ProdukController::class)->middleware(['auth', 'verified']);
 

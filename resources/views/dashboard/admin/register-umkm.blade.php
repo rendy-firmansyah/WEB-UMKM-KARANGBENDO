@@ -33,8 +33,7 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <form class="form" action="{{ route('form.store') }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form class="form" action="{{ route('daftarumkm.store') }}" method="POST">
                         @csrf
                         <div class="field">
                             <div class="mb-4">
@@ -57,9 +56,9 @@
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="owner">
                                     Nomor Telepon
                                 </label>
-                                <input id="phone" type="text" placeholder="Masukkan nama pemilik UMKM"
+                                <input id="phone" type="number" placeholder="Masukkan nomor telepon terdaftar"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="phone" pattern="08[0-9]{8,11}" required />
+                                    name="nomor_telepon" pattern="08[0-9]{8,11}" required />
                             </div>
 
                             <div class="mb-4">

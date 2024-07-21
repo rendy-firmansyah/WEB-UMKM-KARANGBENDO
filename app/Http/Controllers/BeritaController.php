@@ -50,7 +50,7 @@ class BeritaController extends Controller
         $berita->author = $request->input('author');
 
         $berita->save();
-        Alert::success('Berhasil', 'Berita berhasil diupload');
+        // Alert::success('Berhasil', 'Berita berhasil diupload');
 
         return redirect(route('dashboard-admin'));
     }
@@ -95,7 +95,7 @@ class BeritaController extends Controller
             $berita->gambar_berita = $namaGambar;
         };
         $berita->author = $request->input('author');
-        Alert::success('Berhasil', 'Berita berhasil diupdate');
+        // Alert::success('Berhasil', 'Berita berhasil diupdate');
 
         $berita->save();
 
@@ -109,7 +109,7 @@ class BeritaController extends Controller
     {
         $berita = Berita::find($id);
         $berita->delete();
-        Alert::success('Berhasil', 'Berita berhasil dihapus');
+        // Alert::success('Berhasil', 'Berita berhasil dihapus');
         return redirect()->back();
     }
 }

@@ -20,11 +20,11 @@ class UserSeeder extends Seeder
             'password' => bcrypt('admin123'),
             'usertype'=> 'admin',
         ]);
-        $pandawa = User::create([
-            'name' => 'UMKM Pandawa',
-            'nomor_telepon' => '085648408330',
-            'email' => 'pandawa@gmail.com',
-            'password' => bcrypt('pandawa123'),
-        ]);
+        // $pandawa = User::create([
+        //     'name' => 'UMKM Pandawa',
+        //     'nomor_telepon' => '085648408330',
+        //     'email' => 'pandawa@gmail.com',
+        //     'password' => bcrypt('pandawa123'),
+        // ]);
     }
 }

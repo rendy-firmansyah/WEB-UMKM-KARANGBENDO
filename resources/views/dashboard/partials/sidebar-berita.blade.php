@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="active">
-                <a href="{{ route('dashboard-list-umkm') }}">
+                <a href="{{ route('daftarumkm.index') }}">
                     <span class="icon"><i class="mdi mdi-format-list-text"></i></span>
                     <span class="menu-item-label">Dashboard List UMKM</span>
                 </a>
@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="--set-active-forms-html">
-                <a href="{{ route('dashboard-register-umkm') }}">
+                <a href="{{ route('daftarumkm.create') }}">
                     <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                     <span class="menu-item-label">Register UMKM</span>
                 </a>

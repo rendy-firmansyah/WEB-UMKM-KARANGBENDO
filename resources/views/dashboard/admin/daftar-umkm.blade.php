@@ -53,31 +53,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="image-cell">
-                                    <div class="image">
-                                        <img src="{{ asset('images/avatar-admin-berita.png') }}" class="rounded-full">
-                                    </div>
-                                </td>
-                                <td data-label="Name">Rebecca Bauch</td>
-                                <td data-label="Owner">Daugherty-Daniel</td>
-                                <td data-label="Phone">South Cory</td>
-                                <td data-label="email">CvYfP@example.com</td>
-                                <td class="actions-cell">
-                                    <div class="buttons right nowrap">
-                                        <a href="{{ route('dashboard-ubahData-umkm') }}">
-                                            <button class="button small blue --jb-modal" type="button">
-                                                <span class="icon text-white"><i
-                                                        class="mdi mdi-square-edit-outline"></i></span>
+                            @forelse ($userUmkm as $item)          
+                                <tr>
+                                    <td class="image-cell">
+                                        <div class="image">
+                                            <img src="{{ asset('images/avatar-admin-berita.png') }}" class="rounded-full">
+                                        </div>
+                                    </td>
+                                    <td data-label="Name">{{$item->nama_umkm}}</td>
+                                    <td data-label="Owner">{{$item->owner}}</td>
+                                    <td data-label="Phone">{{$item->nomor_telepon}}</td>
+                                    <td data-label="email">{{$item->email}}</td>
+                                    <td class="actions-cell">
+                                        <div class="buttons right nowrap">
+                                            <a href="{{route('daftarumkm.edit', $item->id)}}">
+                                                <button class="button small blue --jb-modal" type="button">
+                                                    <span class="icon text-white"><i
+                                                            class="mdi mdi-square-edit-outline"></i></span>
+                                                </button>
+                                            </a>
+                                            <button class="button small red --jb-modal" data-target="sample-modal"
+                                                type="button">
+                                                <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                                             </button>
-                                        </a>
-                                        <button class="button small red --jb-modal" data-target="sample-modal"
-                                            type="button">
-                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="7" class="text-center">Oops data masih kosong....</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
@@ -87,21 +93,27 @@
 
         @include('dashboard.partials.footer')
 
-        <div id="sample-modal" class="modal">
-            <div class="modal-background --jb-modal-close"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
-                </header>
-                <section class="modal-card-body">
-                    <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button --jb-modal-close">tidak</button>
-                    <button class="button red --jb-modal-close">iya</button>
-                </footer>
+        @if ($userUmkm->isNotEmpty())            
+            <div id="sample-modal" class="modal">
+                <div class="modal-background --jb-modal-close"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title font-medium text-red-500">Peringatan!</p>
+                    </header>
+                    <section class="modal-card-body">
+                        <p>Apakah anda yakin untuk <b>Menghapus data ini?</b></p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button --jb-modal-close">tidak</button>
+                        <form action="{{route('daftarumkm.destroy', $item->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="button red --jb-modal-close">iya</button>
+                        </form>
+                    </footer>
+                </div>
             </div>
-        </div>
+        @endif
 
     </div>
 
