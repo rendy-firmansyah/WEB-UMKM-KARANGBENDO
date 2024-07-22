@@ -41,7 +41,7 @@
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-name">
                                     Judul Berita
                                 </label>
-                                <input id="product-name" type="text" placeholder="Masukkan nama produk"
+                                <input id="product-name" type="text" placeholder="Masukkan Judul Berita"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                                     name="judul_berita" required />
                             </div>
@@ -49,20 +49,11 @@
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-price">
                                     Penulis
                                 </label>
-                                <input id="product-price" type="text" placeholder="Masukkan harga produk"
+                                <input id="product-price" type="text" placeholder="Masukkan Penulis Berita"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                                     name="author" required />
                             </div>
                         </div>
-                        {{-- <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="datetime">
-                                Pilih Tanggal dan Waktu
-                            </label>
-                            <input id="datetime" name="datetime" type="datetime-local"
-                                class="cursor-pointer w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                required>
-                        </div> --}}
-
 
                         <div class="mb-4 mt-2">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="file-input">
@@ -112,8 +103,6 @@
 
                     </form>
                 </div>
-
-
             </div>
 
         </section>
@@ -138,23 +127,6 @@
             <footer class="modal-card-foot">
                 <button class="button --jb-modal-close">Cancel</button>
                 <button class="button red --jb-modal-close">Confirm</button>
-            </footer>
-        </div>
-    </div>
-
-    <div id="sample-modal-2" class="modal">
-        <div class="modal-background --jb-modal-close"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Sample modal</p>
-            </header>
-            <section class="modal-card-body">
-                <p>Lorem ipsum dolor sit amet <b>adipiscing elit</b></p>
-                <p>This is sample modal</p>
-            </section>
-            <footer class="modal-card-foot">
-                <button class="button --jb-modal-close">Cancel</button>
-                <button class="button blue --jb-modal-close">Confirm</button>
             </footer>
         </div>
     </div>
@@ -197,7 +169,7 @@
             preview.src = '';
             preview.classList.add('hidden');
             removeButton.classList.add('hidden');
-            document.getElementById('file-input').value = ''; // Clear the file input
+            document.getElementById('file-input').value = '';
         });
     </script>
 
@@ -227,8 +199,6 @@
     </script>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1" /></noscript>
-
-    <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 
 </body>

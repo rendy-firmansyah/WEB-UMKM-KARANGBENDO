@@ -18,7 +18,7 @@
         <div class="max-w-2xl px-4 py-8 mx-auto lg:py-16">
             <h2 class="mb-4 text-xl font-bold text-gray-900 ">Edit data UMKM</h2>
             <hr class="border-gray-600 w-full border-2 rounded-full my-2">
-            <form action="{{route('daftarumkm.update', $umkmUser->id)}}" method="POST">
+            <form action="{{ route('daftarumkm.update', $umkmUser->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
@@ -27,35 +27,35 @@
                             UMKM</label>
                         <input type="text" name="nama_umkm" id="nama_umkm"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan nama UMKM" value="{{$umkmUser->nama_umkm}}">
+                            placeholder="Masukkan nama UMKM" value="{{ $umkmUser->nama_umkm }}">
                     </div>
 
                     <div class="sm:col-span-2">
                         <label for="owner" class="block mb-2 text-sm font-medium text-gray-900">Owner</label>
                         <input type="text" name="owner" id="owner"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan Pemilik UMKM" value="{{$umkmUser->owner}}">
+                            placeholder="Masukkan Pemilik UMKM" value="{{ $umkmUser->owner }}">
                     </div>
 
                     <div class="sm:col-span-2">
                         <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone</label>
-                        <input type="text" name="phone" id="phone"
+                        <input type="number" name="phone" id="phone"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="08xxxxxxx" pattern="08[0-9]{8,11}" value="{{$umkmUser->nomor_telepon}}">
+                            placeholder="08xxxxxxx" pattern="08[0-9]{8,11}" value="{{ $umkmUser->nomor_telepon }}">
                     </div>
 
                     <div class="sm:col-span-2">
                         <label for="alamat" class="block mb-2 text-sm font-medium text-gray-900">Alamat</label>
                         <input type="text" name="alamat" id="alamat"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="08xxxxxxx" value="{{$umkmUser->alamat}}">
+                            placeholder="08xxxxxxx" value="{{ $umkmUser->alamat }}">
                     </div>
 
                     <div class="sm:col-span-2">
                         <label for="Email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
                         <input type="email" name="email" id="email"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan Email UMKM" value="{{$umkmUser->email}}">
+                            placeholder="Masukkan Email UMKM" value="{{ $umkmUser->email }}">
                     </div>
 
                     <div class="flex items-center space-x-4">
