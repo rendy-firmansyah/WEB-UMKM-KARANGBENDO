@@ -38,7 +38,7 @@
                         <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
                         Berita
                     </p>
-                    <a href="{{ route('dashboard-admin') }}" class="card-header-icon">
+                    <a href="" class="card-header-icon">
                         <span class="icon"><i class="mdi mdi-reload"></i></span>
                     </a>
                 </header>
@@ -125,8 +125,8 @@
         @endif
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    @include('sweetalert::alert')
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> --}}
+    {{-- @include('sweetalert::alert') --}}
     @include('dashboard.partials.script')
 
     <script>

@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
             return redirect(route('form.index'));
         }
 
-        return redirect()->intended(route('dashboard-umkm', absolute: false));
+        return redirect()->intended(route('formUmkm.index', absolute: false));
     }
 
     /**

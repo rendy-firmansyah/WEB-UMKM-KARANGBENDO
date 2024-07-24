@@ -37,7 +37,7 @@ class UMKMUserController extends Controller
             'owner' => 'required|max:255',
             'nomor_telepon' => 'required|max:15',
             'alamat' => 'required|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:umkm_users',
+            'email' => 'required|string|lowercase|email|max:255|unique:users',
             'password' => 'required|string|min:8',
         ]);
 
@@ -81,36 +81,26 @@ class UMKMUserController extends Controller
         $umkmUser = User::find($id);
 
         $validator = Validator::make($request->all(), [
-            'nama_umkm' => 'sometimes|required|max:255',
-            'owner' => 'sometimes|required|max:255',
-            'nomor_telepon' => 'sometimes|required|max:15',
-            'alamat' => 'sometimes|required|max:255',
-            'email' => 'sometimes|required|string|lowercase|email|max:255|unique:umkm_users,email,' . $id,
-            'password' => 'sometimes|required|string|min:8',
+            'nama_umkm' => 'max:255',
+            'owner' => 'max:255',
+            'nomor_telepon' => 'max:15',
+            'alamat' => 'max:255',
+            'email' => 'string|lowercase|email|max:255|unique:users,email,' . $id,
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-        if ($request->has('nama_umkm')) {
-            $umkmUser->nama_umkm = $request->nama_umkm;
-        }
-        if ($request->has('owner')) {
-            $umkmUser->owner = $request->owner;
-        }
-        if ($request->has('nomor_telepon')) {
-            $umkmUser->nomor_telepon = $request->nomor_telepon;
-        }
-        if ($request->has('alamat')) {
-            $umkmUser->alamat = $request->alamat;
-        }
-        if ($request->has('email')) {
-            $umkmUser->email = $request->email;
-        }
-        if ($request->has('password')) {
-            $umkmUser->password = Hash::make($request->password);
-        }
+    
+        $umkmUser->nama_umkm = $request->input('nama_umkm', $umkmUser->nama_umkm);
+        $umkmUser->owner = $request->input('owner', $umkmUser->owner);
+        $umkmUser->nomor_telepon = $request->input('nomor_telepon', $umkmUser->nomor_telepon);
+        $umkmUser->alamat = $request->input('alamat', $umkmUser->alamat);
+        $umkmUser->email = $request->input('email', $umkmUser->email);
+    
+        // if ($request->filled('password')) {
+        //     $umkmUser->password = Hash::make($request->password);
+        // }
 
         $umkmUser->save();
 

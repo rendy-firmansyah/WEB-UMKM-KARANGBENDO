@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
@@ -12,8 +13,9 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        // $categories = Produk::select('kategori')->distinct()->get();
-        return view('dashboard.umkm.form');
+        $user = Auth::user();
+        $produk = Produk::where('user_id', $user->id)->get();
+        return view('dashboard.umkm.dashboard', compact('produk'));
     }
 
     /**
@@ -21,7 +23,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.umkm.form');
     }
 
     /**
@@ -50,6 +52,7 @@ class ProdukController extends Controller
         $produk->harga = $request->input('harga');
         $produk->kategori = $request->input('kategori');
         $produk->status_produk = 'Tersedia';
+        $produk->user_id = Auth::id();
 
         $produk->save();
 
@@ -100,6 +103,7 @@ class ProdukController extends Controller
         $produk->harga = $request->input('harga');
         $produk->kategori = $request->input('kategori');
         $produk->status_produk = $request->input('status_produk');
+        $produk->user_id = Auth::id();
 
         $produk->save();
 

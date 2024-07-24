@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->enum('kategori', ['Fashion', 'Makanan', 'Aksesoris', 'Kosmetik']);
             $table->enum('status_produk', ['Tersedia', 'Tidak Tersedia']);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

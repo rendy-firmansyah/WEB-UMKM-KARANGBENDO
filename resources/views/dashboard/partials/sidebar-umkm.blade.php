@@ -8,7 +8,7 @@
                 <p class="menu-label">Data</p>
                 <ul class="menu-list">
                     <li class="active">
-                        <a href="{{ route('dashboard-umkm') }}">
+                        <a href="{{ route('formUmkm.index') }}">
                             <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
                             <span class="menu-item-label">Dashboard</span>
                         </a>
@@ -17,7 +17,7 @@
                 <p class="menu-label">Action</p>
                 <ul class="menu-list">
                     <li class="--set-active-forms-html">
-                        <a href="{{ route('formUmkm.index') }}">
+                        <a href="{{ route('formUmkm.create') }}">
                             <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                             <span class="menu-item-label">Form</span>
                         </a>
