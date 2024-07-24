@@ -14,7 +14,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admin.form');
+        $beritaAll = Berita::all();
+        return view('dashboard.admin.dashboard', compact('beritaAll'));
     }
 
     /**
@@ -22,7 +23,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.admin.form');
     }
 
     /**

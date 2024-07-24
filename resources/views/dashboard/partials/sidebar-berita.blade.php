@@ -8,7 +8,7 @@
         <p class="menu-label">DATA</p>
         <ul class="menu-list">
             <li class="active">
-                <a href="{{ route('dashboard-admin') }}">
+                <a href="{{ route('form.index') }}">
                     <span class="icon"><i class="mdi mdi-newspaper-variant"></i></span>
                     <span class="menu-item-label">Dashboard News</span>
                 </a>
@@ -24,7 +24,7 @@
         <ul class="menu-list">
 
             <li class="--set-active-forms-html">
-                <a href="{{ route('form.index') }}">
+                <a href="{{ route('form.create') }}">
                     <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                     <span class="menu-item-label">Post News</span>
                 </a>

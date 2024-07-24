@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UmkmUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +15,7 @@ class UMKMUserController extends Controller
      */
     public function index()
     {
-        $userUmkm = UmkmUser::all();
+        $userUmkm = User::where('usertype', '!=', 'admin')->get();
         return view('dashboard.admin.daftar-umkm', compact('userUmkm'));
     }
 
@@ -41,7 +41,8 @@ class UMKMUserController extends Controller
             'password' => 'required|string|min:8',
         ]);
 
-        $umkmUser = UmkmUser::create([
+        $umkmUser = User::create([
+            'name' => 'UMKM',
             'nama_umkm' => $request->nama_umkm,
             'owner' => $request->owner,
             'nomor_telepon' => $request->nomor_telepon,
@@ -68,7 +69,7 @@ class UMKMUserController extends Controller
      */
     public function edit(string $id)
     {
-        $umkmUser = UmkmUser::find($id);
+        $umkmUser = User::find($id);
         return view('dashboard.admin.edit-umkm', compact('umkmUser'));
     }
 
@@ -77,7 +78,7 @@ class UMKMUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $umkmUser = UmkmUser::find($id);
+        $umkmUser = User::find($id);
 
         $validator = Validator::make($request->all(), [
             'nama_umkm' => 'sometimes|required|max:255',
@@ -121,7 +122,7 @@ class UMKMUserController extends Controller
      */
     public function destroy(string $id)
     {
-        $umkmUser = UmkmUser::find($id);
+        $umkmUser = User::find($id);
         $umkmUser->delete();
 
         return redirect()->back();
