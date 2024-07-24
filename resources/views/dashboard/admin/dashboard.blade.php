@@ -64,14 +64,16 @@
                                                 class="rounded-full">
                                         </div>
                                     </td>
-                                    <td data-label="Name">{{ $item->judul_berita }}</td>
-                                    <td data-label="content">{{ Str::limit($item->isi_konten, 25) }}</td>
+                                    <td data-label="Tittle">{{ Str::limit($item->judul_berita, 30) }}</td>
+                                    <td data-label="content">{{ Str::limit($item->isi_konten, 30) }}</td>
                                     <td data-label="author" class="font-medium">{{ $item->author }}</td>
                                     <td data-label="image">
                                         <img class="max-w-24 rounded-md"
                                             src="{{ asset('images/content/' . $item->gambar_berita) }}" alt="">
                                     </td>
-                                    <td data-label="Created">{{ $item->created_at->format('M d, Y - H:i:s') }}</td>
+                                    <td class="text-sm text-gray-800 font-medium py-4">
+                                        {{ \Carbon\Carbon::parse($item->created_at)->locale('id')->translatedFormat('d F Y') }}
+                                    </td>
                                     <td class="actions-cell">
                                         <div class="buttons right nowrap">
                                             <a href="{{ route('form.edit', $item->id) }}">
@@ -89,7 +91,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="text-center">Oops data masih kosong....</td>
+                                    <td colspan="7" class="text-center text-red-500">Oops data masih kosong....</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -124,7 +126,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    {{-- @include('sweetalert::alert') --}}
+    @include('sweetalert::alert')
     @include('dashboard.partials.script')
 
 

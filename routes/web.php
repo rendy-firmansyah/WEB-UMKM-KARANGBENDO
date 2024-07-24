@@ -14,7 +14,7 @@ Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('/umkm', [UserController::class, 'indexUmkm'])->name('umkm');
 Route::get('/order-detail', [UserController::class, 'indexOrder'])->name('order-detail');
 Route::get('/berita', [UserController::class, 'indexBerita'])->name('berita');
-Route::get('/detail-berita', [UserController::class, 'indexDetailBerita'])->name('detail-berita');
+Route::get('/detail-berita/{id}', [UserController::class, 'indexDetailBerita'])->name('detail-berita');
 
 // Admin
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard-admin');

@@ -13,7 +13,7 @@
                 <div class="flex justify-center items-center p-4">
                     <div class="relative w-56 h-56 rounded-md overflow-hidden flex justify-center items-center">
                         <img class="object-cover w-full h-full"
-                            src="https://d220hvstrn183r.cloudfront.net/attachment/18577248412538719799.large"
+                            src="https://www.hin.id/storage/news/Gracious/Gracious%20-%20Gajah%20Oling%204.png"
                             alt="">
                     </div>
                 </div>

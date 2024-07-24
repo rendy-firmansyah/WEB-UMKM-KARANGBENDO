@@ -90,17 +90,17 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 py-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-4">
                 <div
                     class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                     <img class="h-48 w-full object-cover object-center"
-                        src="https://images.unsplash.com/photo-1674296115670-8f0e92b1fddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                        src="https://www.hin.id/storage/news/Gracious/Gracious%20-%20Gajah%20Oling%204.png"
                         alt="Product Image" />
                     <div class="p-4">
                         <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Gajah Oling</h2>
-                        <p class="mb-2 text-base text-gray-700">Lorem ipsum dolor sit amet.</p>
+                        <p class="mb-2 text-base text-gray-700">tersedia semua ukuran</p>
                         <div class="flex items-center">
-                            <p class="mr-2 text-lg font-semibold text-gray-900">Rp.20.000</p>
+                            <p class="mr-2 text-lg font-semibold text-gray-900">Rp.200.000</p>
                             <p class="text-base font-medium text-gray-500 line-through"></p>
                             <p class="ml-auto text-base font-medium text-green-500">Tersedia</p>
                         </div>
@@ -116,14 +116,13 @@
                 <div
                     class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                     <img class="h-48 w-full object-cover object-center"
-                        src="https://d220hvstrn183r.cloudfront.net/attachment/18577248412538719799.large"
-                        alt="Product Image" />
+                        src="https://batiksejawat.com/wp-content/uploads/2021/03/UK-CJ.jpg" alt="Product Image" />
                     <div class="p-4">
-                        <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Gajah Oling
+                        <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Kangkung Stingkes
                         </h2>
-                        <p class="mb-2 text-base text-gray-700">Lorem ipsum dolor sit amet.</p>
+                        <p class="mb-2 text-base text-gray-700">tersedia semua ukuran</p>
                         <div class="flex items-center">
-                            <p class="mr-2 text-lg font-semibold text-gray-900">Rp.20.000</p>
+                            <p class="mr-2 text-lg font-semibold text-gray-900">Rp.120.000</p>
                             <p class="text-base font-medium text-gray-500 line-through"></p>
                             <p class="ml-auto text-base font-medium text-green-500">Tersedia</p>
                         </div>
@@ -139,14 +138,37 @@
                 <div
                     class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                     <img class="h-48 w-full object-cover object-center"
-                        src="https://d220hvstrn183r.cloudfront.net/attachment/18577248412538719799.large"
+                        src="https://4.bp.blogspot.com/--izXFzpb_pM/WdG75pVt0BI/AAAAAAAAAjw/P5WiCbh_pOwoT54SWFkfyrgwr39y7GNFwCLcBGAs/s1600/alas%2Bkobong.jpg"
                         alt="Product Image" />
                     <div class="p-4">
-                        <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Gajah Oling
+                        <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Alas Kobong
                         </h2>
-                        <p class="mb-2 text-base text-gray-700">Lorem ipsum dolor sit amet.</p>
+                        <p class="mb-2 text-base text-gray-700">Tersedia semua ukuran</p>
                         <div class="flex items-center">
-                            <p class="mr-2 text-lg font-semibold text-gray-900">Rp.20.000</p>
+                            <p class="mr-2 text-lg font-semibold text-gray-900">Rp.150.000</p>
+                            <p class="text-base font-medium text-gray-500 line-through"></p>
+                            <p class="ml-auto text-base font-medium text-green-500">Tersedia</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="{{ route('order-detail') }}">
+                            <button type="button"
+                                class="m-4  bg-blue-500 hover:bg-blue-700 text-gray-100 text-sm md:text-md lg:text-lg font-medium py-2 px-8 transition-all rounded-lg">Beli
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                    <img class="h-48 w-full object-cover object-center"
+                        src="https://www.shutterstock.com/image-vector/seamless-vector-batik-ukel-pattern-260nw-2344607081.jpg"
+                        alt="Product Image" />
+                    <div class="p-4">
+                        <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">Batik Ukel
+                        </h2>
+                        <p class="mb-2 text-base text-gray-700">Tersedia semua ukuran</p>
+                        <div class="flex items-center">
+                            <p class="mr-2 text-lg font-semibold text-gray-900">Rp.170.000</p>
                             <p class="text-base font-medium text-gray-500 line-through"></p>
                             <p class="ml-auto text-base font-medium text-green-500">Tersedia</p>
                         </div>
