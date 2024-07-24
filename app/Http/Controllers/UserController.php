@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Berita;
 
 class UserController extends Controller
 {
@@ -19,10 +20,15 @@ class UserController extends Controller
     }
 
     public function indexBerita () {
-        return view('berita');
+        $beritaAll = Berita::orderBy('created_at', 'desc')->take(12)->get();
+        return view('berita', compact('beritaAll'));
     }
 
-    public function indexDetailBerita () {
-        return view('detail-berita');
+   public function indexDetailBerita($id) {
+    $berita = Berita::find($id);
+    if (!$berita) {
+        return redirect()->route('berita')->with('error', 'Berita tidak ditemukan.');
     }
+    return view('detail-berita', ['beritaAll' => [$berita]]);
+   }
 }

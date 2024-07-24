@@ -11,16 +11,18 @@
                 <span
                     class="text-xs sm:text-sm md:text-md lg:text-lg bg-gray-700 px-2 sm:px-3 py-1 rounded-full text-gray-100">#umkmmaju</span>
             </div>
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-8">Selamat datang Desa
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-8">Selamat
+                datang Desa
                 <span class="text-blue-500">Karangbendo</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-md lg:text-lg mb-4 capitalize">Kenalan lebih dekat yuk tentang potensi
+            <p class="text-xs sm:text-sm md:text-md lg:text-lg mb-4 capitalize">Kenalan lebih dekat
+                yuk tentang potensi
                 dan
                 keunggulan apa
                 saja yang ada di Desa Karangbendo</p>
 
             <a href="#pengenalan">
-                <button
+                <button type="button"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-800 rounded-full transition-all">Selengkapnya
                 </button>
             </a>
@@ -57,7 +59,7 @@
                 pesat. Desa ini memproduksi kerajinan tangan berkualitas dan makanan olahan tradisional, menjadikannya
                 pusat kreativitas dan inovasi lokal.</p>
             <a href="#video">
-                <button
+                <button type="button"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-800 rounded-full transition-all">
                     Selengkapnya
                 </button>
@@ -67,10 +69,11 @@
     </section>
 
     <section class="p-6 md:p-12 w-full flex flex-col bg-gray-100 text-gray-800" id="video">
-        <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-5 leading-8 text-center text-blue-500">Cerita
+        <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-5 leading-8 text-center text-blue-500"
+            data-aos="fade-up">Cerita
             <span class="text-gray-800">Kami</span>
         </h3>
-        <video width="100%" controls autoplay loop muted class="rounded-lg">
+        <video data-aos="fade-up" width="100%" controls autoplay loop muted class="rounded-lg">
             <source src="{{ asset('dist/Umkmunggulan.mp4') }}" type="video/mp4">
         </video>
     </section>

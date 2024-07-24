@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
 
 @include('dashboard.partials.head', ['title' => 'Daftar UMKM', 'description' => 'Daftar UMKM'])
 
 <body>
     <div id="app">
-
         @include('dashboard.partials.header')
-
         @include('dashboard.partials.sidebar-berita')
 
         <section class="is-title-bar">
@@ -121,29 +119,40 @@
 
     <!-- Scripts below are for demo only -->
     <script type="text/javascript" src="js/main.min.js?v=1628755089081"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="js/chart.sample.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const deleteButtons = document.querySelectorAll('button[data-target="delete-modal"]');
-            const deleteForm = document.getElementById('delete-form');
-            const deleteIdInput = document.getElementById('delete-id');
-    
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.delete-button');
+
             deleteButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const id = button.getAttribute('data-id');
-                    deleteIdInput.value = id;
-                    deleteForm.setAttribute('action', `{{ url('admin/dashboard/daftarumkm') }}/${id}`);
+                button.addEventListener('click', function() {
+                    const itemId = this.getAttribute('data-id');
+
+                    Swal.fire({
+                        title: 'Apakah anda yakin?',
+                        text: "Anda tidak dapat mengembalikan data yang dihapus!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Ya, hapus!',
+                        cancelButtonText: 'Tidak'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const form = document.getElementById('deleteForm');
+                            form.action = `/daftarumkm/${itemId}`;
+                            form.submit();
+                        }
+                    });
                 });
             });
         });
     </script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-    <script type="text/javascript" src="js/chart.sample.min.js"></script>
-
-
-    <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
-
 </body>
 
 </html>
