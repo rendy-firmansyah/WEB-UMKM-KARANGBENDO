@@ -53,7 +53,7 @@ class BeritaController extends Controller
         $berita->save();
         // Alert::success('berhasil', 'Berita berhasil diupload');
 
-        return redirect(route('dashboard-admin'));
+        return redirect(route('form.index'));
     }
 
     /**
@@ -100,7 +100,7 @@ class BeritaController extends Controller
 
         $berita->save();
 
-        return redirect(route('dashboard-admin'));
+        return redirect(route('form.index'));
     }
 
     /**
