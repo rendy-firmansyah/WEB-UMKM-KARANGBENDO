@@ -2,7 +2,7 @@
 <html lang="en" class="">
 
 @include('dashboard.partials.head', [
-    'title' => 'Form - Admin umkm-karangbendo',
+    'title' => 'Form - Berita umkm-karangbendo',
     'description' => 'Form Berita',
 ])
 

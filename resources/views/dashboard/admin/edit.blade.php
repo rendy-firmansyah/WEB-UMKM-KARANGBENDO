@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit - Berita</title>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('dist/logo-icon-umkm.jpeg') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('dist/logo-icon-umkm.jpeg') }}" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 </head>

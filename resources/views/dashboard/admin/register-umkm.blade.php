@@ -2,7 +2,7 @@
 <html lang="en" class="">
 
 @include('dashboard.partials.head', [
-    'title' => 'Form - Admin umkm-karangbendo',
+    'title' => 'Form - Users umkm-karangbendo',
     'description' => 'Form Berita',
 ])
 
@@ -79,17 +79,21 @@
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                                     name="email" required />
                             </div>
-                            <div class="mb-4">
+                            <div class="mb-4 relative">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="password">
                                     Password
                                 </label>
-                                <input id="password" type="password" placeholder="Masukkan password pemilik UMKM"
-                                    class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="password" minlength="8" required />
-                                <p id="password-error" class="text-red-500 mt-2 hidden">Password harus
-                                    terdiri dari
-                                    minimal 8
-                                    karakter</p>
+                                <div class="relative">
+                                    <input id="password" type="password" placeholder="Masukkan password pemilik UMKM"
+                                        class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500 pr-10"
+                                        name="password" minlength="8" required />
+                                    <span id="toggle-password"
+                                        class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600 cursor-pointer">
+                                        <i id="eye-icon" class="ri-eye-line"></i>
+                                    </span>
+                                </div>
+                                <p id="password-error" class="text-red-500 mt-2 hidden">Password harus terdiri dari
+                                    minimal 8 karakter</p>
                             </div>
                         </div>
 
@@ -250,6 +254,25 @@
     </script>
 
     {{-- end script for custom validation error phone --}}
+
+
+    <script>
+        document.getElementById('toggle-password').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('ri-eye-line');
+                eyeIcon.classList.add('ri-eye-off-line');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('ri-eye-off-line');
+                eyeIcon.classList.add('ri-eye-line');
+            }
+        });
+    </script>
+
 
     <script>
         ! function(f, b, e, v, n, t, s) {
