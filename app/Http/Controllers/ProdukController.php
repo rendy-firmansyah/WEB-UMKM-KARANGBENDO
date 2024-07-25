@@ -56,7 +56,7 @@ class ProdukController extends Controller
 
         $produk->save();
 
-        return redirect(route('dashboard-umkm'));
+        return redirect(route('formUmkm.index'));
     }
 
     /**
@@ -85,7 +85,7 @@ class ProdukController extends Controller
             'nama_produk' => 'max:255',
             'gambar' => 'image|mimes:png,jpg,jpeg',
             'deskripsi_produk' => '',
-            'harga' => 'nullable',
+            'harga' => '',
             'status_produk' => '',
             'kategori' => 'in:Fashion,Makanan,Aksesoris,Kosmetik'
         ]);
@@ -107,7 +107,7 @@ class ProdukController extends Controller
 
         $produk->save();
 
-        return redirect(route('dashboard-umkm'));
+        return redirect(route('formUmkm.index'));
     }
 
     /**

@@ -88,8 +88,7 @@
                                                             class="mdi mdi-square-edit-outline"></i></span>
                                                 </button>
                                             </a>
-                                            <button class="button small red --jb-modal" data-target="sample-modal"
-                                                type="button">
+                                            <button class="button small red --jb-modal" data-target="sample-modal" data-id="{{$item->id}}" type="button">
                                                 <span class="icon text-white"><i class="mdi mdi-trash-can"></i></span>
                                             </button>
                                         </div>
@@ -119,9 +118,10 @@
                     </section>
                     <footer class="modal-card-foot">
                         <button class="button --jb-modal-close">tidak</button>
-                        <form action="{{route('formUmkm.destroy', $item->id)}}" method="POST">
+                        <form action="" method="POST" id="delete-form">
                             @csrf
                             @method('DELETE')
+                            <input type="hidden" name="id" id="delete-id">
                             <button class="button red --jb-modal-close">iya</button>
                         </form>
                     </footer>
@@ -156,6 +156,21 @@
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '658339141622648');
         fbq('track', 'PageView');
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const deleteButtons = document.querySelectorAll('button[data-target="sample-modal"]');
+            const deleteForm = document.getElementById('delete-form');
+            const deleteIdInput = document.getElementById('delete-id');
+    
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    deleteIdInput.value = id;
+                    deleteForm.setAttribute('action', `{{ url('umkm/dashboard/formUmkm') }}/${id}`);
+                });
+            });
+        });
     </script>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1" /></noscript>
