@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+// use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UMKMUserController extends Controller
 {
@@ -52,7 +54,7 @@ class UMKMUserController extends Controller
         ]);
 
         // dd($umkmUser);
-
+        Alert::success('Berhasil', 'Akun UMKM Berhasil Dibuat');
         return redirect()->route('daftarumkm.index');
     }
 
@@ -101,6 +103,7 @@ class UMKMUserController extends Controller
         // if ($request->filled('password')) {
         //     $umkmUser->password = Hash::make($request->password);
         // }
+        Alert::success('Berhasil', 'Data UMKM berhasil diubah');
 
         $umkmUser->save();
 
@@ -114,7 +117,7 @@ class UMKMUserController extends Controller
     {
         $umkmUser = User::find($id);
         $umkmUser->delete();
-
+        Alert::success('Berhasil', 'Akun UMKM Berhasil Dihapus');
         return redirect()->back();
     }
 }

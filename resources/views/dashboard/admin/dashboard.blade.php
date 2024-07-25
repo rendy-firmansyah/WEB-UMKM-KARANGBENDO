@@ -82,7 +82,8 @@
                                                             class="mdi mdi-square-edit-outline"></i></span>
                                                 </button>
                                             </a>
-                                            <button class="button small red --jb-modal" data-target="sample-modal" data-id="{{$item->id}}" type="button">
+                                            <button class="button small red --jb-modal" data-target="sample-modal"
+                                                data-id="{{ $item->id }}" type="button">
                                                 <span class="icon text-white"><i class="mdi mdi-trash-can"></i></span>
                                             </button>
                                         </div>
@@ -125,8 +126,7 @@
         @endif
     </div>
 
-    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> --}}
-    {{-- @include('sweetalert::alert') --}}
+    @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
     @include('dashboard.partials.script')
 
     <script>
@@ -134,7 +134,7 @@
             const deleteButtons = document.querySelectorAll('button[data-target="sample-modal"]');
             const deleteForm = document.getElementById('delete-form');
             const deleteIdInput = document.getElementById('delete-id');
-    
+
             deleteButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const id = button.getAttribute('data-id');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
-// use RealRashid\SweetAlert\Facades\Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class BeritaController extends Controller
@@ -51,7 +51,7 @@ class BeritaController extends Controller
         $berita->author = $request->input('author');
 
         $berita->save();
-        // Alert::success('berhasil', 'Berita berhasil diupload');
+        Alert::success('berhasil', 'Berita berhasil diupload');
 
         return redirect(route('form.index'));
     }
@@ -96,8 +96,7 @@ class BeritaController extends Controller
             $berita->gambar_berita = $namaGambar;
         };
         $berita->author = $request->input('author');
-        // Alert::success('berita', 'Berita berhasil diupdate');
-
+        Alert::success('berhasil', 'Berita berhasil diupdate');
         $berita->save();
 
         return redirect(route('form.index'));
@@ -110,7 +109,7 @@ class BeritaController extends Controller
     {
         $berita = Berita::find($id);
         $berita->delete();
-        // Alert::success('Berhasil', 'Berita berhasil dihapus');
+        Alert::success('Berhasil', 'Berita berhasil dihapus');
         return redirect()->back();
     }
 }

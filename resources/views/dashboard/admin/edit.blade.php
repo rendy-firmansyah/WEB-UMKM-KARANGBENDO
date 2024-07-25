@@ -97,7 +97,6 @@
 
     </section>
 
-
     <script>
         document.getElementById('img-berita').addEventListener('change', function(event) {
             const file = event.target.files[0];
@@ -126,5 +125,3 @@
 </body>
 
 </html>
-
-

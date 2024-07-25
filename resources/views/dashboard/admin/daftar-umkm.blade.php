@@ -71,7 +71,8 @@
                                                             class="mdi mdi-square-edit-outline"></i></span>
                                                 </button>
                                             </a>
-                                            <button class="button small red --jb-modal" data-target="delete-modal" data-id="{{$item->id}}" type="button">
+                                            <button class="button small red --jb-modal" data-target="delete-modal"
+                                                data-id="{{ $item->id }}" type="button">
                                                 <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                                             </button>
                                         </div>
@@ -115,6 +116,7 @@
 
     </div>
 
+    @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
     @include('dashboard.partials.script')
 
     <!-- Scripts below are for demo only -->
@@ -122,18 +124,18 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script type="text/javascript" src="js/chart.sample.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const deleteButtons = document.querySelectorAll('button[data-target="delete-modal"]');
             const deleteForm = document.getElementById('delete-form');
             const deleteIdInput = document.getElementById('delete-id');
-    
+
             deleteButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const id = button.getAttribute('data-id');
                     deleteIdInput.value = id;
-                    deleteForm.setAttribute('action', `{{ url('admin/dashboard/daftarumkm') }}/${id}`);
+                    deleteForm.setAttribute('action',
+                        `{{ url('admin/dashboard/daftarumkm') }}/${id}`);
                 });
             });
         });
