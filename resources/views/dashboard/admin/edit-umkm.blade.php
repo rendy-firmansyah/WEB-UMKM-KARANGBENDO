@@ -76,11 +76,11 @@
                     </div>
 
                     <div class="flex items-center space-x-4">
-                        <button type="submit"
+                        <button type="submit" value="update" name="action"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5">
                             Update Data
                         </button>
-                        <button type="button"
+                        <button type="reset"
                             class="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5">
                             <svg class="w-5 h-5 mr-1 -ml-1" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@
             </form>
             <div class="w-full mt-4">
                 <a href="{{ route('daftarumkm.index') }}">
-                    <button
+                    <button type="submit" value="back" name="action"
                         class="bg-white shadow-lg hover:bg-slate-100 text-gray-800 text-sm font-medium py-2 px-6 rounded-lg">
                         Kembali ke halaman dashboard
                     </button>

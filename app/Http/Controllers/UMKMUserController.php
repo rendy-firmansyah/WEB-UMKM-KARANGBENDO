@@ -43,6 +43,13 @@ class UMKMUserController extends Controller
             'password' => 'required|string|min:8',
         ]);
 
+        if ($validator->fails()) {
+            if ($validator->errors()->has('email')) {
+                Alert::error('Gagal', 'Akun Gagal Dibuat Silahkan Gunakan Email Lain');
+                return redirect()->route('daftarumkm.index')->withErrors($validator)->withInput();
+            }
+        }
+
         $umkmUser = User::create([
             'name' => 'UMKM',
             'nama_umkm' => $request->nama_umkm,
@@ -56,7 +63,7 @@ class UMKMUserController extends Controller
         // dd($umkmUser);
         Alert::success('Berhasil', 'Akun UMKM Berhasil Dibuat');
         return redirect()->route('daftarumkm.index');
-    }
+}
 
     /**
      * Display the specified resource.
@@ -78,41 +85,46 @@ class UMKMUserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        $umkmUser = User::find($id);
+   public function update(Request $request, string $id)
+{
+    $umkmUser = User::find($id);
 
-        $validator = Validator::make($request->all(), [
-            'nama_umkm' => 'max:255',
-            'owner' => 'max:255',
-            'nomor_telepon' => 'max:15',
-            'alamat' => 'max:255',
-            'email' => 'string|lowercase|email|max:255|unique:users,email,' . $id,
-        ]);
+    $originalData = [
+        'nama_umkm' => $umkmUser->nama_umkm,
+        'owner' => $umkmUser->owner,
+        'nomor_telepon' => $umkmUser->nomor_telepon,
+        'alamat' => $umkmUser->alamat,
+        'email' => $umkmUser->email,
+    ];
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-    
-        $umkmUser->nama_umkm = $request->input('nama_umkm', $umkmUser->nama_umkm);
-        $umkmUser->owner = $request->input('owner', $umkmUser->owner);
-        $umkmUser->nomor_telepon = $request->input('nomor_telepon', $umkmUser->nomor_telepon);
-        $umkmUser->alamat = $request->input('alamat', $umkmUser->alamat);
-        $umkmUser->email = $request->input('email', $umkmUser->email);
-    
-        // if ($request->filled('password')) {
-        //     $umkmUser->password = Hash::make($request->password);
-        // }
-        Alert::success('Berhasil', 'Data UMKM berhasil diubah');
+    $validator = Validator::make($request->all(), [
+        'nama_umkm' => 'max:255',
+        'owner' => 'max:255',
+        'nomor_telepon' => 'max:15',
+        'alamat' => 'max:255',
+        'email' => 'string|lowercase|email|max:255|unique:users,email,' . $id,
+    ]);
 
-        $umkmUser->save();
-
-        return redirect()->route('daftarumkm.index');
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    $input = $request->only(['nama_umkm', 'owner', 'nomor_telepon', 'alamat', 'email']);
+
+    if ($request->input('action') === 'update') {
+        if ($input == $originalData) {
+            Alert::info('Info', 'Tidak ada data yang diubah');
+            return redirect()->route('daftarumkm.index');
+        } else {
+            $umkmUser->update($input);
+            Alert::success('Berhasil', 'Data UMKM berhasil diubah');
+            return redirect()->route('daftarumkm.index');
+        }
+    } else if ($request->input('action') === 'back') {
+        return redirect()->route('daftarumkm.index');
+    }
+}
+
     public function destroy(string $id)
     {
         $umkmUser = User::find($id);
