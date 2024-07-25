@@ -55,7 +55,8 @@
                             <div class="mb-4">
                                 <label for="phone" class="block text-sm mb-2 font-bold text-gray-700">Nomor
                                     Telepon</label>
-                                <input id="phone" type="text" placeholder="Masukkan nomor telepon terdaftar"
+                                <input id="phone" inputmode="numeric" type="text"
+                                    placeholder="Masukkan nomor telepon terdaftar"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                                     name="nomor_telepon" required />
                                 <p id="phone-error" class="text-red-500 mt-2 hidden">Nomor telepon tidak sesuai format.
@@ -85,7 +86,7 @@
                                 <input id="password" type="password" placeholder="Masukkan password pemilik UMKM"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
                                     name="password" minlength="8" required />
-                                <p id="password-error" class="text-red-500 font-medium mt-2 hidden">Password harus
+                                <p id="password-error" class="text-red-500 mt-2 hidden">Password harus
                                     terdiri dari
                                     minimal 8
                                     karakter</p>

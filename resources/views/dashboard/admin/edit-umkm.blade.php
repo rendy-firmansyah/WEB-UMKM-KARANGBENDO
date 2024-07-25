@@ -38,10 +38,13 @@
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone</label>
-                        <input type="number" name="nomor_telepon" id="phone"
+                        <label for="phone" inputmode="numeric"
+                            class="block mb-2 text-sm font-medium text-gray-900">Phone</label>
+                        <input type="text" name="nomor_telepon" id="phone"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="08xxxxxxx" pattern="08[0-9]{8,11}" value="{{ $umkmUser->nomor_telepon }}">
+                        <p id="phone-error" class="text-red-500 mt-2 hidden">Nomor telepon tidak sesuai format.
+                            Harus berupa angka dengan panjang 10-12 digit, dimulai dengan 08.</p>
                     </div>
 
                     <div class="sm:col-span-2">
@@ -86,6 +89,41 @@
 
     </section>
 
+    {{-- script for custom validation error phone --}}
+    <script>
+        document.getElementById('phone').addEventListener('input', function() {
+            const phoneInput = this;
+            const phoneError = document.getElementById('phone-error');
+            const phonePattern = /^08[0-9]{8,11}$/;
+
+            // Cek jika input berisi karakter non-numerik
+            if (/\D/.test(phoneInput.value) && phoneInput.value !== '') {
+                phoneInput.setCustomValidity('Nomor harus berupa angka.');
+                phoneError.textContent = 'Nomor harus berupa angka, bukan huruf.';
+                phoneError.classList.remove('hidden');
+            } else if (!phonePattern.test(phoneInput.value)) {
+                phoneInput.setCustomValidity(
+                    'Nomor telepon tidak sesuai format. Harus berupa angka dengan panjang 10-12 digit, dimulai dengan 08.'
+                );
+                phoneError.textContent =
+                    'Nomor telepon tidak sesuai format. Harus berupa angka dengan panjang 10-12 digit, dimulai dengan 08.';
+                phoneError.classList.remove('hidden');
+            } else {
+                phoneInput.setCustomValidity('');
+                phoneError.classList.add('hidden');
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const phoneInput = document.getElementById('phone');
+
+            if (!phoneInput.checkValidity()) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    {{-- end script for custom validation error phone --}}
 
 </body>
 
