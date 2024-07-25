@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button type="submit"
+                    <button type="submit" name="action" value="update"
                         class="text-white bg-blue-700 transition-all hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 ">
                         Update Berita
                     </button>
@@ -89,7 +89,7 @@
             </form>
             <div class="w-full md:w-1/2 flex justify-start items-center">
                 <a href="{{ route('form.index') }}">
-                    <button
+                    <button type="submit" name="action" value="back"
                         class="my-4 bg-white shadow-lg hover:bg-slate-100 text-gray-800 text-sm font-medium py-2 px-6 transition-all rounded-lg">kembali
                         ke halaman dashboard</button>
                 </a>

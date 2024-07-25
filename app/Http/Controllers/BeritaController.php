@@ -76,31 +76,47 @@ class BeritaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        $request->validate([
-            'judul_berita' => 'max:255',
-            'isi_konten' => '',
-            'gambar_berita' => 'image|mimes:png,jpg,jpeg',
-            'author' => 'max:255',
-        ]);
+public function update(Request $request, string $id)
+{
+    // Validasi input
+    $request->validate([
+        'judul_berita' => 'max:255',
+        'isi_konten' => '',
+        'gambar_berita' => 'image|mimes:png,jpg,jpeg',
+        'author' => 'max:255',
+    ]);
 
-        $berita = Berita::find($id);
-        $berita->judul_berita = $request->input('judul_berita');
-        $berita->isi_konten = $request->input('isi_konten');
-        if ($request->hasFile('gambar_berita'))
-        {
-            $gambar = $request->file('gambar_berita');
-            $namaGambar = time(). '.' .$gambar->getClientOriginalExtension();
-            $gambar->move(public_path('images/content'), $namaGambar);
-            $berita->gambar_berita = $namaGambar;
-        };
-        $berita->author = $request->input('author');
-        Alert::success('berhasil', 'Berita berhasil diupdate');
-        $berita->save();
+    $berita = Berita::find($id);
 
-        return redirect(route('form.index'));
+    $originalData = $berita->getAttributes();
+
+    $berita->judul_berita = $request->input('judul_berita', $originalData['judul_berita']);
+    $berita->isi_konten = $request->input('isi_konten', $originalData['isi_konten']);
+
+    if ($request->hasFile('gambar_berita')) {
+        $gambar = $request->file('gambar_berita');
+        $namaGambar = time() . '.' . $gambar->getClientOriginalExtension();
+        $gambar->move(public_path('images/content'), $namaGambar);
+        $berita->gambar_berita = $namaGambar;
+    } else {
+        $berita->gambar_berita = $originalData['gambar_berita'];
     }
+
+    $berita->author = $request->input('author', $originalData['author']);
+
+    if ($request->input('action') === 'update') {
+        if ($berita->isDirty()) {
+            $berita->save();
+            Alert::success('Berhasil', 'Berita berhasil diupdate');
+        } else {
+            Alert::info('Info', 'Tidak ada data yang diubah');
+        }
+        return redirect()->route('form.index');
+    } elseif ($request->input('action') === 'back') {
+        return redirect()->route('form.index');
+    }
+}
+
 
     /**
      * Remove the specified resource from storage.
