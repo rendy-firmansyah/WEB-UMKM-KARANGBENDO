@@ -46,49 +46,66 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Nama Produk</th>
-                                <th>Deskripsi</th>
-                                <th>Harga</th>
-                                <th>Alamat</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                {{-- <th>Alamat</th> --}}
                                 <th>Image</th>
-                                <th>Tanggal Upload</th>
-                                <th>Status</th>>
+                                <th>Upload Date</th>
+                                <th>Status</th>
                                 <th class="text-right">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($produk as $item)                                
+                            @forelse ($produk as $item)
                                 <tr>
                                     <td class="image-cell">
                                         <div class="image">
                                             <img src="{{ asset('images/avatar-admin-umkm.png') }}" class="rounded-full">
                                         </div>
                                     </td>
-                                    <td data-label="Name">{{$item->nama_produk}}</td>
-                                    <td data-label="Company">{{$item->deskripsi_produk}}</td>
-                                    <td data-label="City">{{$item->harga}}</td>
-                                    <td data-label="alamat">{{$item->alamat}}</td>
-                                    <td data-label="Image">
-                                        <img class="max-w-24 rounded-md"
-                                        src="{{ asset('images/content/' . $item->gambar) }}"
-                                        alt="">
+                                    <td data-label="Name">{{ Str::limit($item->nama_produk, 30) }}</td>
+                                    <td data-label="Description">
+                                        {{ Str::limit($item->deskripsi_produk, 10) }}
                                     </td>
-                                    <td data-label="Created">
-                                        <small class="text-gray-500" title="Oct 25, 2021">{{ $item->created_at->format('M d, Y') }}</small>
+                                    <td data-label="Price" class="whitespace-nowrap overflow-hidden text-ellipsis">
+                                        @php
+                                            $harga = $item->harga;
+                                            $formattedHarga = number_format($harga, 0, ',', '.');
+                                            $displayHarga = 'Rp. ' . $formattedHarga;
+                                        @endphp
+                                        {{ $displayHarga }}
+                                    </td>
+
+                                    {{-- <td data-label="alamat">{{ $item->alamat }}</td> --}}
+                                    <td data-label="Image">
+                                        <img class="w-32 h-20 object-cover rounded-md"
+                                            src="{{ asset('images/content/' . $item->gambar) }}" alt="">
+                                    </td>
+                                    <td data-label="Upload Date">
+                                        <small class="text-gray-800 font-medium"
+                                            title="Oct 25, 2021">{{ $item->created_at->format('M d, Y') }}</small>
                                     </td>
 
                                     <td data-label="Status" class="status-cell">
-                                        <span class="status" style="color: rgb(0, 176, 79);">{{$item->status_produk}}</span>
+                                        <span
+                                            class=" {{ $item->status_produk === 'Tersedia' ? 'inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20' : 'inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10' }} ">
+                                            {{ $item->status_produk }}
+                                        </span>
                                     </td>
+
+
+
                                     <td class="actions-cell">
                                         <div class="buttons right nowrap">
-                                            <a href="{{route('formUmkm.edit', $item->id)}}">
+                                            <a href="{{ route('formUmkm.edit', $item->id) }}">
                                                 <button class="button small blue --jb-modal" type="button">
                                                     <span class="icon text-white"><i
                                                             class="mdi mdi-square-edit-outline"></i></span>
                                                 </button>
                                             </a>
-                                            <button class="button small red --jb-modal" data-target="sample-modal" data-id="{{$item->id}}" type="button">
+                                            <button class="button small red --jb-modal" data-target="sample-modal"
+                                                data-id="{{ $item->id }}" type="button">
                                                 <span class="icon text-white"><i class="mdi mdi-trash-can"></i></span>
                                             </button>
                                         </div>
@@ -106,7 +123,7 @@
         </section>
 
         @include('dashboard.partials.footer')
-        @if ($produk->isNotEmpty())            
+        @if ($produk->isNotEmpty())
             <div id="sample-modal" class="modal">
                 <div class="modal-background --jb-modal-close"></div>
                 <div class="modal-card">
@@ -134,7 +151,8 @@
 
     @include('dashboard.partials.script')
 
-
+    @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
+    @include('dashboard.partials.script')
     <script>
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
@@ -162,12 +180,13 @@
             const deleteButtons = document.querySelectorAll('button[data-target="sample-modal"]');
             const deleteForm = document.getElementById('delete-form');
             const deleteIdInput = document.getElementById('delete-id');
-    
+
             deleteButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const id = button.getAttribute('data-id');
                     deleteIdInput.value = id;
-                    deleteForm.setAttribute('action', `{{ url('umkm/dashboard/formUmkm') }}/${id}`);
+                    deleteForm.setAttribute('action',
+                        `{{ url('umkm/dashboard/formUmkm') }}/${id}`);
                 });
             });
         });

@@ -60,7 +60,14 @@
                                     </td>
                                     <td data-label="Name">{{ $item->nama_umkm }}</td>
                                     <td data-label="Owner">{{ $item->owner }}</td>
-                                    <td data-label="alamat">{{ $item->alamat }}</td>
+                                    <td data-label="alamat">
+                                        <span class="block md:hidden truncate w-20">
+                                            {{ $item->alamat }}
+                                        </span>
+                                        <span class="hidden md:block truncate w-50">
+                                            {{ $item->alamat }}
+                                        </span>
+                                    </td>
                                     <td data-label="Phone">{{ $item->nomor_telepon }}</td>
                                     <td data-label="email">{{ $item->email }}</td>
                                     <td class="actions-cell">

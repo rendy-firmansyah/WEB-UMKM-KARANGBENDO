@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProdukController extends Controller
 {
@@ -33,7 +34,7 @@ class ProdukController extends Controller
     {
         $request->validate([
             'nama_produk' => 'required|max:255',
-            'gambar' => 'required|mimes:png,jpg,jpeg',
+            'gambar' => 'required|mimes:png,jpg,jpeg,svg,gif,webp',
             'deskripsi_produk' => 'required',
             'harga' => 'required',
             'kategori' => 'required|in:Fashion,Makanan,Aksesoris,Kosmetik'
@@ -53,6 +54,8 @@ class ProdukController extends Controller
         $produk->kategori = $request->input('kategori');
         $produk->status_produk = 'Tersedia';
         $produk->user_id = Auth::id();
+
+        Alert::success('Berhasil', 'Produk Berhasil Di Upload');
 
         $produk->save();
 
@@ -83,7 +86,7 @@ class ProdukController extends Controller
     {
         $request->validate([
             'nama_produk' => 'max:255',
-            'gambar' => 'image|mimes:png,jpg,jpeg',
+            'gambar' => 'image|mimes:png,jpg,jpeg,svg,gif,webp',
             'deskripsi_produk' => '',
             'harga' => '',
             'status_produk' => '',
@@ -91,6 +94,7 @@ class ProdukController extends Controller
         ]);
 
         $produk = Produk::find($id);
+        $original = $produk->getAttributes(); 
         $produk->nama_produk = $request->input('nama_produk');
         if ($request->hasFile('gambar'))
         {
@@ -105,7 +109,15 @@ class ProdukController extends Controller
         $produk->status_produk = $request->input('status_produk');
         $produk->user_id = Auth::id();
 
-        $produk->save();
+
+        if ($produk->getAttributes() == $original) {
+        Alert::info('Informasi', 'Tidak ada data yang diubah.');
+        return redirect()->route('formUmkm.index'); 
+    }
+
+    $produk->save();
+    Alert::success('Berhasil', 'Produk Berhasil Di Update');
+    return redirect(route('formUmkm.index'));
 
         return redirect(route('formUmkm.index'));
     }
@@ -117,7 +129,7 @@ class ProdukController extends Controller
     {
         $produk = Produk::find($id);
         $produk->delete();
-
+        Alert::success('Berhasil', 'Produk Berhasil Dihapus');
         return redirect()->back();
     }
 }

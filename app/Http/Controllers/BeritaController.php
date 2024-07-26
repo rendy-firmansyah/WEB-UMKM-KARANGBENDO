@@ -34,7 +34,7 @@ class BeritaController extends Controller
         $request->validate([
             'judul_berita' => 'required|max:255',
             'isi_konten' => 'required',
-            'gambar_berita' => 'required|mimes:png,jpg,jpeg',
+            'gambar_berita' => 'required|mimes:png,jpg,jpeg,gif,svg,webp',
             'author' => 'required',
         ]);
 
@@ -82,7 +82,7 @@ public function update(Request $request, string $id)
     $request->validate([
         'judul_berita' => 'max:255',
         'isi_konten' => '',
-        'gambar_berita' => 'image|mimes:png,jpg,jpeg',
+        'gambar_berita' => 'image|mimes:png,jpg,jpeg,gif,svg,webp',
         'author' => 'max:255',
     ]);
 
