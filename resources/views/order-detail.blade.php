@@ -52,12 +52,12 @@
                                 Hubungi Penjual
                                 <i class="ri-whatsapp-line px-2"></i>
                             </button>
-                            <a href="https://maps.app.goo.gl/sUMWwyUw8TBy1pxJ6">
-                                <button
-                                    class="bg-blue-500 hover:bg-blue-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
-                                    lihat Alamat
-                                    <i class="ri-map-pin-range-fill px-2"></i>
-                            </a>
+                        </a>
+                        <a href="https://maps.app.goo.gl/sUMWwyUw8TBy1pxJ6">
+                            <button
+                                class="bg-blue-500 hover:bg-blue-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
+                                lihat Alamat
+                                <i class="ri-map-pin-range-fill px-2"></i>
                         </a>
                     </div>
                     <p class="text-gray-800 font-medium pt-4">Bagikan :</p>

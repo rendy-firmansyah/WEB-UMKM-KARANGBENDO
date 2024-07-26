@@ -109,7 +109,7 @@ public function update(Request $request, string $id)
             $berita->save();
             Alert::success('Berhasil', 'Berita berhasil diupdate');
         } else {
-            Alert::info('Info', 'Tidak ada data yang diubah');
+            Alert::info('Info', 'Tidak ada perubahan yang diubah');
         }
         return redirect()->route('form.index');
     } elseif ($request->input('action') === 'back') {

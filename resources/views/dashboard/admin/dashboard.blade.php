@@ -38,7 +38,7 @@
                         <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
                         Berita
                     </p>
-                    <a href="" class="card-header-icon">
+                    <a href="{{ route('form.index') }}" class="card-header-icon">
                         <span class="icon"><i class="mdi mdi-reload"></i></span>
                     </a>
                 </header>
