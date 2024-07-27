@@ -12,6 +12,7 @@ use App\Http\Controllers\UMKMUserController;
 // Non user
 Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('/umkm', [UserController::class, 'indexUmkm'])->name('umkm');
+Route::post('/filter-produk', [UserController::class, 'indexUmkm'])->name('filterProduk');
 Route::get('/order-detail', [UserController::class, 'indexOrder'])->name('order-detail');
 Route::get('/berita', [UserController::class, 'indexBerita'])->name('berita');
 Route::get('/detail-berita/{id}', [UserController::class, 'indexDetailBerita'])->name('detail-berita');
