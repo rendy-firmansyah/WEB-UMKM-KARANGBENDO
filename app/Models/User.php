@@ -53,6 +53,6 @@ class User extends Authenticatable
     // Definisi relasi one-to-many dengan produk
     public function produks()
     {
-        return $this->hasMany(Produk::class);
+        return $this->hasMany(Produk::class, 'user_id');
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Berita;
+use App\Models\Produk;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -11,10 +13,29 @@ class UserController extends Controller
         return view('home');
     }
 
-    public function indexUmkm () {
-        return view('umkm');
-    }
+    public function indexUmkm(Request $request) {
+        $kategori = $request->input('kategori', null);
+        $umkm = $request->input('umkm', null);
     
+        $query = Produk::query();
+    
+        if ($kategori) {
+            $query->where('kategori', $kategori);
+        }
+    
+        if ($umkm) {
+            $query->whereHas('user', function ($q) use ($umkm) {
+                $q->where('nama_umkm', $umkm);
+            });
+        }
+    
+        $produk = $query->get();
+    
+        $umkms = User::select('nama_umkm')->distinct()->get();
+    
+        return view('umkm', ['produk' => $produk, 'umkms' => $umkms]);
+    }    
+
     public function indexOrder () {
         return view('order-detail');
     }

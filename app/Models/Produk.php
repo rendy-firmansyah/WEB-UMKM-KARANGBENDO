@@ -13,6 +13,6 @@ class Produk extends Model
     // Definisi relasi many-to-one dengan user
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
