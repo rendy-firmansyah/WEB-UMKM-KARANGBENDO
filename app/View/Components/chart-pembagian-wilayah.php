@@ -2,24 +2,20 @@
 
 namespace App\View\Components;
 
-use Closure;
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class chart-pembagian-wilayah extends Component
+class ChartPembagianWilayah extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public $data;
+    public $labels;
+
+    public function __construct($data = [], $labels = [])
     {
-        //
+        $this->data = $data;
+        $this->labels = $labels;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
-    public function render(): View|Closure|string
+    public function render()
     {
         return view('components.chart-pembagian-wilayah');
     }

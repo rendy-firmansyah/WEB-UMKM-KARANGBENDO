@@ -42,7 +42,7 @@
         style="background-image: url({{ asset('images/batik-bg-fix.png') }}); background-repeat: no-repeat; background-size: cover">
 
         <div class="w-full lg:w-1/2 flex justify-center">
-            <img src="{{ asset('images/kombinasiDesa.png') }}" alt="ragam-desa" class="w-2/3 md:w-3/4 lg:w-4/5">
+            <img src="{{ asset('images/kombinasiDesa.png') }}" alt="ragam-desa" class="w-3/4 lg:w-4/5">
         </div>
 
         <div class="w-full lg:w-1/2 container">
@@ -50,21 +50,21 @@
                 <span
                     class="text-xs sm:text-sm md:text-md lg:text-lg bg-gray-700 px-2 sm:px-3 py-1 rounded-full text-gray-100">#digitalisasiDesa</span>
             </div>
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 leading-8">Desa <span
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Desa <span
                     class="text-blue-500">Karangbendo</span>
             </h1>
-            <p class="text-xs sm:text-sm md:text-md lg:text-lg mb-4 ">
+            <p class="text-xs my-4 sm:text-sm md:text-md lg:text-lg font-normal mb-4 ">
                 Desa Karangbendo, terletak di Kecamatan Rogojampi, Kabupaten Banyuwangi, dikenal dengan UMKM yang
                 berkembang
                 pesat. Desa ini memproduksi kerajinan tangan berkualitas dan makanan olahan tradisional, menjadikannya
                 pusat kreativitas dan inovasi lokal.</p>
             <a href="#video">
                 <button type="button"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-800 rounded-full transition-all">
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 md:py-3 px-4 md:px-6 border-b-4 border-blue-700 hover:border-blue-800 rounded-full transition-all text-sm md:text-base">
                     Selengkapnya
                 </button>
             </a>
-            </a>
+
         </div>
     </section>
 
@@ -122,60 +122,62 @@
     </section>
     {{-- potensi section end --}}
 
-
-    <section class="p-6 md:p-12 w-full flex flex-col bg-gray-100 text-gray-800 "
+    {{-- batas wilayah section --}}
+    <section class="p-6 md:p-12 w-full flex flex-col bg-gray-100 text-gray-800"
         style="background-image: url({{ asset('images/batik-bg-fix.png') }}); background-repeat: no-repeat; background-size: cover">
 
-        <div class="">
-            <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-8">Letak Demografis
-                <span class="text-blue-500">Desa</span>
+        <div class="text-start mb-4 lg:mb-0">
+            <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
+                Letak Demografis <span class="text-blue-500">Desa</span>
             </h3>
         </div>
 
-
-        <div class="container mx-auto p-4">
-            <div class="flex flex-col-reverse lg:flex-row justify-center items-center">
-                <div class="w-full lg:w-1/2">
-                    <p class="text-md md:text-base lg:text-xl py-4 font-bold">Batas <span
-                            class="text-blue-500">Wilayah</span></p>
-                    <table class="min-w-full bg-gray-800 rounded-lg">
-                        <thead>
-                            <tr class="border-b border-gray-600">
-                                <th
-                                    class="text-sm sm:text-base md:text-lg lg:text-xl font-bold p-2 text-gray-100 text-left">
-                                    Batas</th>
-                                <th
-                                    class="text-sm sm:text-base md:text-lg lg:text-xl font-bold p-2 text-gray-100 text-left">
-                                    Desa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-gray-600">
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Batas Utara</td>
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Pakistaji</td>
-                            </tr>
-                            <tr class="border-b border-gray-600">
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Batas Timur</td>
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Badean</td>
-                            </tr>
-                            <tr class="border-b border-gray-600">
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Batas Selatan</td>
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Rogojampi</td>
-                            </tr>
-                            <tr>
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Batas Barat</td>
-                                <td class="text-sm sm:text-base p-2 text-gray-100">Gitik</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="w-full flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12">
+            <!-- Card for Details -->
+            <div class="w-full lg:w-1/2 bg-white py-8 sm:py-12 px-4 shadow-xl rounded-3xl">
+                <div>
+                    <p
+                        class="text-center text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-300 bg-clip-text text-transparent">
+                        Demografis
+                    </p>
+                    <p class="text-center text-lg font-semibold mb-4">Batas Wilayah</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between border-b py-2 px-4">
+                            <span class="font-medium">Batas Utara :</span>
+                            <span class="font-medium">Desa Pakistaji</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2 px-4">
+                            <span class="font-medium">Batas Selatan :</span>
+                            <span class="font-medium">Desa Rogojampi</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2 px-4">
+                            <span class="font-medium">Batas Barat :</span>
+                            <span class="font-medium">Desa Gitik</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2 px-4">
+                            <span class="font-medium">Batas Timur :</span>
+                            <span class="font-medium">Desa Badean</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2 px-4">
+                            <span class="font-bold text-emerald-500">Kecamatan :</span>
+                            <span class="font-bold">Rogojoampi</span>
+                        </div>
+                        <div class="flex justify-between py-2 px-4">
+                            <span class="font-bold text-emerald-500">Kabupaten :</span>
+                            <span class="font-bold">Banyuwangi</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="w-full lg:w-1/2 flex justify-center items-center mb-4 lg:mb-0">
-                    <img class="w-3/4 md:h-1/3 lg:w-4/5" src="{{ asset('images/bwi-location.png') }}" alt="bwi-map">
-                </div>
+            <!-- Image Section -->
+            <div class="w-full lg:w-1/2 flex justify-center items-center">
+                <img class="w-full max-w-md md:max-w-lg lg:max-w-xl" src="{{ asset('images/bwi-location.png') }}"
+                    alt="BWI Location">
             </div>
         </div>
     </section>
+    {{-- batas wilayah section end --}}
 
 
     {{-- luas wilayah section --}}
@@ -183,71 +185,94 @@
     <section class="flex flex-col bg-gray-100 text-gray-800 p-6 md:p-12 "
         style="background-image: url({{ asset('images/batik-bg-fix.png') }}); background-repeat: no-repeat; background-size: cover">
         <h3 class="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-8 text-center">Pembagian
-            <span class="text-blue-500">Wilayah</span>
+            <span class="text-blue-500">Dusun</span> dan Jumlah Kartu <span class="text-blue-500">Keluarga</span>
         </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 py-8">
 
             <div
                 class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
                 <div class="flex flex-col">
-                    <p class="font-bold">Luas Total</p>
-                    <p>692.176 Ha</p>
-                </div>
-            </div>
-
-            <div
-                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-                <div class="flex flex-col">
-                    <p class="font-bold ">Pertnian</p>
-                    <p>503.924 Ha</p>
+                    <p class="font-bold">Krajan</p>
+                    <p class="text-center text-yellow-500 font-bold">150 KK</p>
                 </div>
             </div>
 
             <div
                 class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
                 <div class="flex flex-col">
-                    <p class="font-bold">Pemukiman</p>
-                    <p>55.051 Ha</p>
+                    <p class="font-bold ">Karanganyar</p>
+                    <p class="text-center text-yellow-500 font-bold">288 KK</p>
                 </div>
             </div>
 
             <div
                 class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
                 <div class="flex flex-col">
-                    <p class="font-bold">Jalan</p>
-                    <p>19.200 Ha</p>
+                    <p class="font-bold">Bades</p>
+                    <p class="text-center text-yellow-500 font-bold">651 KK</p>
+                </div>
+            </div>
+
+            <div
+                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
+                <div class="flex flex-col">
+                    <p class="font-bold">Jajangsurat</p>
+                    <p class="text-center text-yellow-500 font-bold">322 KK</p>
                 </div>
             </div>
             <div
                 class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
                 <div class="flex flex-col">
-                    <p class="font-bold">Makam</p>
-                    <p>3.200 Ha</p>
+                    <p class="font-bold">Pancoran</p>
+                    <p class="text-center text-yellow-500 font-bold">302 KK</p>
                 </div>
             </div>
-            <div
-                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-                <div class="flex flex-col">
-                    <p class="font-bold">Fasilitas Umum</p>
-                    <p>15.210 Ha</p>
+
+        </div>
+        <div
+            class="w-full flex flex-col lg:flex-row items-center justify-between p-4 space-y-4 lg:space-y-0 lg:space-x-4">
+            <!-- Card for Details -->
+            <div class="w-full lg:w-1/2 bg-white py-8 sm:py-12 shadow-xl rounded-3xl">
+                <div class="px-6">
+                    <p
+                        class="text-center text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-300 bg-clip-text text-transparent mb-4">
+                        Pembagian Wilayah</p>
+                    <p class="text-center text-lg font-semibold mb-4">Total 692.176 Ha</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between border-b py-2">
+                            <span>Pertanian:</span>
+                            <span>503.924 Ha</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2">
+                            <span>Pemukiman:</span>
+                            <span>55.051 Ha</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2">
+                            <span>Jalan:</span>
+                            <span>19.200 Ha</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2">
+                            <span>Makam:</span>
+                            <span>3.200 Ha</span>
+                        </div>
+                        <div class="flex justify-between border-b py-2">
+                            <span>Fasilitas Umum:</span>
+                            <span>15.210 Ha</span>
+                        </div>
+                        <div class="flex justify-between py-2">
+                            <span>Lain - lain:</span>
+                            <span>2.280 Ha</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div
-                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-                <div class="flex flex-col">
-                    <p class="font-bold">Lain - lain</p>
-                    <p>2.280 Ha</p>
-                </div>
+
+            <!-- Chart Section -->
+            <div class="w-full flex justify-center lg:w-1/2 bg-white py-8 sm:py-12 shadow-xl rounded-3xl ">
+                <x-chart-pembagian-wilayah :data="[503924, 55051, 19200, 3200, 15210, 2280]" :labels="['Pertanian', 'Pemukiman', 'Jalan', 'Makam', 'Fasilitas Umum', 'Lain-lain']" />
             </div>
         </div>
-        <div class="w-full flex flex-col-reverse lg:flex-row items-center justify-center">
-            <div class="w-full lg:w-3/5 flex justify-center">
-                <x-chart-pembagian-wilayah></x-chart-pembagian-wilayah>
-            </div>
-            <div class="w-full lg:w-2/5 flex justify-center">
-                <img src="{{ asset('images/data-3d.png') }}" alt="data-3d" class="h-full max-h-96">
-            </div>
-        </div>
+
     </section>
 
     {{-- Section wilayah end --}}

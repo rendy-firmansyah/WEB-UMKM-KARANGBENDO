@@ -68,7 +68,7 @@
                                     <td data-label="content">{{ Str::limit($item->isi_konten, 30) }}</td>
                                     <td data-label="author" class="font-medium">{{ $item->author }}</td>
                                     <td data-label="image">
-                                        <img class="max-w-24 rounded-md"
+                                        <img class="w-32 h-20 rounded-md"
                                             src="{{ asset('images/content/' . $item->gambar_berita) }}" alt="">
                                     </td>
                                     <td class="text-sm text-gray-800 font-medium py-4">

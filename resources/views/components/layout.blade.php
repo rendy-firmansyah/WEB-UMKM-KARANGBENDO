@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="{{ asset('dist/logo-icon-umkm.jpeg') }}" type="image/x-icon">
     <title>{{ $title ?? 'UMKM Unggulan Desa Karangbendo' }}</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-
+    @stack('scripts')
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
@@ -55,12 +55,37 @@
 </head>
 
 <body>
-
+    <div id="loading-screen" class="fixed inset-0 bg-gray-800 flex flex-col items-center justify-center z-50 ">
+        <div class="flex space-x-2 justify-center items-center mb-4">
+            <div class="h-6 w-6 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+            <div class="h-6 w-6 bg-blue-600 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+            <div class="h-6 w-6 bg-blue-600 rounded-full animate-bounce"></div>
+        </div>
+        <p class="text-gray-100 text-lg">Loading...</p>
+    </div>
     <x-navbar></x-navbar>
     <main>
         {{ $slot }}
     </main>
     <x-footer></x-footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loadingScreen = document.getElementById('loading-screen');
+
+            function showLoading() {
+                loadingScreen.classList.remove('hidden');
+            }
+
+            function hideLoading() {
+                loadingScreen.classList.add('hidden');
+            }
+
+            showLoading();
+            window.addEventListener('load', hideLoading);
+
+            window.addEventListener('beforeunload', showLoading);
+        });
+    </script>
 </body>
 
 </html>
