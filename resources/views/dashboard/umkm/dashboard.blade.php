@@ -49,11 +49,9 @@
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <th>Alamat</th>
                                 <th>Image</th>
                                 <th>Upload Date</th>
                                 <th>Status</th>
-                                <th>Phone</th>
                                 <th class="flex justify-end">Action</th>
                             </tr>
                         </thead>
@@ -78,7 +76,6 @@
                                         {{ $displayHarga }}
                                     </td>
 
-                                    <td data-label="alamat">{{ $item->alamat }}</td>
                                     <td data-label="Image">
                                         <img class="w-32 h-20 object-cover rounded-md"
                                             src="{{ asset('images/content/' . $item->gambar) }}" alt="">
@@ -94,13 +91,6 @@
                                             {{ $item->status_produk }}
                                         </span>
                                     </td>
-                                    <td data-label="phone">
-                                        <p>{{ $item->nomor_telepon }}</p>
-
-                                    </td>
-
-
-
 
                                     <td class="actions-cell">
                                         <div class="buttons right nowrap">
