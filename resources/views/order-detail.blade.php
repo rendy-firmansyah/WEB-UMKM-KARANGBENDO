@@ -44,14 +44,14 @@
                         </table>
 
                         <div class="mt-4 flex items-start flex-col  gap-1 lg:flex-row">
-                            <a href="https://wa.me/{{ $item->nomor_telepon }}">
+                            <a href="https://wa.me/{{ $item->user->nomor_telepon }}">
                                 <button type="button"
                                     class="bg-emerald-500 hover:bg-emerald-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
                                     Hubungi Penjual
                                     <i class="ri-whatsapp-line px-2"></i>
                                 </button>
                             </a>
-                            <a href="{{ $item->alamat }}">
+                            <a href="{{$item->user->alamat}}">
                                 <button
                                     class="bg-blue-500 hover:bg-blue-700 transition-all text-white font-medium py-2 px-4 rounded inline-flex items-center">
                                     lihat Alamat

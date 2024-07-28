@@ -50,11 +50,16 @@ class UMKMUserController extends Controller
             }
         }
 
+        $nomor_telepon = $request->nomor_telepon;
+        if (substr($nomor_telepon, 0, 2) == '08') {
+            $nomor_telepon = '628' . substr($nomor_telepon, 2);
+        }
+
         $umkmUser = User::create([
             'name' => 'UMKM',
             'nama_umkm' => $request->nama_umkm,
             'owner' => $request->owner,
-            'nomor_telepon' => $request->nomor_telepon,
+            'nomor_telepon' => $nomor_telepon,
             'alamat' => $request->alamat,
             'email' => $request->email,
             'password' => Hash::make($request->password)
@@ -63,7 +68,7 @@ class UMKMUserController extends Controller
         // dd($umkmUser);
         Alert::success('Berhasil', 'Akun UMKM Berhasil Dibuat');
         return redirect()->route('daftarumkm.index');
-}
+    }
 
     /**
      * Display the specified resource.

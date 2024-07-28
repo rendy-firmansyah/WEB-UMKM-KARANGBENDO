@@ -10,6 +10,8 @@ class Produk extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nama_produk', 'deskripsi_produk', 'harga', 'status_produk', 'gambar', 'user_id'];
+
     // Definisi relasi many-to-one dengan user
     public function user()
     {

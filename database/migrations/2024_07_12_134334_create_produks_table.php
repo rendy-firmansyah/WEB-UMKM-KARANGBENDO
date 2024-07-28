@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_produk');
             $table->string('gambar');
-            $table->string('deskripsi_produk');
+            $table->text('deskripsi_produk');
             $table->integer('harga');
             $table->enum('kategori', ['Fashion', 'Makanan', 'Aksesoris', 'Kosmetik']);
             $table->enum('status_produk', ['Tersedia', 'Tidak Tersedia']);

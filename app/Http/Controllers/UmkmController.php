@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UmkmController extends Controller
 {
     public function index() {
-        $produk = Produk::all();
+        $produk = Produk::with('user')->get();
         return view('dashboard.umkm.dashboard', compact('produk'));
     }
 }

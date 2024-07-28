@@ -29,5 +29,14 @@ class UserSeeder extends Seeder
             'email' => 'pandawa@gmail.com',
             'password' => bcrypt('pandawa123'),
         ]);
+        $rahayu = User::create([
+            'name' => 'UMKM',
+            'nama_umkm' => 'Kerupuk Rahayu',
+            'owner' => 'Bu Fuad',
+            'alamat' => 'https://maps.app.goo.gl/tGGRczPuNt9qKQJQ8',
+            'nomor_telepon' => '085648408330',
+            'email' => 'rahayu@gmail.com',
+            'password' => bcrypt('rahayu123'),
+        ]);
     }
 }
