@@ -32,8 +32,8 @@
         <section>
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div>
-                    <h2 class="text-lg md:text-2xl lg:text-3xl font-bold mb-3 leading-8 text-start pt-4">1. Batik <span
-                            class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-purple-800 to-[#755553]">Pandawa</span>
+                    <h2 class="text-lg md:text-2xl lg:text-3xl font-bold mb-3 leading-8 text-start pt-4">
+                        {{ $umkms->count(), 0 }}
                     </h2>
                 </div>
 
@@ -51,7 +51,12 @@
                         @if (count($umkms) > 0)
                             <select name="umkm" id="umkmSelect"
                                 class="h-12 w-full lg:w-60 border border-gray-300 text-gray-100 pl-11 text-base font-normal bg-blue-500 rounded-full block py-2.5 px-4 appearance-none relative focus:outline-none transition-all duration-500 hover:bg-blue-600 focus:bg-blue-600">
-                                <option value="" selected disabled class="bg-transparent text-white">Short by UMKM
+                                <option value="" selected disabled class="bg-transparent text-white">
+                                    @if (request('umkm'))
+                                        {{ request('umkm') }}
+                                    @else
+                                        Pilih UMKM
+                                    @endif
                                 </option>
                                 @foreach ($umkms as $umkm)
                                     @if (!empty($umkm->nama_umkm))
@@ -125,7 +130,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="{{ route('order-detail') }}">
+                            <a href="{{ route('order-detail', $item->id) }}">
                                 <button type="button"
                                     class="m-4 bg-blue-500 hover:bg-blue-700 text-gray-100 text-sm md:text-md lg:text-lg font-medium py-2 px-8 transition-all rounded-lg">Beli
                                 </button>

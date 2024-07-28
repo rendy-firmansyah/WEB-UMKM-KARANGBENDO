@@ -36,8 +36,12 @@ class UserController extends Controller
         return view('umkm', ['produk' => $produk, 'umkms' => $umkms]);
     }    
 
-    public function indexOrder () {
-        return view('order-detail');
+    public function indexOrder ($id) {
+        $produk = Produk::find($id);
+        if (!$produk) {
+            return redirect()->route('home')->with('error', 'Produk tidak ditemukan.');
+        }
+        return view('order-detail', ['produk' => [$produk]]);
     }
 
     public function indexBerita () {
@@ -52,4 +56,5 @@ class UserController extends Controller
     }
     return view('detail-berita', ['beritaAll' => [$berita]]);
    }
+
 }

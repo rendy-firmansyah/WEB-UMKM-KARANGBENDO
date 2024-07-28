@@ -49,11 +49,12 @@
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                {{-- <th>Alamat</th> --}}
+                                <th>Alamat</th>
                                 <th>Image</th>
                                 <th>Upload Date</th>
                                 <th>Status</th>
-                                <th class="text-right">Action</th>
+                                <th>Phone</th>
+                                <th class="flex justify-end">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -77,14 +78,14 @@
                                         {{ $displayHarga }}
                                     </td>
 
-                                    {{-- <td data-label="alamat">{{ $item->alamat }}</td> --}}
+                                    <td data-label="alamat">{{ $item->alamat }}</td>
                                     <td data-label="Image">
                                         <img class="w-32 h-20 object-cover rounded-md"
                                             src="{{ asset('images/content/' . $item->gambar) }}" alt="">
                                     </td>
                                     <td data-label="Upload Date">
-                                        <small class="text-gray-800 font-medium"
-                                            title="Oct 25, 2021">{{ $item->created_at->format('M d, Y') }}</small>
+                                        <p class="text-gray-800 font-medium" title="{{ $item->created_at }}">
+                                            {{ $item->created_at->format('M d, Y') }}</p>
                                     </td>
 
                                     <td data-label="Status" class="status-cell">
@@ -93,6 +94,11 @@
                                             {{ $item->status_produk }}
                                         </span>
                                     </td>
+                                    <td data-label="phone">
+                                        <p>{{ $item->nomor_telepon }}</p>
+
+                                    </td>
+
 
 
 
