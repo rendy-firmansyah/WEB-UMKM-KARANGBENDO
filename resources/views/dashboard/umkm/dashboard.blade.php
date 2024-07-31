@@ -27,6 +27,9 @@
                 <h1 class="title">
                     Dashboard
                 </h1>
+                <p class="text-center">Selamat Datang, <span
+                        class="font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500">{{ Auth::user()->nama_umkm }}</span>
+                </p>
             </div>
         </section>
 

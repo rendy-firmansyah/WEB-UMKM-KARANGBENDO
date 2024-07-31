@@ -3,7 +3,8 @@
 
 
     <section
-        class=" p-6 md:p-12 w-full flex flex-col-reverse lg:flex-row md:flex-row bg-gray-800 sm:py-24  text-gray-100 items-center min-h-screen"
+        class="px-6 min-h-[90vh] pb-10 md:p-12 md:min-h-screen
+         w-full flex flex-col-reverse lg:flex-row md:flex-row bg-gray-800 text-gray-100 items-center"
         id="hero"
         style="background-image: url({{ asset('images/bg-sectionHome.png') }}); background-repeat: no-repeat; background-size: cover;">
         <div class="w-full lg:w-1/2 container">
@@ -11,7 +12,7 @@
                 <span
                     class="text-xs sm:text-sm md:text-md lg:text-lg bg-gray-700 px-2 sm:px-3 py-1 rounded-full text-gray-100">#umkmmaju</span>
             </div>
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-8">Selamat
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3">Selamat
                 datang Desa
                 <span class="text-blue-500">Karangbendo</span>
             </h1>
@@ -31,9 +32,8 @@
         <div class="w-full lg:w-1/2 flex justify-center">
             <img src="{{ asset('images/hero-img.png') }}" alt="ragam-batik" class="w-2/3 md:w-3/4 lg:w-1/2">
         </div>
-
-
     </section>
+
 
     {{-- penegnalan desa section start --}}
     <section

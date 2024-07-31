@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description"
-        content="UMKM Unggulan Desa Karangbendo adalah pusat kegiatan ekonomi kreatif di Karangbendo. Kami menyediakan berbagai produk batik, kerupuk, dan masih banyak potensi lain yang dimiliki oleh deesa karangbendo.">
+        content="UMKM Unggulan Desa Karangbendo menyediakan berbagai produk batik, kerupuk, dan masih banyak potensi lain yang dimiliki oleh deesa karangbendo.">
     <meta name="keywords"
         content="UMKM, Desa Karangbendo, Batik, Kerupuk, Produk Lokal, Ekonomi Kreatif, Banyuwangi, Karangbendo, Pandawa, Larasati, Srokandi, Kerupuk Rahayu, Kota Banyuwangi, Rogojampi, Web Desa, Website Desa, UMKM Unggulan Desa Karangbendo">
     <meta name="author" content="Desa Karangbendo">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="UMKM Desa Karangbendo - Membangun Ekonomi Lokal dengan Kreativitas">
     <meta property="og:description"
-        content="UMKM Desa Karangbendo adalah pusat kegiatan ekonomi kreatif di Karangbendo. Kami menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
+        content="UMKM Desa Karangbendo menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
     <meta property="og:image" content="{{ asset('dist/logo-icon-umkm.jpeg') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="UMKM Desa Karangbendo - Membangun Ekonomi Lokal dengan Kreativitas">
     <meta name="twitter:description"
-        content="UMKM Desa Karangbendo adalah pusat kegiatan ekonomi kreatif di Karangbendo. Kami menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
+        content="UMKM Desa Karangbendo menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
     <meta name="twitter:image" content="{{ asset('dist/logo-icon-umkm.jpeg') }}">
     <meta name="twitter:site" content="@karangbendo_umkm">
     <link rel="canonical" href="{{ url()->current() }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('dist/logo-icon-umkm.jpeg') }}">
     <meta itemprop="name" content="UMKM Desa Karangbendo - Membangun Ekonomi Lokal dengan Kreativitas">
     <meta itemprop="description"
-        content="UMKM Desa Karangbendo adalah pusat kegiatan ekonomi kreatif di Karangbendo. Kami menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
+        content="UMKM Desa Karangbendo menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
     <meta itemprop="image" content="{{ asset('images/schema-image.jpg') }}">
     <link rel="icon" href="{{ asset('dist/logo-icon-umkm.jpeg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dist/logo-icon-umkm.jpeg') }}" type="image/x-icon">
@@ -50,6 +50,14 @@
 
         * {
             scroll-behavior: smooth
+        }
+
+        select {
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path d="M5.29 7.71a1 1 0 011.41 0L10 11.34l3.29-3.63a1 1 0 011.42 0l.03.03a1 1 0 010 1.41l-4 4a1 1 0 01-1.42 0l-4-4a1 1 0 01-.03-1.41z" /></svg>');
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.25rem;
+            padding-right: 2.5rem;
         }
     </style>
 </head>
