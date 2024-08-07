@@ -14,23 +14,23 @@
     <meta property="og:title" content="UMKM Desa Karangbendo - Membangun Ekonomi Lokal dengan Kreativitas">
     <meta property="og:description"
         content="UMKM Desa Karangbendo menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
-    <meta property="og:image" content="{{ asset('dist/logo-icon-umkm.jpeg') }}">
+    <meta property="og:image" content="{{ asset('images/logo-icon-umkm.jpeg') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="UMKM Desa Karangbendo - Membangun Ekonomi Lokal dengan Kreativitas">
     <meta name="twitter:description"
         content="UMKM Desa Karangbendo menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
-    <meta name="twitter:image" content="{{ asset('dist/logo-icon-umkm.jpeg') }}">
+    <meta name="twitter:image" content="{{ asset('images/logo-icon-umkm.jpeg') }}">
     <meta name="twitter:site" content="@karangbendo_umkm">
     <link rel="canonical" href="{{ url()->current() }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('dist/logo-icon-umkm.jpeg') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo-icon-umkm.jpeg') }}">
     <meta itemprop="name" content="UMKM Desa Karangbendo - Membangun Ekonomi Lokal dengan Kreativitas">
     <meta itemprop="description"
         content="UMKM Desa Karangbendo menyediakan berbagai produk batik, kerupuk, dan kerajinan lokal berkualitas tinggi.">
     <meta itemprop="image" content="{{ asset('images/schema-image.jpg') }}">
-    <link rel="icon" href="{{ asset('dist/logo-icon-umkm.jpeg') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('dist/logo-icon-umkm.jpeg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo-icon-umkm.jpeg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/logo-icon-umkm.jpeg') }}" type="image/x-icon">
     <title>{{ $title ?? 'UMKM Unggulan Desa Karangbendo' }}</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     @stack('scripts')
