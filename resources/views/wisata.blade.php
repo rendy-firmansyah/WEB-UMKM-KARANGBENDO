@@ -41,7 +41,7 @@
                     class="bg-white bg-opacity-90 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden group">
                     <div class="relative h-40 mb-4">
                         <i
-                            class="ri-plant-line text-6xl text-yellow-600 absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:opacity-0"></i>
+                            class="ri-contrast-drop-line text-6xl text-yellow-600 absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:opacity-0"></i>
                         <img src="{{ asset('images/pancoran.jpg') }}" alt="Kebun Buah Karangbendo"
                             class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     </div>
@@ -208,51 +208,6 @@
         </div>
     </section>
 
-    <!-- New Section -->
-    {{-- <section
-        class="relative p-6 md:p-12 w-full bg-gray-100 text-gray-800 min-h-screen flex flex-col justify-center items-center overflow-hidden"
-        style="background-image: url({{ asset('images/batik-biru.png') }}); background-repeat: no-repeat; background-size: cover;">
-
-        <div class="container mx-auto px-6 lg:px-20">
-            <h2
-                class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-green-500 to-yellow-400">
-                Destinasi Wisata Terbaru
-            </h2>
-
-            <div class="flex flex-col lg:flex-row mb-16 items-center">
-                <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
-                    <h3
-                        class="text-xl md:text-2xl lg:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-yellow-500 to-orange-500">
-                        Taman Bunga Karangbendo
-                    </h3>
-                    <p class="text-gray-700 text-lg">
-                        Nikmati keindahan taman bunga yang menakjubkan dengan berbagai macam flora dan jalur jalan kaki
-                        yang indah.
-                    </p>
-                </div>
-                <div class="w-full lg:w-1/2">
-                    <img src="{{ asset('images/taman-bunga.jpg') }}" alt="Taman Bunga Karangbendo"
-                        class="rounded-lg shadow-lg">
-                </div>
-            </div>
-
-            <div class="flex flex-col lg:flex-row-reverse  items-center">
-                <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
-                    <h3
-                        class="text-xl md:text-2xl lg:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-                        Cafe Rindu Alam
-                    </h3>
-                    <p class="text-gray-700 text-lg">
-                        Santai sambil menikmati hidangan lezat di cafe yang dikelilingi pemandangan alam yang menawan.
-                    </p>
-                </div>
-                <div class="w-full lg:w-1/2">
-                    <img src="{{ asset('images/cafe-rindu-alam.jpg') }}" alt="Cafe Rindu Alam"
-                        class="rounded-lg shadow-lg">
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <style>
         @keyframes text-fade {
