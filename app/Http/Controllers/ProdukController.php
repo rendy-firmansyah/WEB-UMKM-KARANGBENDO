@@ -36,7 +36,7 @@ class ProdukController extends Controller
             'nama_produk' => 'required|max:255',
             'gambar' => 'required|mimes:png,jpg,jpeg,svg,gif,webp',
             'deskripsi_produk' => 'required',
-            'harga' => 'required',
+            'harga' => 'nullable|numeric',
             'kategori' => 'required|in:Fashion,Makanan,Aksesoris,Kosmetik'
         ]);
 
@@ -50,7 +50,7 @@ class ProdukController extends Controller
             $produk->gambar = $namaGambar;
         };
         $produk->deskripsi_produk = $request->input('deskripsi_produk');
-        $produk->harga = $request->input('harga');
+        $produk->harga = $request->input('harga') ?? null;
         $produk->kategori = $request->input('kategori');
         $produk->status_produk = 'Tersedia';
         $produk->user_id = Auth::id();

@@ -49,13 +49,9 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Price</th>
                                 <th>Image</th>
                                 <th>Upload Date</th>
-                                <th>Status</th>
-                                <th class="flex justify-end">Action</th>
+                                <th class="text-right">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,18 +62,6 @@
                                             <img src="{{ asset('images/avatar-admin-umkm.png') }}" class="rounded-full">
                                         </div>
                                     </td>
-                                    <td data-label="Name">{{ Str::limit($item->nama_produk, 30) }}</td>
-                                    <td data-label="Description">
-                                        {{ Str::limit($item->deskripsi_produk, 10) }}
-                                    </td>
-                                    <td data-label="Price" class="whitespace-nowrap overflow-hidden text-ellipsis">
-                                        @php
-                                            $harga = $item->harga;
-                                            $formattedHarga = number_format($harga, 0, ',', '.');
-                                            $displayHarga = 'Rp. ' . $formattedHarga;
-                                        @endphp
-                                        {{ $displayHarga }}
-                                    </td>
 
                                     <td data-label="Image">
                                         <img class="w-32 h-20 object-cover rounded-md"
@@ -86,13 +70,6 @@
                                     <td data-label="Upload Date">
                                         <p class="text-gray-800 font-medium" title="{{ $item->created_at }}">
                                             {{ $item->created_at->format('M d, Y') }}</p>
-                                    </td>
-
-                                    <td data-label="Status" class="status-cell">
-                                        <span
-                                            class=" {{ $item->status_produk === 'Tersedia' ? 'inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20' : 'inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10' }} ">
-                                            {{ $item->status_produk }}
-                                        </span>
                                     </td>
 
                                     <td class="actions-cell">
@@ -148,11 +125,10 @@
     </div>
 
 
-    @include('dashboard.partials.script')
 
     @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
     @include('dashboard.partials.script')
-    <script>
+    {{-- <script>
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
             n = f.fbq = function() {
@@ -173,8 +149,8 @@
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '658339141622648');
         fbq('track', 'PageView');
-    </script>
-    <script>
+    </script> --}}
+    {{-- <script>
         document.addEventListener('DOMContentLoaded', () => {
             const deleteButtons = document.querySelectorAll('button[data-target="sample-modal"]');
             const deleteForm = document.getElementById('delete-form');
@@ -190,8 +166,8 @@
             });
         });
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1" /></noscript>
+    <noscript><img height="1" width="1" style="display:none" --}}
+    {{-- src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1" /></noscript> --}}
 
     <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">

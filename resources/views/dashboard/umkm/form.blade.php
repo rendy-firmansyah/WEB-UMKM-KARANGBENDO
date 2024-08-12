@@ -49,7 +49,7 @@
                                 </label>
                                 <input id="product-price" type="number" placeholder="Masukkan harga produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="harga" required />
+                                    name="harga" />
                             </div>
                         </div>
                         <div class="mb-4">

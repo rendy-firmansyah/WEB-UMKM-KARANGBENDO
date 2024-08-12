@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->string('gambar');
             $table->text('deskripsi_produk');
-            $table->integer('harga');
+            $table->integer('harga')->nullable()->change();
             $table->enum('kategori', ['Fashion', 'Makanan', 'Aksesoris', 'Kosmetik']);
             $table->enum('status_produk', ['Tersedia', 'Tidak Tersedia']);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

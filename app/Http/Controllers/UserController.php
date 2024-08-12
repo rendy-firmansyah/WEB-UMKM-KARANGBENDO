@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Berita;
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -57,4 +58,18 @@ class UserController extends Controller
     return view('detail-berita', ['beritaAll' => [$berita]]);
    }
 
+   public function indexWisata () {
+    return view('wisata');
+}
+
+    public function indexBatik () {
+        return view('batik');
+    }
+
+    public function indexKuliner ( ) {
+        return view('kuliner');
+
+    }
+    public function indexPertanian ( ) {
+        return view('pertanian');}
 }

@@ -33,6 +33,7 @@
                     class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-teal-500">UMKM
                 </span> Unggulan
             </h3>
+
             <form class="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-4 w-full md:w-auto"
                 action="{{ route('filterProduk') }}" id="filterForm" method="POST">
                 @csrf
@@ -51,7 +52,7 @@
                                 </option>
                                 @foreach ($umkms as $umkm)
                                     @if (!empty($umkm->nama_umkm))
-                                        <option value="{{ $umkm->nama_umkm }}" class="text-gray-800 bg-gray-100">
+                                        <option value="{{ $umkm->nama_umkm }}" class="bg-gray-100 text-gray-800">
                                             {{ $umkm->nama_umkm }}
                                         </option>
                                     @endif
@@ -83,36 +84,35 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-4">
                 @foreach ($produk as $item)
                     <div
-                        class="w-full transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                        class="transition transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                         <img class="h-48 w-full object-cover object-center"
                             src="{{ asset('images/content/' . $item->gambar) }}" alt="Product Image" />
                         <div class="p-4">
-                            <h2 class="mb-2 text-lg font-medium capitalize text-gray-900">{{ $item->nama_produk }}</h2>
-                            <p class="mb-2 text-base text-gray-700">{{ Str::limit($item->deskripsi_produk, 100) }}</p>
-                            <div class="flex items-center">
-                                <p class="mr-2 text-lg font-semibold text-gray-900">
-                                    @php
-                                        $harga = $item->harga;
-                                        $formattedHarga = number_format($harga, 0, ',', '.');
-                                        $displayHarga = 'Rp. ' . $formattedHarga;
-                                    @endphp
-                                    {{ $displayHarga }}</p>
-                                <p class="text-base font-medium text-gray-500 line-through"></p>
-                                <p
-                                    class=" {{ $item->status_produk === 'Tersedia' ? 'inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20' : 'inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10' }} ">
-                                    {{ $item->status_produk }}
-                                </p>
+                            <div class="flex justify-start gap-4 items-center mb-3">
+                                <div class="bg-teal-500 w-10 h-10 rounded-full flex justify-center items-center">
+                                    <i class="ri-store-2-fill text-gray-100 text-xl"></i>
+                                </div>
+                                <h2 class="text-md md:text-lg font-bold">{{ $item->user->nama_umkm }}</h2>
+                            </div>
+                            <div class="flex justify-start gap-4 items-center">
+                                <div class="bg-blue-500 w-10 h-10 rounded-full flex justify-center items-center">
+                                    <i class="ri-user-follow-fill text-gray-100 text-xl"></i>
+                                </div>
+                                <h2 class="text-md md:text-lg font-semibold text-gray-700">{{ $item->user->owner }}
+                                </h2>
                             </div>
                         </div>
                         <div>
-                            <a href="{{ route('order-detail', $item->id) }}">
+                            <a href="{{ route('detail-umkm', $item->id) }}">
                                 <button type="button"
-                                    class="m-4 bg-blue-500 hover:bg-blue-700 text-gray-100 text-sm md:text-md lg:text-lg font-medium py-2 px-8 transition-all rounded-lg">Beli
+                                    class="m-4 bg-blue-500 hover:bg-blue-700 text-gray-100 text-sm md:text-md font-medium py-2 px-8 transition-all rounded-lg">Kunjungi
+                                    UMKM
                                 </button>
                             </a>
                         </div>
                     </div>
-                @endforeach
+            </div>
+            @endforeach
             </div>
         </section>
     </section>
