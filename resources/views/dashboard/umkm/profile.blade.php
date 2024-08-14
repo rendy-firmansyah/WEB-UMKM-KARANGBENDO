@@ -48,7 +48,7 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <input type="text" name="nama_umkm" placeholder="berikan toko anda nama...." value={{$user->nama_umkm}}
+                                        <input type="text" name="nama_umkm" placeholder="berikan toko anda nama...." value="{{old('nama_umkm', $user->nama_umkm)}}"
                                             class="input">
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                     <div class="field">
                         <label class="label">Store Name</label>
                         <div class="control">
-                            <input type="text" readonly value={{$user->nama_umkm}} class="input is-static">
+                            <input type="text" readonly value="{{ old('nama_umkm',$user->nama_umkm)}}" class="input is-static">
                         </div>
                     </div>
                     <hr>
