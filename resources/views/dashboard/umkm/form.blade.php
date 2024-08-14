@@ -106,6 +106,19 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="mb-4">
+                            <label for="categoryies" class=" text-gray-800 text-sm font-bold">Pilih
+                                Kategori</label>
+                            <select id="countries"
+                                class="bg-white border  text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2 "
+                                name="kategori" required>
+                                <option selected disabled class="bg-slate-100">Select Category</option>
+                                <option class="font-medium" value="Fashion"
+                                    {{ old('kategori') == 'Fashion' ? 'selected' : '' }}>Fashion</option>
+                                <option class="font-medium" value="Makanan"
+                                    {{ old('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
+                            </select>
+                        </div>
                         {{-- <div class="mb-4 relative w-32">
                             <img id="preview-image" class="hidden w-32 h-32 object-cover rounded-lg shadow-md" />
                             <button id="remove-image"

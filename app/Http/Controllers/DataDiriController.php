@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DataDiriController extends Controller
 {
@@ -11,7 +13,6 @@ class DataDiriController extends Controller
      */
     public function index()
     {
-       
     }
 
     /**
@@ -19,7 +20,7 @@ class DataDiriController extends Controller
      */
     public function create()
     {
-       return view('dashboard.umkm.profile');
+
     }
 
     /**
@@ -27,7 +28,7 @@ class DataDiriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -41,9 +42,11 @@ class DataDiriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        //
+        $user = Auth::user();
+        // $editUser = $user()
+        return view('dashboard.umkm.profile', compact('user'));
     }
 
     /**
@@ -51,7 +54,24 @@ class DataDiriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'foto_profile' => 'image|mimes:png,jpg,jpeg',
+            'deskripsi_toko' => '',
+        ]);
+        $user = Auth::user();
+        // $profile = User::find($user_id);
+        if ($request->hasFile('foto_profile'))
+        {
+            $gambar = $request->file('foto_profile');
+            $namaGambar = time(). '.' .$gambar->getClientOriginalExtension();
+            $gambar->move(public_path('images/content'), $namaGambar);
+            $user->foto_profile = $namaGambar;
+        };
+        $user->deskripsi_toko = $request->input('deskripsi_toko');
+        $user->save();
+
+        return redirect()->back();
+        
     }
 
     /**

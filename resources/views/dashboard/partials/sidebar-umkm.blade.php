@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li class="--set-active-forms-html">
-                <a href="{{ route('profileUmkm.create') }}">
+                <a href="{{ route('profileUmkm.edit', ['profileUmkm' => Auth::user()->id]) }}">
                     <span class="icon"><i class="mdi mdi-account-box"></i></span>
                     <span class="menu-item-label">Profile</span>
                 </a>

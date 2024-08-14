@@ -25,18 +25,21 @@
                     </p>
                 </header>
                 <div class="card-content">
-                    <form>
+                    <form action="{{route('profileUmkm.update', ['profileUmkm' => $user->id] )}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
                         <div class="field">
                             <label class="label">Foto Profile</label>
                             <div class="field-body">
-                                <div class="field file">
+                                {{-- <div class="field file">
                                     <label class="upload control">
                                         <a class="button blue">
                                             Upload
                                         </a>
                                         <input type="file">
                                     </label>
-                                </div>
+                                </div> --}}
+                                <input type="file" name="foto_profile" id="">
                             </div>
                         </div>
                         <hr>
@@ -45,8 +48,8 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <input type="text" autocomplete="on" name="name" value="Kerupuk Rahayu"
-                                            class="input" required>
+                                        <input type="text" name="nama_umkm" placeholder="berikan toko anda nama...." value={{$user->nama_umkm}}
+                                            class="input">
                                     </div>
                                 </div>
                             </div>
@@ -56,8 +59,8 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <input type="email" autocomplete="on" name="email"
-                                            value="Beli Kerupuk Gratis nasi" class="input" required>
+                                        <input type="text" autocomplete="on" name="deskripsi_toko"
+                                            placeholder="berikan toko anda deskripsi...." value="{{$user->deskripsi_toko ?: 'toko anda masih belum ada deskripsinya nih...'}}" class="input" required>
                                     </div>
                                 </div>
                             </div>
@@ -82,21 +85,20 @@
                 </header>
                 <div class="card-content">
                     <div class="image w-48 h-48 mx-auto">
-                        <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe"
-                            class="rounded-full">
+                        <img src="{{ $user->foto_profile ? asset('images/content/' . $user->foto_profile) : 'https://avatars.dicebear.com/v2/initials/john-doe.svg' }}" alt="Profile Image" class="rounded-full">
                     </div>
                     <hr>
                     <div class="field">
                         <label class="label">Store Name</label>
                         <div class="control">
-                            <input type="text" readonly value="Kerupuk Rahayu" class="input is-static">
+                            <input type="text" readonly value={{$user->nama_umkm}} class="input is-static">
                         </div>
                     </div>
                     <hr>
                     <div class="field">
                         <label class="label">Deskription Store</label>
                         <div class="control">
-                            <input type="text" readonly value="beli 5 gratis toko" class="input is-static">
+                            <input type="text" readonly value="{{$user->deskripsi_toko ?: 'toko anda masih belum ada deskripsinya nih...'}}" class="input is-static">
                         </div>
                     </div>
                 </div>

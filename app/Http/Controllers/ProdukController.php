@@ -33,15 +33,15 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_produk' => 'required|max:255',
+            // 'nama_produk' => 'required|max:255',
             'gambar' => 'required|mimes:png,jpg,jpeg,svg,gif,webp',
-            'deskripsi_produk' => 'required',
-            'harga' => 'nullable|numeric',
-            'kategori' => 'required|in:Fashion,Makanan,Aksesoris,Kosmetik'
+            // 'deskripsi_produk' => 'required',
+            // 'harga' => 'nullable|numeric',
+            'kategori' => 'required|in:Fashion,Makanan'
         ]);
 
         $produk = new Produk();
-        $produk->nama_produk = $request->input('nama_produk');
+        // $produk->nama_produk = $request->input('nama_produk');
         if ($request->hasFile('gambar'))
         {
             $gambar = $request->file('gambar');
@@ -49,10 +49,10 @@ class ProdukController extends Controller
             $gambar->move(public_path('images/content'), $namaGambar);
             $produk->gambar = $namaGambar;
         };
-        $produk->deskripsi_produk = $request->input('deskripsi_produk');
-        $produk->harga = $request->input('harga') ?? null;
+        // $produk->deskripsi_produk = $request->input('deskripsi_produk');
+        // $produk->harga = $request->input('harga') ?? null;
         $produk->kategori = $request->input('kategori');
-        $produk->status_produk = 'Tersedia';
+        // $produk->status_produk = 'Tersedia';
         $produk->user_id = Auth::id();
 
         Alert::success('Berhasil', 'Produk Berhasil Di Upload');
@@ -85,17 +85,17 @@ class ProdukController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'nama_produk' => 'max:255',
+            // 'nama_produk' => 'max:255',
             'gambar' => 'image|mimes:png,jpg,jpeg,svg,gif,webp',
-            'deskripsi_produk' => '',
-            'harga' => '',
-            'status_produk' => '',
-            'kategori' => 'in:Fashion,Makanan,Aksesoris,Kosmetik'
+            // 'deskripsi_produk' => '',
+            // 'harga' => '',
+            // 'status_produk' => '',
+            // 'kategori' => 'in:Fashion,Makanan'
         ]);
 
         $produk = Produk::find($id);
         $original = $produk->getAttributes(); 
-        $produk->nama_produk = $request->input('nama_produk');
+        // $produk->nama_produk = $request->input('nama_produk');
         if ($request->hasFile('gambar'))
         {
             $gambar = $request->file('gambar');
@@ -103,10 +103,10 @@ class ProdukController extends Controller
             $gambar->move(public_path('images/content'), $namaGambar);
             $produk->gambar = $namaGambar;
         };
-        $produk->deskripsi_produk = $request->input('deskripsi_produk');
-        $produk->harga = $request->input('harga');
-        $produk->kategori = $request->input('kategori');
-        $produk->status_produk = $request->input('status_produk');
+        // $produk->deskripsi_produk = $request->input('deskripsi_produk');
+        // $produk->harga = $request->input('harga');
+        // $produk->kategori = $request->input('kategori');
+        // $produk->status_produk = $request->input('status_produk');
         $produk->user_id = Auth::id();
 
 
