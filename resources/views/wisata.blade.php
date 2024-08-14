@@ -198,7 +198,7 @@
                 </div>
             </div>
 
-            <!-- Tombol Lihat Lokasi Semua -->
+
             <div class="mt-8 text-start">
                 <a href="{{ route('home') }}"
                     class="inline-block bg-white shadow-lg text-gray-800 font-semibold py-2 px-8 rounded-lg text-lg ">
