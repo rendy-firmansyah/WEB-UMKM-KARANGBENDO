@@ -11,7 +11,8 @@
                         Wisata Kuliner
                     </span>
                     <h1 class="text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
-                        Karangbendo <br><span class="text-orange-600 animate-color-pulse">Surga Kuliner Pedesaan</span>
+                        Karangbendo <br><span class="text-orange-600 ">Surga Kuliner
+                            Pedesaan</span>
                     </h1>
                     <p class="text-lg text-gray-700 lg:text-xl max-w-lg">
                         Nikmati kelezatan autentik masakan desa yang menggoda selera, dari hidangan tradisional hingga

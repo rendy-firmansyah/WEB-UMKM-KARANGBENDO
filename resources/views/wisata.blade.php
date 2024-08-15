@@ -1,7 +1,8 @@
 <x-layout>
     <x-slot name="title">Wisata - Unggulan Desa Karangbendo</x-slot>
 
-    <section class="relative bg-gray-100 w-full min-h-screen flex flex-col justify-center items-center overflow-hidden"
+    <section
+        class="relative bg-gray-100 w-full min-h-screen flex flex-col justify-center items-center overflow-hidden pt-36 sm:pt-24 md:pt-32 lg:pt-10"
         style="background-image: url({{ asset('images/batik-biru.png') }}); background-repeat: no-repeat; background-size: cover;">
 
 
@@ -121,6 +122,14 @@
         }
     </style>
 
+    <div class="flex items-center justify-center p-6 bg-gray-100">
+        <div class="text-center mt-12 md:mt-6 lg:mt-0">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4 tracking-tight">
+                Daftar Wisata
+            </h2>
+            <div class="w-24 h-1 bg-blue-500 mx-auto rounded-full mb-2 md:mb-4 lg:mb-8"></div>
+        </div>
+    </div>
     <section
         class="relative p-6 md:p-12 w-full bg-gray-100 text-gray-800 min-h-screen flex flex-col justify-center items-center overflow-hidden"
         style="background-image: url({{ asset('images/batik-biru.png') }}); background-repeat: no-repeat; background-size: cover;">

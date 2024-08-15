@@ -14,8 +14,8 @@
                     class="bg-white bg-opacity-90 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden group">
                     <div class="relative h-40 mb-4">
                         <i
-                            class="ri-woman-line text-6xl text-pink-600 absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:opacity-0"></i>
-                        <img src="{{ asset('images/batik-srikandi.jpg') }}" alt="Batik Srikandi"
+                            class="ri-color-filter-fill text-6xl text-pink-600 absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:opacity-0"></i>
+                        <img src="{{ asset('images/srikandiBatik.JPG') }}" alt="Batik Srikandi"
                             class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     </div>
                     <h4 class="text-xl font-semibold mb-2 text-pink-900">Batik Srikandi</h4>
@@ -27,7 +27,7 @@
                     <div class="relative h-40 mb-4">
                         <i
                             class="ri-flower-line text-6xl text-purple-600 absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:opacity-0"></i>
-                        <img src="{{ asset('images/batik-larasati.jpg') }}" alt="Batik Larasati"
+                        <img src="{{ asset('images/larasatiBatik.JPG') }}" alt="Batik Larasati"
                             class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     </div>
                     <h4 class="text-xl font-semibold mb-2 text-purple-900">Batik Larasati</h4>
@@ -38,8 +38,8 @@
                     class="bg-white bg-opacity-90 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden group">
                     <div class="relative h-40 mb-4">
                         <i
-                            class="ri-shield-star-line text-6xl text-blue-600 absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:opacity-0"></i>
-                        <img src="{{ asset('images/batik-pandawa.jpg') }}" alt="Batik Pandawa"
+                            class="ri-vip-crown-2-line text-6xl text-blue-600 absolute inset-0 flex items-center justify-center transition-all duration-500 group-hover:scale-150 group-hover:rotate-12 group-hover:opacity-0"></i>
+                        <img src="{{ asset('images/pandawaBatik.JPG') }}" alt="Batik Pandawa"
                             class="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                     </div>
                     <h4 class="text-xl font-semibold mb-2 text-blue-900">Batik Pandawa</h4>
@@ -70,14 +70,14 @@
                         Batik Srikandi menggambarkan kekuatan dan keanggunan pahlawan wanita dalam pewayangan. Motif ini
                         mencerminkan semangat perjuangan dan keberanian.
                     </p>
-                    <a href="#"
+                    <a href="{{ route('umkm') }}"
                         class="inline-block bg-pink-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-pink-700 transition duration-300">
                         Lihat Koleksi
                     </a>
                 </div>
                 <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl shadow-xl">
                     <div class="relative group">
-                        <img src="{{ asset('images/batik-srikandi-detail.jpg') }}" alt="Batik Srikandi"
+                        <img src="{{ asset('images/srikandiBatik.JPG') }}" alt="Batik Srikandi"
                             class="w-full h-auto object-cover transition duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                     </div>
@@ -94,14 +94,14 @@
                         Batik Larasati memadukan motif floral yang anggun dengan warna-warna cerah, mencerminkan
                         kecantikan alam dan keindahan bunga-bunga di Karangbendo.
                     </p>
-                    <a href="#"
+                    <a href="{{ route('umkm') }}"
                         class="inline-block bg-purple-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-purple-700 transition duration-300">
                         Lihat Koleksi
                     </a>
                 </div>
                 <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl shadow-xl">
                     <div class="relative group">
-                        <img src="{{ asset('images/batik-larasati-detail.jpg') }}" alt="Batik Larasati"
+                        <img src="{{ asset('images/larasatiBatik.JPG') }}" alt="Batik Larasati"
                             class="w-full h-auto object-cover transition duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                     </div>
@@ -118,14 +118,14 @@
                         Batik Pandawa menggambarkan nilai-nilai kepahlawanan dan kebijaksanaan dari lima Pandawa dalam
                         cerita Mahabharata, menyimbolkan kearifan lokal Karangbendo.
                     </p>
-                    <a href="#"
+                    <a href="{{ route('umkm') }}"
                         class="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">
                         Lihat Koleksi
                     </a>
                 </div>
                 <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl shadow-xl">
                     <div class="relative group">
-                        <img src="{{ asset('images/batik-pandawa-detail.jpg') }}" alt="Batik Pandawa"
+                        <img src="{{ asset('images/pandawaBatik.JPG') }}" alt="Batik Pandawa"
                             class="w-full h-auto object-cover transition duration-300 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                     </div>

@@ -67,12 +67,12 @@
                             <option value="" selected disabled class="bg-slate-100">Pilih Kategori</option>
                             <option value="Makanan" class="bg-slate-100 text-slate-900"
                                 {{ request('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
-                            <option value="Aksesoris" class="bg-slate-100 text-slate-900"
-                                {{ request('kategori') == 'Aksesoris' ? 'selected' : '' }}>Aksesoris</option>
+                            {{-- <option value="Aksesoris" class="bg-slate-100 text-slate-900"
+                                {{ request('kategori') == 'Aksesoris' ? 'selected' : '' }}>Aksesoris</option> --}}
                             <option value="Fashion" class="bg-slate-100 text-slate-900"
                                 {{ request('kategori') == 'Fashion' ? 'selected' : '' }}>Fashion</option>
-                            <option value="Kosmetik" class="bg-slate-100 text-slate-900"
-                                {{ request('kategori') == 'Kosmetik' ? 'selected' : '' }}>Kosmetik</option>
+                            {{-- <option value="Kosmetik" class="bg-slate-100 text-slate-900"
+                                {{ request('kategori') == 'Kosmetik' ? 'selected' : '' }}>Kosmetik</option> --}}
                         </select>
                     </div>
                 </div>
@@ -82,39 +82,52 @@
         <hr class="border-gray-700 w-full border-2 rounded-full opacity-20">
         <section>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-4">
-                @foreach ($produk as $item)
-                    <div
-                        class="transition transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
-                        <img class="h-48 w-full object-cover object-center"
-                            src="{{ asset('images/content/' . $item->gambar) }}" alt="Product Image" />
-                        <div class="p-4">
-                            <div class="flex justify-start gap-4 items-center mb-3">
-                                <div class="bg-teal-500 w-10 h-10 rounded-full flex justify-center items-center">
-                                    <i class="ri-store-2-fill text-gray-100 text-xl"></i>
+                @forelse ($user as $item)
+                    @if ($item->nama_umkm && $item->owner)
+                        <div
+                            class="transition transform overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                            @if ($item->foto_profile && file_exists(public_path('images/content/' . $item->foto_profile)))
+                                <img class="h-48 w-full object-cover object-center"
+                                    src="{{ asset('images/content/' . $item->foto_profile) }}" alt="umkm Image" />
+                            @else
+                                <div class="h-48 w-full bg-gray-200 flex items-center justify-center gap-3">
+                                    <i class="ri-image-line text-3xl  text-indigo-600"></i>
+                                    <span class="text-gray-500">Gambar tidak tersedia</span>
                                 </div>
-                                <h2 class="text-md md:text-lg font-bold">{{ $item->user->nama_umkm }}</h2>
+                            @endif
+                            <div class="p-4">
+                                <div class="flex justify-start gap-4 items-center mb-3">
+                                    <div class="bg-teal-500 w-10 h-10 rounded-full flex justify-center items-center">
+                                        <i class="ri-store-2-fill text-gray-100 text-xl"></i>
+                                    </div>
+                                    <h2 class="text-md md:text-lg font-bold">{{ $item->nama_umkm }}</h2>
+                                </div>
+                                <div class="flex justify-start gap-4 items-center">
+                                    <div class="bg-blue-500 w-10 h-10 rounded-full flex justify-center items-center">
+                                        <i class="ri-user-follow-fill text-gray-100 text-xl"></i>
+                                    </div>
+                                    <h2 class="text-md md:text-lg font-semibold text-gray-700">{{ $item->owner }}</h2>
+                                </div>
                             </div>
-                            <div class="flex justify-start gap-4 items-center">
-                                <div class="bg-blue-500 w-10 h-10 rounded-full flex justify-center items-center">
-                                    <i class="ri-user-follow-fill text-gray-100 text-xl"></i>
-                                </div>
-                                <h2 class="text-md md:text-lg font-semibold text-gray-700">{{ $item->user->owner }}
-                                </h2>
+                            <div>
+                                <a href="{{ route('detail-umkm', $item->id) }}">
+                                    <button type="button"
+                                        class="m-4 bg-blue-500 hover:bg-blue-700 text-gray-100 text-sm md:text-md font-medium py-2 px-8 transition-all rounded-lg">
+                                        Kunjungi UMKM
+                                    </button>
+                                </a>
                             </div>
                         </div>
-                        <div>
-                            <a href="{{ route('detail-umkm', $item->id) }}">
-                                <button type="button"
-                                    class="m-4 bg-blue-500 hover:bg-blue-700 text-gray-100 text-sm md:text-md font-medium py-2 px-8 transition-all rounded-lg">Kunjungi
-                                    UMKM
-                                </button>
-                            </a>
-                        </div>
+                    @endif
+                @empty
+                    <div class="col-span-full text-center fonmt-bold text-md md:text-xl text-red-500 py-8">
+                        Oops! Belum ada UMKM .
                     </div>
-            </div>
-            @endforeach
+                @endforelse
             </div>
         </section>
+
+
     </section>
 
 </x-layout>

@@ -5,7 +5,7 @@
         <div class="container mx-auto px-4 py-20 lg:py-32">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Konten Utama -->
-                <div class="space-y-8 animate-fade-in-up">
+                <div class="mt-10 md:mt-4 md:space-y-8 animate-fade-in-up">
                     <span
                         class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full inline-block">
                         Inovasi Pertanian
@@ -14,7 +14,7 @@
                         Karangbendo <br><span class="text-green-600 animate-color-pulse">Menuju Pertanian Masa
                             Depan</span>
                     </h1>
-                    <p class="text-lg text-gray-700 lg:text-xl max-w-lg">
+                    <p class="text-lg my-4 lg:my-2 text-gray-700 lg:text-xl max-w-lg">
                         Menyatukan tradisi dan teknologi untuk menciptakan pertanian berkelanjutan yang memberdayakan
                         masyarakat desa.
                     </p>
@@ -34,14 +34,16 @@
 
                 <!-- Ilustrasi Interaktif -->
                 <div class="relative h-96 animate-fade-in">
-                    <div
-                        class="absolute inset-0 bg-green-200 rounded-full animate-blob mix-blend-multiply filter blur-xl opacity-70">
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-blue-200 rounded-full animate-blob animation-delay-2000 mix-blend-multiply filter blur-xl opacity-70">
-                    </div>
-                    <div
-                        class="absolute inset-0 bg-yellow-200 rounded-full animate-blob animation-delay-4000 mix-blend-multiply filter blur-xl opacity-70">
+                    <div class="absolute inset-14 md:inset-0 scale-125 sm:scale-100 transform-gpu">
+                        <div
+                            class="absolute inset-0 bg-green-200 rounded-full animate-blob mix-blend-multiply filter blur-xl opacity-70">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-blue-200 rounded-full animate-blob animation-delay-2000 mix-blend-multiply filter blur-xl opacity-70">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-yellow-200 rounded-full animate-blob animation-delay-4000 mix-blend-multiply filter blur-xl opacity-70">
+                        </div>
                     </div>
                     <img src="{{ asset('images/modern-farm.jpg') }}" alt="Modern Farming"
                         class="relative z-10 w-full lg:w-4/5 h-fit object-contain animate-float rounded-lg">
@@ -49,7 +51,7 @@
             </div>
 
             <!-- Fitur Unggulan -->
-            <div class="mt-20">
+            <div class="mt-10 md:mt-32">
                 <h2 class="text-2xl font-bold text-center text-gray-800 mb-10 animate-fade-in">Keunggulan Kami</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div
@@ -60,7 +62,7 @@
                     </div>
                     <div
                         class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200">
-                        <i class="ri-droplet-line text-4xl text-blue-600 mb-4"></i>
+                        <i class="ri-heavy-showers-line text-4xl text-blue-600 mb-4"></i>
                         <h3 class="font-semibold text-gray-800 mb-2">Irigasi Pintar</h3>
                         <p class="text-gray-600 text-sm">Sistem irigasi otomatis berbasis IoT untuk efisiensi air.</p>
                     </div>

@@ -15,35 +15,39 @@ class UserController extends Controller
     }
 
     public function indexUmkm(Request $request) {
-        $kategori = $request->input('kategori', null);
-        $umkm = $request->input('umkm', null);
-    
-        $query = Produk::query();
-    
-        if ($kategori) {
-            $query->where('kategori', $kategori);
-        }
-    
-        if ($umkm) {
-            $query->whereHas('user', function ($q) use ($umkm) {
-                $q->where('nama_umkm', $umkm);
-            });
-        }
-    
-        $produk = $query->get();
-    
-        $umkms = User::select('nama_umkm')->distinct()->get();
-    
-        return view('umkm', ['produk' => $produk, 'umkms' => $umkms]);
-    }    
+    $kategori = $request->input('kategori', null);
+    $umkm = $request->input('umkm', null);
 
-    public function indexOrder ($id) {
-        $produk = Produk::find($id);
-        if (!$produk) {
-            return redirect()->route('home')->with('error', 'Produk tidak ditemukan.');
-        }
-        return view('order-detail', ['produk' => [$produk]]);
+    $query = User::query();
+
+    if ($kategori) {
+        $query->whereHas('produks', function ($q) use ($kategori) {
+            $q->where('kategori', $kategori);
+        });
     }
+
+    if ($umkm) {
+        $query->where('nama_umkm', $umkm);
+    }
+
+    $user = $query->with('produks')->get();
+
+
+    $umkms = User::select('nama_umkm')->distinct()->get();
+
+    return view('umkm', ['user' => $user, 'umkms' => $umkms]);
+}
+
+   public function indexOrder($id) {
+    $umkmStore = User::find($id);
+    if (!$umkmStore) {
+        return redirect()->route('home')->with('error', 'UMKM tidak ditemukan.');
+    }
+    
+    $products = Produk::where('user_id', $umkmStore->id)->get();
+    $user = Auth::user();
+    return view('detail-umkm', ['umkmStore' => $umkmStore, 'products' => $products, 'user' => $user] );
+}
 
     public function indexBerita () {
         $beritaAll = Berita::orderBy('created_at', 'desc')->take(12)->get();
