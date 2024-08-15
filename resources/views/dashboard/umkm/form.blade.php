@@ -34,7 +34,7 @@
                     <form class="form" action="{{ route('formUmkm.store') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
-                        <div class="field">
+                        {{-- <div class="field">
                             <div class="mb-4">
                                 <label class="block text-gray-800 text-sm font-bold mb-2" for="product-name">
                                     Nama Produk
@@ -49,7 +49,7 @@
                                 </label>
                                 <input id="product-price" type="number" placeholder="Masukkan harga produk"
                                     class="w-full px-3 py-2 text-gray-800 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                                    name="harga" required />
+                                    name="harga" />
                             </div>
                         </div>
                         <div class="mb-4">
@@ -68,23 +68,58 @@
                                 <option class="font-medium" value="Kosmetik"
                                     {{ old('kategori') == 'Kosmetik' ? 'selected' : '' }}>Kosmetik</option>
                             </select>
-                        </div>
+                        </div> --}}
 
 
-                        <div class="mb-4">
+                        <div class="mb-8">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="file-input">
                                 Upload Foto
                             </label>
-                            <div class="flex items-center">
-                                <label
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
-                                    Upload
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-full max-w-md bg-gray-100 rounded-lg shadow-inner border-2 border-dashed border-gray-400 p-6 text-center">
                                     <input type="file" id="file-input" name="gambar" accept="image/*" class="hidden"
-                                        required />
-                                </label>
+                                        required onchange="previewImage(event)" />
+                                    <label for="file-input" class="cursor-pointer">
+                                        <div id="image-preview" class="mb-4 hidden">
+                                            <img src="" alt="Preview"
+                                                class="max-w-full h-auto mx-auto rounded-lg shadow-md" />
+                                        </div>
+                                        <div id="upload-prompt">
+                                            <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
+                                                fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                                <path
+                                                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p class="mt-1 text-sm text-gray-600">
+                                                <span class="font-medium text-indigo-600 hover:text-indigo-500">Klik
+                                                    untuk upload</span>
+                                            </p>
+                                            <p class="mt-1 text-xs text-gray-500">PNG, JPG, GIF, SVG</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <button type="button" id="remove-image"
+                                    class="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 hidden">
+                                    Hapus Gambar
+                                </button>
                             </div>
                         </div>
-                        <div class="mb-4 relative w-32">
+                        <div class="mb-4">
+                            <label for="categoryies" class=" text-gray-800 text-sm font-bold">Pilih
+                                Kategori</label>
+                            <select id="countries"
+                                class="bg-white border  text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2 "
+                                name="kategori" required>
+                                <option selected disabled class="bg-slate-100">Select Category</option>
+                                <option class="font-medium" value="Fashion"
+                                    {{ old('kategori') == 'Fashion' ? 'selected' : '' }}>Fashion</option>
+                                <option class="font-medium" value="Makanan"
+                                    {{ old('kategori') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
+                            </select>
+                        </div>
+                        {{-- <div class="mb-4 relative w-32">
                             <img id="preview-image" class="hidden w-32 h-32 object-cover rounded-lg shadow-md" />
                             <button id="remove-image"
                                 class="hidden absolute top-0 right-0 mt-1 mr-1 bg-red-500 text-white rounded-full w-6 h-6  items-center justify-center">
@@ -93,9 +128,9 @@
                         </div>
                         <label for="description" class="block text-gray-800 text-sm font-bold mb-2">Deskripsi
                             Produk</label>
-                        <textarea id="description" name="deskripsi_produk" placeholder="Masukkan Deskripsi Produk"
-                            class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                            rows="4" required></textarea>
+                        <textarea id="description" name="deskripsi_produk" placeholder="Masukkan Deskripsi Produk" --}}
+                        {{-- class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
+                        rows="4" required></textarea> --}}
 
                         <hr>
 
@@ -159,33 +194,40 @@
     <!-- Scripts below are for demo only -->
     <script type="text/javascript" src="{{ asset('dist/js/main.min.js?v=1628755089081') }}"></script>
     {{-- script for upload foto --}}
-    <script>
-        document.getElementById('file-input').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const preview = document.getElementById('preview-image');
-            const removeButton = document.getElementById('remove-image');
 
-            if (file) {
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
                 const reader = new FileReader();
 
                 reader.onload = function(e) {
-                    preview.src = e.target.result;
+                    const preview = document.getElementById('image-preview');
+                    const promptElement = document.getElementById('upload-prompt');
+                    const removeButton = document.getElementById('remove-image');
+
+                    preview.innerHTML =
+                        `<img src="${e.target.result}" alt="Preview" class="max-w-full h-auto mx-auto rounded-lg shadow-md" />`;
                     preview.classList.remove('hidden');
+                    promptElement.classList.add('hidden');
                     removeButton.classList.remove('hidden');
                 }
 
-                reader.readAsDataURL(file);
+                reader.readAsDataURL(input.files[0]);
             }
-        });
+        }
 
         document.getElementById('remove-image').addEventListener('click', function() {
-            const preview = document.getElementById('preview-image');
+            const input = document.getElementById('file-input');
+            const preview = document.getElementById('image-preview');
+            const promptElement = document.getElementById('upload-prompt');
             const removeButton = document.getElementById('remove-image');
 
-            preview.src = '';
+            input.value = '';
+            preview.innerHTML = '';
             preview.classList.add('hidden');
+            promptElement.classList.remove('hidden');
             removeButton.classList.add('hidden');
-            document.getElementById('file-input').value = '';
         });
     </script>
     {{-- end of script for upload --}}

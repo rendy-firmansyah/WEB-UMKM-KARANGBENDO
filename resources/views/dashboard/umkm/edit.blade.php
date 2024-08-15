@@ -22,98 +22,51 @@
             <form action="{{ route('formUmkm.update', $produk->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
-                    <div class="sm:col-span-2">
-                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Product
-                            Name</label>
-                        <input type="text" name="nama_produk" id="name"
-                            class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan nama produk" value="{{$produk->nama_produk}}">
-                    </div>
-                    <div class="w-full">
-                        <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Price</label>
-                        <input type="number" name="harga" id="price"
-                            class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Masukkan Harga" value={{ $produk->harga }}>
-                    </div>
-                    <div>
-                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
-                        <select id="category"
-                            class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            name="kategori">
-                            <option selected="" disabled>Pilih Kategori</option>
-                            <option class="font-medium" {{ $produk->kategori == 'Makanan' ? 'selected' : '' }}>Makanan
-                            </option>
-                            <option class="font-medium" {{ $produk->kategori == 'Fashion' ? 'selected' : '' }}>Fashion
-                            </option>
-                            <option class="font-medium" {{ $produk->kategori == 'Aksesoris' ? 'selected' : '' }}>
-                                Aksesoris</option>
-                            <option class="font-medium" {{ $produk->kategori == 'Kosmetik' ? 'selected' : '' }}>Kosmetik
-                            </option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
-                        <select id="category" name="status_produk"
-                            class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option selected="" disabled>Status</option>
-                            <option class="font-medium" {{ $produk->status_produk == 'Tersedia' ? 'selected' : '' }}>
-                                Tersedia</option>
-                            <option class="font-medium"
-                                {{ $produk->status_produk == 'Tidak Tersedia' ? 'selected' : '' }}>Tidak Tersedia
-                            </option>
-                        </select>
-                    </div>
 
-                    <div class="sm:col-span-2">
-                        <label for="img-berita" class="block mb-2 text-sm font-medium text-gray-900">Upload
-                            Image</label>
-                        <div class="flex items-center justify-center w-full">
-                            <label for="img-berita"
-                                class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 border-gray-300 hover:bg-gray-100 transition-all">
-                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                    <i class="ri-folder-5-fill text-xl md:text-4xl"></i>
-                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                            class="font-semibold">Click to upload</span></p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, JPEG, SVG, GIF
-                                    </p>
-                                </div>
-                                <input id="img-berita" type="file" class="hidden" name="gambar"
-                                    accept="image/png, image/jpeg, image/gif, image/svg+xml">
-                            </label>
-                        </div>
-                        <div class="mt-4 relative" id="image-preview-container" style="display: none;">
-                            <img id="image-preview" class="w-full h-auto rounded-lg" />
-                            <button id="remove-image"
-                                class="absolute top-2 right-2 bg-red-500 text-white rounded-full px-2 focus:outline-none">
-                                &times;
-                            </button>
-                        </div>
+                <div class="sm:col-span-2">
+                    <label for="img-berita" class="block mb-2 text-sm font-medium text-gray-900">Upload
+                        Image</label>
+                    <div class="flex items-center justify-center w-full">
+                        <label for="img-berita"
+                            class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 border-gray-300 hover:bg-gray-100 transition-all">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <i class="ri-folder-5-fill text-xl md:text-4xl"></i>
+                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                        class="font-semibold">Click to upload</span></p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, JPEG, SVG, GIF
+                                </p>
+                            </div>
+                            <input id="img-berita" type="file" class="hidden" name="gambar"
+                                accept="image/png, image/jpeg, image/gif, image/svg+xml">
+                        </label>
                     </div>
-
-                    <div class="sm:col-span-2">
-                        <label for="description"
-                            class="block mb-2 text-sm font-medium text-gray-900">Description</label>
-                        <textarea id="description" name="deskripsi_produk" placeholder="Masukkan Deskripsi Produk"
-                            class="w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:shadow-outline focus:border-blue-500"
-                            rows="4">{{ $produk->deskripsi_produk }}</textarea>
+                    <div class="mt-4 relative" id="image-preview-container" style="display: none;">
+                        <img id="image-preview" class="w-full h-auto rounded-lg" />
+                        <button id="remove-image"
+                            class="absolute top-2 right-2 bg-red-500 text-white rounded-full px-2 focus:outline-none">
+                            &times;
+                        </button>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button type="submit"
-                        class="text-white bg-blue-700 transition-all hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 ">
-                        Update product
-                    </button>
+
+
+                <div class="flex flex-col w-full md:flex-row justify-start gap-0 md:gap-4 mt-4">
+                    <div class="flex items-center space-x-4">
+                        <button type="submit"
+                            class="text-white bg-blue-700 transition-all hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 ">
+                            Update product
+                        </button>
+                    </div>
+                    <div class="w-full md:w-1/2 flex justify-start items-center">
+                        <a href="{{ route('formUmkm.index') }}">
+                            <button
+                                class="my-4 bg-white shadow-lg hover:bg-slate-100 text-gray-800 text-sm font-medium py-2 px-6 transition-all rounded-lg">kembali
+                                ke halaman dashboard</button>
+                        </a>
+                    </div>
                 </div>
             </form>
-            <div class="w-full md:w-1/2 flex justify-start items-center">
-                <a href="{{ route('formUmkm.index') }}">
-                    <button
-                        class="my-4 bg-white shadow-lg hover:bg-slate-100 text-gray-800 text-sm font-medium py-2 px-6 transition-all rounded-lg">kembali
-                        ke halaman dashboard</button>
-                </a>
-            </div>
-        </div>
+
 
     </section>
 

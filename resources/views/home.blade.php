@@ -87,37 +87,45 @@
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
 
-            <div
-                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-                <div class="w-12 sm:w-20 rounded-full">
-                    <img src="{{ asset('images/fashion-icon.png') }}" alt="icon-fashion">
+            <a href="{{ route('batik') }}">
+                <div
+                    class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
+                    <div class="w-12 sm:w-20 rounded-full">
+                        <img src="{{ asset('images/fashion-icon.png') }}" alt="icon-fashion">
+                    </div>
+                    <p>Batik</p>
                 </div>
-                <p>Batik</p>
-            </div>
+            </a>
 
-            <div
-                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-                <div class="w-12 sm:w-20 rounded-full">
-                    <img src="{{ asset('images/makanan.png') }}" alt="makanan-icon">
+            <a href="{{ route('kuliner') }}">
+                <div
+                    class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
+                    <div class="w-12 sm:w-20 rounded-full">
+                        <img src="{{ asset('images/makanan.png') }}" alt="makanan-icon">
+                    </div>
+                    <p>Kuliner</p>
                 </div>
-                <p>Makanan</p>
-            </div>
+            </a>
 
-            <div
-                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-                <div class="w-12 sm:w-20 rounded-full">
-                    <img src="{{ asset('images/pertanian-icon.png') }}" alt="pertanian-icon">
+            <a href="{{ route('pertanian') }}">
+                <div
+                    class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
+                    <div class="w-12 sm:w-20 rounded-full">
+                        <img src="{{ asset('images/pertanian-icon.png') }}" alt="pertanian-icon">
+                    </div>
+                    <p>Pertanian</p>
                 </div>
-                <p>Pertanian</p>
-            </div>
+            </a>
 
-            <div
-                class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
-                <div class="w-12 sm:w-20 rounded-full">
-                    <img src="{{ asset('images/wisata-icon.png') }}" alt="icon-wiasata">
+            <a href="{{ route('wisata') }}">
+                <div
+                    class="bg-white py-8 sm:py-12 shadow-xl rounded-3xl flex gap-4 justify-center items-center hover:bg-blue-500 transition-all text-gray-800 hover:text-gray-100 font-semibold text-lg md:text-md sm:text-sm lg:text-lg">
+                    <div class="w-12 sm:w-20 rounded-full">
+                        <img src="{{ asset('images/wisata-icon.png') }}" alt="icon-wiasata">
+                    </div>
+                    <p>Wisata</p>
                 </div>
-                <p>Wisata</p>
-            </div>
+            </a>
         </div>
     </section>
     {{-- potensi section end --}}

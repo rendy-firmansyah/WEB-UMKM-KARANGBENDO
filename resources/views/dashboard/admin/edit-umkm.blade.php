@@ -41,7 +41,7 @@
                             class="block mb-2 text-sm font-medium text-gray-900">Phone</label>
                         <input type="text" name="nomor_telepon" id="phone"
                             class="bg-gray-50 border border-gray-300 font-medium text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                            placeholder="08xxxxxxx" pattern="08[0-9]{8,11}" value="{{ $umkmUser->nomor_telepon }}">
+                            placeholder="08xxxxxxx" value="{{ $umkmUser->nomor_telepon }}">
                         <p id="phone-error" class="text-red-500 mt-2 hidden">Nomor telepon tidak sesuai format.
                             Harus berupa angka dengan panjang 10-12 digit, dimulai dengan 08.</p>
                     </div>
@@ -78,7 +78,7 @@
                         <div class="flex items-center min-w-fit">
                             <button type="submit" name="action" value="update"
                                 class="text-white bg-blue-700 transition-all hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 w-full md:w-auto">
-                                Update Berita
+                                Update Data UMKM
                             </button>
                         </div>
                         <div class="flex items-center min-w-fit">
