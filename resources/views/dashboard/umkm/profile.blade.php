@@ -48,8 +48,7 @@
                                 </label>
                                 <input
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    type="text" name="nama_umkm" id="nama_umkm"
-                                    placeholder="Give your store a name..."
+                                    type="text" name="nama_umkm" id="nama_umkm" placeholder="masukkan nama UMKM..."
                                     value="{{ old('nama_umkm', $user->nama_umkm) }}">
                             </div>
 
@@ -60,9 +59,8 @@
                                 <input
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     type="text" name="deskripsi_toko" id="deskripsi_toko"
-                                    placeholder="Describe your store..."
-                                    value="{{ $user->deskripsi_toko ?: 'Your store doesn\'t have a description yet...' }}"
-                                    required>
+                                    placeholder="deskripsi UMKM..."
+                                    value="{{ $user->deskripsi_toko ?: 'anda belum mengisi deskripsi' }}" required>
                             </div>
 
                             <div class="flex items-center justify-end">

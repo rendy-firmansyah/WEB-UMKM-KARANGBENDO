@@ -7,6 +7,7 @@ use App\Models\Berita;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserController extends Controller
 {
@@ -39,15 +40,22 @@ class UserController extends Controller
 }
 
    public function indexOrder($id) {
-    $umkmStore = User::find($id);
-    if (!$umkmStore) {
+    try {
+        $umkmStore = User::findOrFail($id); // Menggunakan findOrFail()
+    } catch (ModelNotFoundException $e) {
         return redirect()->route('home')->with('error', 'UMKM tidak ditemukan.');
     }
     
     $products = Produk::where('user_id', $umkmStore->id)->get();
     $user = Auth::user();
-    return view('detail-umkm', ['umkmStore' => $umkmStore, 'products' => $products, 'user' => $user] );
+    
+    return view('detail-umkm', [
+        'umkmStore' => $umkmStore, 
+        'products' => $products, 
+        'user' => $user
+    ]);
 }
+
 
     public function indexBerita () {
         $beritaAll = Berita::orderBy('created_at', 'desc')->take(12)->get();
