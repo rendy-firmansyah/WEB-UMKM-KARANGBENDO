@@ -47,12 +47,10 @@ class UserController extends Controller
     }
     
     $products = Produk::where('user_id', $umkmStore->id)->get();
-    $user = Auth::user();
     
     return view('detail-umkm', [
         'umkmStore' => $umkmStore, 
         'products' => $products, 
-        'user' => $user
     ]);
 }
 

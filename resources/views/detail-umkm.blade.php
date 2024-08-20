@@ -23,7 +23,7 @@
                     </div>
                     <div
                         class="p-2 bg-blue-200 rounded-full transform transition-transform duration-300 ease-in-out hover:scale-110">
-                        <img src="{{ asset('images/content/' . (optional($user)->foto ?? 'default.jpg')) }}"
+                        <img src="{{ asset('images/content/' . (optional($umkmStore)->foto_profile ?? 'default.jpg')) }}"
                             alt="logo-toko" class="w-10 h-10 rounded-full">
                     </div>
 
@@ -40,7 +40,7 @@
         </div>
 
         <div class="my-4 flex">
-            <p class="ml-4">{{ optional($user)->deskripsi_toko ?? 'pemilik toko belum mengatur deskripsi...!' }}
+            <p class="ml-4">{{ optional($umkmStore)->deskripsi_toko ?? 'pemilik toko belum mengatur deskripsi...!' }}
             </p>
         </div>
 
