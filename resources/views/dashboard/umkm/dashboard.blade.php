@@ -38,7 +38,7 @@
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-                        Clients
+                        produk
                     </p>
                     <a href="" class="card-header-icon">
                         <span class="icon"><i class="mdi mdi-reload"></i></span>
@@ -111,10 +111,10 @@
                     </section>
                     <footer class="modal-card-foot">
                         <button class="button --jb-modal-close">tidak</button>
-                        <form action="" method="POST" id="delete-form">
+                        <form action="{{ route('formUmkm.destroy', $item->id) }}" method="POST" id="delete-form">
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="id" id="delete-id">
+                            {{-- <input type="hidden" name="id" id="delete-id"> --}}
                             <button class="button red --jb-modal-close">iya</button>
                         </form>
                     </footer>
@@ -128,48 +128,7 @@
 
     @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
     @include('dashboard.partials.script')
-    {{-- <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '658339141622648');
-        fbq('track', 'PageView');
-    </script> --}}
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const deleteButtons = document.querySelectorAll('button[data-target="sample-modal"]');
-            const deleteForm = document.getElementById('delete-form');
-            const deleteIdInput = document.getElementById('delete-id');
 
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const id = button.getAttribute('data-id');
-                    deleteIdInput.value = id;
-                    deleteForm.setAttribute('action',
-                        `{{ url('umkm/dashboard/formUmkm') }}/${id}`);
-                });
-            });
-        });
-    </script>
-    <noscript><img height="1" width="1" style="display:none" --}}
-    {{-- src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1" /></noscript> --}}
-
-    <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
 
 </body>
